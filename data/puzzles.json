@@ -1,0 +1,238 @@
+{
+ "puzzles": [
+  {
+   "id": 1,
+   "rating": 500,
+   "theme": "Mate in 1",
+   "title": "Scholar's Mate",
+   "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR w KQkq - 4 4",
+   "solution": [
+    "h5f7"
+   ],
+   "explain": "f7 is defended only by the king. Queen and bishop together deliver mate — the most common trap for beginners."
+  },
+  {
+   "id": 2,
+   "rating": 500,
+   "theme": "Mate in 1",
+   "title": "Fool's Mate",
+   "fen": "rnbqkbnr/pppp1ppp/8/4p3/6P1/5P2/PPPPP2P/RNBQKBNR b KQkq g3 0 2",
+   "solution": [
+    "d8h4"
+   ],
+   "explain": "White weakened the e1–h4 diagonal with f3 and g4. Qh4# is the fastest possible checkmate."
+  },
+  {
+   "id": 3,
+   "rating": 600,
+   "theme": "Mate in 1",
+   "title": "Back Rank",
+   "fen": "6k1/5ppp/8/8/8/8/5PPP/3R2K1 w - - 0 1",
+   "solution": [
+    "d1d8"
+   ],
+   "explain": "Black's king is trapped by its own pawns. Always watch the back rank!"
+  },
+  {
+   "id": 4,
+   "rating": 600,
+   "theme": "Mate in 1",
+   "title": "Back Rank (Black)",
+   "fen": "3r2k1/5ppp/8/8/8/8/5PPP/6K1 b - - 0 1",
+   "solution": [
+    "d8d1"
+   ],
+   "explain": "The same pattern with colours reversed."
+  },
+  {
+   "id": 5,
+   "rating": 650,
+   "theme": "Mate in 1",
+   "title": "Promotion Mate",
+   "fen": "k7/2P5/1K6/8/8/8/8/8 w - - 0 1",
+   "solution": [
+    "c7c8q"
+   ],
+   "explain": "The king covers a7 and b7; the new queen (or rook!) checks along the 8th rank."
+  },
+  {
+   "id": 6,
+   "rating": 700,
+   "theme": "Mate in 1",
+   "title": "Smothered Mate",
+   "fen": "6rk/6pp/8/6N1/8/8/8/6K1 w - - 0 1",
+   "solution": [
+    "g5f7"
+   ],
+   "explain": "The king is smothered by its own rook and pawns — only a knight's check can't be blocked."
+  },
+  {
+   "id": 7,
+   "rating": 700,
+   "theme": "Fork",
+   "title": "Pawn Fork",
+   "fen": "4k3/8/3n1n2/8/4P3/8/8/2B1K3 w - - 0 1",
+   "solution": [
+    "e4e5",
+    "d6f5",
+    "e5f6"
+   ],
+   "explain": "A pawn attacking two pieces at once — one of them must fall."
+  },
+  {
+   "id": 8,
+   "rating": 750,
+   "theme": "Mate in 1",
+   "title": "Arabian Mate",
+   "fen": "7k/R7/5N2/8/8/8/8/6K1 w - - 0 1",
+   "solution": [
+    "a7h7"
+   ],
+   "explain": "One of the oldest known patterns: the knight guards the rook and covers g8."
+  },
+  {
+   "id": 9,
+   "rating": 800,
+   "theme": "Mate in 1",
+   "title": "Greek Gift Finish",
+   "fen": "rnbq1rk1/ppp2ppp/4p3/3p3Q/3P4/3B4/PPP2PPP/RNB1K1NR w KQ - 0 7",
+   "solution": [
+    "h5h7"
+   ],
+   "explain": "Queen and bishop battery on h7. With no knight on f6, nothing defends it."
+  },
+  {
+   "id": 10,
+   "rating": 800,
+   "theme": "Fork",
+   "title": "Royal Fork",
+   "fen": "r3k3/8/8/1N6/8/8/8/4K3 w - - 0 1",
+   "solution": [
+    "b5c7",
+    "e8d7",
+    "c7a8"
+   ],
+   "explain": "The knight checks the king and attacks the rook at the same time."
+  },
+  {
+   "id": 11,
+   "rating": 900,
+   "theme": "Skewer",
+   "title": "File Skewer",
+   "fen": "3q4/8/8/3k4/8/8/8/R5K1 w - - 0 1",
+   "solution": [
+    "a1d1",
+    "d5e4",
+    "d1d8"
+   ],
+   "explain": "Check the king; when it steps aside the queen behind it is lost."
+  },
+  {
+   "id": 12,
+   "rating": 900,
+   "theme": "Pin",
+   "title": "Punish the Pin",
+   "fen": "4k3/1p6/2n5/1B6/3P4/8/8/4K3 w - - 0 1",
+   "solution": [
+    "d4d5",
+    "e8d7",
+    "d5c6"
+   ],
+   "explain": "A pinned piece cannot run away. Attack it with something cheaper."
+  },
+  {
+   "id": 13,
+   "rating": 950,
+   "theme": "Fork",
+   "title": "Queen Fork",
+   "fen": "6k1/6pp/8/r7/8/8/5PPP/3Q2K1 w - - 0 1",
+   "solution": [
+    "d1d8",
+    "g8f7",
+    "d8a5"
+   ],
+   "explain": "Check plus an attack on a loose piece. Loose pieces drop off!"
+  },
+  {
+   "id": 14,
+   "rating": 1000,
+   "theme": "Discovered attack",
+   "title": "Unmasked Rook",
+   "fen": "4q1k1/8/8/8/4N3/8/8/4R1K1 w - - 0 1",
+   "solution": [
+    "e4f6",
+    "g8g7",
+    "e1e8"
+   ],
+   "explain": "The knight jumps out with check and uncovers the rook on the queen. Black must deal with the check first."
+  },
+  {
+   "id": 15,
+   "rating": 1000,
+   "theme": "Mate in 2",
+   "title": "Doubled Rooks",
+   "fen": "r5k1/5ppp/8/8/8/8/3R1PPP/3R2K1 w - - 0 1",
+   "solution": [
+    "d2d8",
+    "a8d8",
+    "d1d8"
+   ],
+   "explain": "Two attackers against one defender on the back rank: sacrifice the first rook, mate with the second."
+  },
+  {
+   "id": 16,
+   "rating": 1050,
+   "theme": "Mate in 2",
+   "title": "Doubled Rooks (Black)",
+   "fen": "3r2k1/3r1ppp/8/8/8/8/5PPP/R5K1 b - - 0 1",
+   "solution": [
+    "d7d1",
+    "a1d1",
+    "d8d1"
+   ],
+   "explain": "Same idea for Black: overload the lone defender of the first rank."
+  },
+  {
+   "id": 17,
+   "rating": 1200,
+   "theme": "Mate in 2",
+   "title": "Philidor's Legacy",
+   "fen": "4r2k/6pp/7N/3Q4/8/8/6PP/6K1 w - - 0 1",
+   "solution": [
+    "d5g8",
+    "e8g8",
+    "h6f7"
+   ],
+   "explain": "A queen sacrifice forces the rook to g8, smothering its own king. Then Nf7#."
+  },
+  {
+   "id": 18,
+   "rating": 1300,
+   "theme": "Mate in 2",
+   "title": "The Opera Game",
+   "fen": "4kb1r/p2n1ppp/4q3/4p1B1/4P3/1Q6/PPP2PPP/2KR4 w k - 1 17",
+   "solution": [
+    "b3b8",
+    "d7b8",
+    "d1d8"
+   ],
+   "explain": "Paul Morphy, Paris 1858: the queen sacrifice deflects the knight from d7 and Rd8 is mate, protected by the bishop."
+  },
+  {
+   "id": 19,
+   "rating": 1400,
+   "theme": "Endgame",
+   "title": "Pawn Breakthrough",
+   "fen": "7k/ppp5/8/PPP5/8/8/8/7K w - - 0 1",
+   "solution": [
+    "b5b6",
+    "a7b6",
+    "c5c6",
+    "b7c6",
+    "a5a6"
+   ],
+   "noVerify": true,
+   "explain": "Three pawns against three: 1.b6! breaks through by force. After any capture, the other sacrifice clears a path and one white pawn queens."
+  }
+ ]
+}

@@ -1,28 +1,13 @@
 /*
  * board.js — interactive chessboard view (click-to-move and drag & drop),
- * legal-move dots, last-move / check highlights, arrows, stars, promotion picker.
+ * legal-move dots, last-move / check highlights, arrows, promotion picker, move animation.
  */
 (function (global) {
   'use strict';
   const { sqName, sqIndex, colorOf, typeOf } = global.Chess;
-  const GLYPH = { k: '♚', q: '♛', r: '♜', b: '♝', n: '♞', p: '♟' };
-  const VS = '︎';
-  // Original vector piece set (45×45 viewBox), styled via CSS for each colour.
-  const BASE = '<rect x="10.5" y="34" width="24" height="5" rx="2"/>';
-  const SHAPES = {
-    p: '<path d="M17 21h11l3.5 13h-18z"/><rect x="15.5" y="18.5" width="14" height="3.5" rx="1.75"/><circle cx="22.5" cy="13" r="5.5"/>' + BASE,
-    r: '<path d="M15.5 30l1.5-13h11l1.5 13z"/><rect x="13" y="29.5" width="19" height="4.5" rx="1.5"/><rect x="13" y="13.5" width="19" height="4" rx="1.5"/>' +
-       '<path d="M12.5 8h4v3h4V8h4v3h4V8h4v6h-20z"/>' + BASE,
-    n: '<path d="M15 34c0-6 3-9 6.5-12.5-3 1-6 3-8.5 3.6-2 .5-3.5-1-2.5-3 1.6-3.3 5.5-7.3 8-9.8L18 7.5l3.6 2.8c2.6-1 5.4-1 7.6.2 4.4 2.5 5.8 8.5 5.3 15.5L34 34z"/>' +
-       '<circle class="eye" cx="22" cy="14.5" r="1.3"/>' + BASE,
-    b: '<rect x="15" y="29" width="15" height="5" rx="2"/><path d="M17 29c-4-5-3-12 5.5-20 8.5 8 9.5 15 5.5 20z"/><circle cx="22.5" cy="7" r="2.6"/>' +
-       '<path class="line" d="M25.5 14.5l-4.5 5M22.5 23.5v2.5M21 25h3"/>' + BASE,
-    q: '<rect x="13" y="29.5" width="19" height="4.5" rx="1.5"/><path d="M13 30L9 14l7 7 1-11 4 8 1.5-10 1.5 10 4-8 1 11 7-7-4 16z"/>' +
-       '<circle cx="9" cy="13.5" r="2.3"/><circle cx="17" cy="9.5" r="2.3"/><circle cx="22.5" cy="7" r="2.3"/><circle cx="28" cy="9.5" r="2.3"/><circle cx="36" cy="13.5" r="2.3"/>' + BASE,
-    k: '<rect x="13" y="29.5" width="19" height="4.5" rx="1.5"/><path d="M14 30c-4-5-4-11 1-13 3-1 6 1 7.5 4 1.5-3 4.5-5 7.5-4 5 2 5 8 1 13z"/>' +
-       '<path d="M21 5h3v3h3v3h-3v6h-3v-6h-3V8h3z"/>' + BASE,
-  };
-  const pieceSvg = (t) => `<svg viewBox="3.5 3 38 38" aria-hidden="true">${SHAPES[t]}</svg>`;
+  // Pieces: the standard "cburnett" set used by Lichess (img/pieces, CC BY-SA 3.0, Colin M.L. Burnett).
+  const pieceHtml = (color, type, extra) =>
+    `<div class="piece ${color}${type.toUpperCase()}${extra ? ' ' + extra : ''}"></div>`;
 
   class BoardView {
     /**
@@ -123,8 +108,7 @@
         if (pieceEl) pieceEl.classList.add('dragging-src');
         const ghost = document.createElement('div');
         const p = this.chess.board[d.from];
-        ghost.className = 'piece ghost ' + colorOf(p);
-        ghost.innerHTML = pieceSvg(typeOf(p));
+        ghost.className = 'piece ghost ' + colorOf(p) + typeOf(p).toUpperCase();
         const size = this.el.getBoundingClientRect().width / 8;
         ghost.style.width = ghost.style.height = size + 'px';
         document.body.appendChild(ghost);
@@ -178,15 +162,15 @@
       this.promo.innerHTML = '';
       const title = document.createElement('div');
       title.className = 'promo-title';
-      title.textContent = 'Promote to:';
+      title.textContent = t('Promote to:');
       this.promo.appendChild(title);
       const row = document.createElement('div');
       row.className = 'promo-row';
       for (const t of ['q', 'r', 'b', 'n']) {
         const btn = document.createElement('button');
-        btn.className = 'piece promo-btn ' + color;
-        btn.innerHTML = pieceSvg(t);
-        btn.title = global.Chess.PIECE_NAMES[t];
+        btn.className = 'promo-btn';
+        btn.innerHTML = pieceHtml(color, t);
+        btn.title = I18N.piece(t);
         btn.addEventListener('click', () => {
           this.promo.classList.add('hidden');
           this.selected = null;
@@ -196,7 +180,7 @@
       }
       const cancel = document.createElement('button');
       cancel.className = 'btn ghost small';
-      cancel.textContent = 'Cancel';
+      cancel.textContent = t('Cancel');
       cancel.addEventListener('click', () => { this.promo.classList.add('hidden'); this.selected = null; this.render(); });
       this.promo.append(row, cancel);
       this.promo.classList.remove('hidden');
@@ -234,7 +218,7 @@
           if (this.canMovePiece(sq) && !this.clickMode) cls.push('movable');
           let inner = '';
           const p = ch ? ch.board[sq] : null;
-          if (p) inner += `<div class="piece ${colorOf(p)}">${pieceSvg(typeOf(p))}</div>`;
+          if (p) inner += pieceHtml(colorOf(p), typeOf(p));
           if (this.stars.has(name)) inner += '<div class="star">★</div>';
           if (targets.has(sq)) inner += targets.get(sq) || p ? '<div class="cap-ring"></div>' : '<div class="dot"></div>';
           if (this.showCoords) {
@@ -246,6 +230,22 @@
       }
       this.el.innerHTML = html;
       this.drawArrows();
+      if (this.animate) { this.slide(this.animate); this.animate = null; }
+    }
+
+    /** Slide the piece now on `to` from the `from` square (call via set({animate:[from,to]})). */
+    slide([from, to]) {
+      const a = this.center(from), b = this.center(to);
+      const pc = this.el.querySelector(`[data-sq="${sqIndex(to)}"] .piece`);
+      if (!pc) return;
+      const size = this.el.getBoundingClientRect().width / 100;
+      pc.style.transition = 'none';
+      pc.style.transform = `translate(${(a[0] - b[0]) * size}px, ${(a[1] - b[1]) * size}px)`;
+      pc.style.zIndex = 5;
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        pc.style.transition = 'transform 160ms ease-out';
+        pc.style.transform = '';
+      }));
     }
 
     center(name) {
@@ -257,7 +257,7 @@
     }
 
     drawArrows() {
-      const colors = { green: '#15781B', blue: '#2563eb', red: '#c0392b', orange: '#e67e22' };
+      const colors = { green: '#15781B', blue: '#2b6fd6', red: '#c8372d', orange: '#e08a14', yellow: '#d4a600' };
       let defs = '<defs>';
       for (const [k, c] of Object.entries(colors)) {
         defs += `<marker id="ah-${k}" markerWidth="4" markerHeight="4" refX="2.05" refY="2" orient="auto"><path d="M0,0 L4,2 L0,4 z" fill="${c}"/></marker>`;
@@ -276,7 +276,6 @@
     }
   }
 
-  BoardView.GLYPH = GLYPH;
-  BoardView.pieceSvg = pieceSvg;
+  BoardView.pieceHtml = pieceHtml;
   global.BoardView = BoardView;
 })(window);

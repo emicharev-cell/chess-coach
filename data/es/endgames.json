@@ -1,0 +1,238 @@
+{
+  "id": "endgames",
+  "title": "Finales",
+  "icon": "♔",
+  "blurb": "Las posiciones teóricas que todo jugador fuerte se sabe de memoria, repasadas contra el motor hasta que la técnica sea automática.",
+  "chapters": [
+    {
+      "id": "king-pawn",
+      "title": "Rey y peón",
+      "lessons": [
+        {
+          "id": "key-squares",
+          "title": "Casillas clave y la oposición",
+          "level": 1,
+          "side": "w",
+          "summary": "La base de todos los finales. Aprende qué casillas ganan y cómo luchan los reyes por ellas.",
+          "refs": ["book:dvoretsky", "book:capablanca"],
+          "steps": [
+            {
+              "type": "text",
+              "title": "Casillas clave",
+              "fen": "4k3/8/8/8/8/4K3/4P3/8 w - - 0 1",
+              "marks": { "d4": "green", "e4": "green", "f4": "green" },
+              "text": "Para un peón que aún no ha cruzado la mitad del tablero, las **casillas clave** son las tres casillas **dos filas por delante de él**. Aquí, para el peón de e2, son d4, e4 y f4. Si el rey atacante llega a una casilla clave, el peón corona **haga lo que haga el defensor**.\n\nEste es el punto de partida de Dvoretsky: no calculas todo el final, solo te preguntas '¿puede mi rey llegar a una casilla clave?'"
+            },
+            {
+              "type": "find",
+              "title": "Pisa una casilla clave",
+              "fen": "8/8/4k3/8/8/4K3/4P3/8 w - - 0 1",
+              "text": "Juegan blancas. El rey negro está cerca. Gana la carrera por las casillas clave.",
+              "solution": [["Ke4", "Kd4", "Kf4"]],
+              "why": "Cualquiera de **Ke4, Kd4 o Kf4** pone al rey en una casilla clave, y el final está ganado. Una jugada de peón como e4? lo echaría a perder: tras ...Ke5 las negras controlan las casillas clave (d5, e5, f5) del peón de e4.",
+              "wrong": { "e4": "Si empujas primero, el rey negro toma la oposición delante del peón: ...Ke5 y son tablas. ¡Primero el rey!", "e3": "El peón no puede ir ahí porque tu propio rey está en e3." }
+            },
+            {
+              "type": "quiz",
+              "title": "La oposición",
+              "fen": "8/4k3/8/4K3/4P3/8/8/8 w - - 0 1",
+              "question": "Reyes en e5 y e7, peón blanco en e4, **juegan blancas**. ¿Cuál es el resultado con juego perfecto?",
+              "options": [
+                { "text": "Tablas: las negras tienen la oposición, y las blancas no tienen un tiempo de reserva con el peón.", "correct": true, "why": "Correcto. Los reyes están enfrentados con una casilla entre ellos y juegan las blancas, así que las negras 'tienen la oposición'. Las blancas no pueden llegar a d6, e6 ni f6 (las casillas clave), y el peón no puede moverse porque el rey lo bloquea. Si jugaran las negras, sería victoria." },
+                { "text": "Ganan las blancas con Kd5.", "why": "1.Kd5 Kd7! mantiene la oposición, y las blancas no pueden progresar." },
+                { "text": "Ganan las blancas avanzando e4–e5.", "why": "El peón no puede avanzar: el propio rey blanco está en e5." },
+                { "text": "Ganan las negras.", "why": "Las negras no tienen peones, así que no pueden ganar. La cuestión es si las blancas pueden coronar." }
+              ]
+            },
+            {
+              "type": "play",
+              "title": "Ejercicio de técnica: corona el peón",
+              "fen": "4k3/8/8/8/8/4K3/4P3/8 w - - 0 1",
+              "goal": "promote",
+              "you": "w",
+              "text": "Ahora juégalo contra el motor. Lleva tu rey a una casilla clave, mantén la oposición cuando haga falta y corona el peón con seguridad. (La nueva dama no debe poder ser capturada y no debe ser ahogado.)"
+            }
+          ]
+        },
+        {
+          "id": "reti",
+          "title": "El cuadrado y el milagro de Réti",
+          "level": 2,
+          "side": "w",
+          "summary": "Cómo calcular carreras de peones con el 'cuadrado', y un rey que persigue dos objetivos a la vez.",
+          "refs": ["game:reti1921", "book:delavilla"],
+          "steps": [
+            {
+              "type": "text",
+              "title": "La regla del cuadrado",
+              "fen": "8/8/8/8/k6p/8/3K4/8 w - - 0 1",
+              "marks": { "h4": "red", "h1": "yellow", "e1": "yellow", "e4": "yellow" },
+              "text": "Dibuja un cuadrado desde el peón hasta su casilla de coronación (aquí h4–h1–e1–e4). Si el rey defensor puede **entrar en el cuadrado** en su turno, alcanza el peón. Si juegan blancas, Ke2 o Ke3 entra en el cuadrado y el peón h es cazado. Si juegan negras, ...h3 se escapa y el peón corona.\n\nEl cuadrado te permite juzgar carreras de peones al instante, sin contar jugadas una por una."
+            },
+            {
+              "type": "find",
+              "title": "El estudio de Réti (1921)",
+              "fen": "7K/8/k1P5/7p/8/8/8/8 w - - 0 1",
+              "text": "El rey blanco está fuera del cuadrado del peón h, y el rey negro está junto al peón c. Parece imposible. Juegan blancas y hacen **tablas**.",
+              "solution": ["Kg7"],
+              "why": "**1.Kg7!** va a por el peón h *y* hacia el peón c a la vez, porque una ruta diagonal del rey es tan corta como una recta. 1...h4 2.Kf6! h3 (2...Kb6 3.Ke5! alcanza el peón) 3.Ke7 h2 4.c7 Kb7 5.Kd7, y ambos bandos coronan. Tablas. Réti lo publicó en 1921, y sigue asombrando hoy.",
+              "wrong": { "c7": "1.c7? Kb7 y el peón c cae; luego el peón h corre. El rey tiene que trabajar en los dos objetivos a la vez.", "Kh7": "El rey tiene que moverse en diagonal para ganar tiempo: Kg7, Kf6, Ke5 / Ke7." }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rook-endings",
+      "title": "Finales de torre",
+      "lessons": [
+        {
+          "id": "lucena",
+          "title": "La posición de Lucena: construir un puente",
+          "level": 2,
+          "side": "w",
+          "summary": "La técnica ganadora más importante de los finales de torre.",
+          "refs": ["book:dvoretsky", "book:delavilla"],
+          "steps": [
+            {
+              "type": "text",
+              "title": "La posición",
+              "fen": "1K6/1P1k4/8/8/8/8/r7/2R5 w - - 0 1",
+              "marks": { "b8": "yellow", "b7": "yellow" },
+              "text": "El peón blanco está en séptima, su rey en la casilla de coronación y el rey negro está **cortado** por la torre de c1. El problema es que el rey blanco no puede salir sin recibir jaques de la torre negra.\n\nLa posición lleva el nombre de Luis Ramírez de Lucena, aunque no aparece en su libro de 1497; la publicó por primera vez Alessandro Salvio en 1634. El método ganador se llama **'construir un puente'** (término de Nimzowitsch): la torre va a la cuarta fila para tapar luego los jaques."
+            },
+            {
+              "type": "line",
+              "title": "Construye el puente (juegas con blancas)",
+              "you": "w",
+              "fen": "1K6/1P1k4/8/8/8/8/r7/2R5 w - - 0 1",
+              "moves": [
+                ["Rd1+", "Primero aleja al rey negro una columna más."],
+                ["Ke7", "Si 1...Kc6 2.Kc8 y el peón corona."],
+                ["Rd4", "¡El puente! La torre va a la cuarta fila, lista para tapar los jaques en la columna b."],
+                ["Ra1", "Las negras esperan."],
+                ["Kc7", "El rey sale."],
+                ["Rc1+", "Jaques desde el lado."],
+                ["Kb6", "El rey se acerca a la torre."],
+                ["Rb1+", "Otro jaque."],
+                ["Kc6", "Sigue caminando hacia el puente."],
+                ["Rc1+", "Jaque."],
+                ["Kb5", "Ahora el rey está en la quinta fila..."],
+                ["Rb1+", "...un último jaque..."],
+                ["Rb4", "...y el puente lo tapa. El peón corona. Apréndelo de memoria."]
+              ]
+            },
+            {
+              "type": "play",
+              "title": "Ejercicio de técnica: gánalo contra el motor",
+              "fen": "1K6/1P1k4/8/8/8/8/r7/2R5 w - - 0 1",
+              "goal": "promote",
+              "you": "w",
+              "text": "Ahora gánalo contra el motor, que se defenderá con toda la tenacidad posible. Corona el peón con seguridad."
+            }
+          ]
+        },
+        {
+          "id": "philidor",
+          "title": "La posición de Philidor: la defensa de la tercera fila",
+          "level": 2,
+          "side": "b",
+          "summary": "El método fundamental para hacer tablas en los finales de torre, de Philidor (1777).",
+          "refs": ["book:philidor", "book:dvoretsky"],
+          "steps": [
+            {
+              "type": "text",
+              "title": "El esquema defensivo",
+              "fen": "4k3/R7/1r6/4PK2/8/8/8/8 w - - 0 1",
+              "marks": { "b6": "green", "e8": "green" },
+              "arrows": [["b6", "h6", "green"]],
+              "text": "El rey negro está **delante del peón**, y la torre negra domina la **sexta fila** (la 'tercera fila' vista desde las negras). Impide que el rey blanco llegue a la sexta, donde se refugiaría de los jaques.\n\nEl momento clave: cuando las blancas empujan **e6**, el rey ya no puede esconderse delante de su peón, así que la torre negra **baja a la primera fila** y da jaques desde atrás. Philidor lo analizó en 1777, y sigue siendo la primera técnica defensiva que todo jugador debe conocer."
+            },
+            {
+              "type": "line",
+              "title": "El momento de la verdad (juegas con negras)",
+              "you": "b",
+              "fen": "4k3/R7/1r6/4PK2/8/8/8/8 w - - 0 1",
+              "moves": [
+                ["e6", "Las blancas empujan, esperando jugar Kf6 a continuación."],
+                ["Rb1", "¡Ahora! La torre se va al otro extremo para dar jaques desde atrás. El rey no puede esconderse, porque el peón de e6 ya no lo protege."],
+                ["Kf6", "Las blancas lo intentan igualmente."],
+                ["Rf1+", "Jaques desde atrás."],
+                ["Ke5", "El rey tiene que retroceder o correr hacia la torre."],
+                ["Re1+", "Sigue dando jaques: no hay refugio. Tablas."]
+              ]
+            },
+            {
+              "type": "play",
+              "title": "Ejercicio de técnica: aguanta las tablas",
+              "fen": "4k3/R7/1r6/4PK2/8/8/8/8 w - - 0 1",
+              "goal": "hold",
+              "you": "b",
+              "moves": 12,
+              "text": "Juegas con negras y el motor lleva las blancas. Aguanta las tablas durante 12 jugadas: mantén la torre en la sexta fila hasta que el peón avance, y luego da jaques desde atrás."
+            }
+          ]
+        },
+        {
+          "id": "rook-skewer",
+          "title": "El truco de la enfilada con peón a",
+          "level": 2,
+          "side": "w",
+          "summary": "Cuando el rey defensor se va al lado equivocado, una enfilada de torre decide.",
+          "refs": ["book:dvoretsky"],
+          "steps": [
+            {
+              "type": "find",
+              "title": "¡Enfilada!",
+              "fen": "R7/P4k2/8/8/8/6K1/r7/8 w - - 0 1",
+              "text": "La torre blanca está delante del peón a y la torre negra detrás. El rey negro está en f7, y eso es un error. Encuentra el truco ganador.",
+              "solution": ["Rh8", "Rxa7", "Rh7+", "Kf6", "Rxa7"],
+              "why": "**1.Rh8!** amenaza a8=Q. Si 1...Rxa7, **2.Rh7+** enfila al rey y la torre por la séptima fila. Por eso en este final el rey defensor debe estar en **g7 o h7** (la defensa Vančura y otras parecidas). Desde ahí controla h7 y h8 y el truco no funciona.",
+              "engine": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mating-technique",
+      "title": "Técnica de mate",
+      "lessons": [
+        {
+          "id": "basic-mates",
+          "title": "Mates de dama y de torre contra el reloj",
+          "level": 1,
+          "side": "w",
+          "summary": "Da mate de forma eficiente contra la mejor defensa: el método de la caja con la torre y el estrechamiento a salto de caballo con la dama.",
+          "refs": ["book:capablanca"],
+          "steps": [
+            {
+              "type": "text",
+              "title": "Método, no suerte",
+              "fen": "8/8/8/4k3/8/8/8/3QK3 w - - 0 1",
+              "text": "**Dama:** estrecha la caja manteniéndote a un salto de caballo del rey. Cuando esté en el borde, acerca tu propio rey y da mate. Cuidado con el **ahogado**: deja siempre una casilla al rey hasta el golpe final.\n\n**Torre:** corta al rey por una fila o columna (la 'caja'), acerca tu rey hasta enfrentarlo (la oposición) y entonces da jaque para hacerlo retroceder una fila. Repite hasta llegar al borde.\n\n*Fundamentos del ajedrez* de Capablanca empieza justo con estos mates, para que aprendas cómo cooperan las piezas."
+            },
+            {
+              "type": "play",
+              "title": "Mate de dama: en menos de 12 jugadas",
+              "fen": "8/8/8/4k3/8/8/8/3QK3 w - - 0 1",
+              "goal": "mate",
+              "you": "w",
+              "moves": 12,
+              "text": "Da mate al rey del motor en **12 jugadas o menos**. ¡Sin ahogar!"
+            },
+            {
+              "type": "play",
+              "title": "Mate de torre: en menos de 22 jugadas",
+              "fen": "8/8/8/4k3/8/8/8/R3K3 w - - 0 1",
+              "goal": "mate",
+              "you": "w",
+              "moves": 22,
+              "text": "Ahora con una torre. Usa el método de la caja y da mate en **22 jugadas o menos**."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,448 @@
+{
+  "id": "middlegame",
+  "title": "Middlegame",
+  "icon": "⚔️",
+  "blurb": "Tactical motifs, attacking patterns, pawn structures and rook technique. These are the patterns a grandmaster recognises instantly.",
+  "chapters": [
+    {
+      "id": "tactics",
+      "title": "Tactical Motifs",
+      "lessons": [
+        {
+          "id": "discovered",
+          "title": "Discovered Checks & the Windmill",
+          "level": 2,
+          "side": "both",
+          "summary": "The most powerful tactical weapon: one piece moves, another attacks. Double check and the windmill.",
+          "refs": [
+            "game:torrelasker1925",
+            "game:reti1910",
+            "book:vukovic"
+          ],
+          "steps": [
+            {
+              "type": "text",
+              "title": "Anatomy of a discovery",
+              "fen": "r3q3/pp3ppk/8/8/4N3/8/PP3PPP/4R1K1 w - - 0 1",
+              "arrows": [
+                [
+                  "e1",
+                  "e8",
+                  "red"
+                ]
+              ],
+              "marks": {
+                "e4": "yellow"
+              },
+              "text": "A **discovered attack** happens when one piece (the *front piece*) moves out of the way of another (the *rear piece*). Then there are **two attackers at once**: the rear piece's line opens, and the front piece makes its own threat.\n\nIf the front piece moves **with check**, the opponent has to deal with the check, and the attack behind it lands for free. Here the e4-knight blocks the e1-rook's attack on the black queen."
+            },
+            {
+              "type": "find",
+              "title": "Unleash the rook",
+              "fen": "r3q3/pp3ppk/8/8/4N3/8/PP3PPP/4R1K1 w - - 0 1",
+              "text": "White to move wins the queen. Move the knight *with check*.",
+              "solution": [
+                "Ng5+"
+              ],
+              "why": "**1.Ng5+!** The knight gives check from a square where nothing can take it, so Black must deal with the check, and **2.Rxe8** wins the queen. Compare 1.Nf6+? gxf6!, where the front piece is lost. A discovered attack works best when the front piece moves with check *and* lands safely.",
+              "wrong": {
+                "Nd6": "The rook does attack the queen now, but without a check Black simply moves the queen away.",
+                "Nf6+": "Also check, but 1...gxf6! takes the knight, and after 2.Rxe8 Rxe8 you have lost it for nothing. Pick the square where the knight is safe."
+              }
+            },
+            {
+              "type": "text",
+              "title": "Double check",
+              "setup": "e4 c6 d4 d5 Nc3 dxe4 Nxe4 Nf6 Qd3 e5 dxe5 Qa5+ Bd2 Qxe5 O-O-O Nxe4 Qd8+ Kxd8 Bg5+",
+              "arrows": [
+                [
+                  "g5",
+                  "d8",
+                  "red"
+                ],
+                [
+                  "d1",
+                  "d8",
+                  "red"
+                ]
+              ],
+              "text": "**Double check**: both the front and rear pieces give check. You can't block two lines or capture two pieces at once, so **only a king move** is possible. That makes double check the most forcing move in chess.\n\nThis is Réti vs Tartakower (Vienna 1910) after 9.Qd8+!! Kxd8 10.Bg5++. Black resigned after 10...Kc7 11.Bd8#."
+            },
+            {
+              "type": "find",
+              "title": "The windmill",
+              "fen": "5r1k/1p1b1qRp/5B2/8/8/8/5PPP/6K1 w - - 0 1",
+              "text": "The g7-rook and f6-bishop form a **windmill**: the rook moves along the 7th rank with discovered check from the bishop, comes back to g7 with check, and repeats. Start harvesting with the most valuable target.",
+              "solution": [
+                "Rxf7+",
+                "Kg8",
+                "Rg7+",
+                "Kh8",
+                "Rxd7+"
+              ],
+              "why": "**Rxf7+** (a discovered check from the f6-bishop) wins the queen. After Kg8, **Rg7+** Kh8, the windmill turns again with **Rxd7+**, then Rg7+ and Rxb7+... The black king is stuck shuttling between g8 and h8. The most famous windmill is Torre vs Lasker, Moscow 1925, where Carlos Torre's rook gobbled up most of the 7th rank against a former world champion."
+            }
+          ]
+        },
+        {
+          "id": "pins-skewers",
+          "title": "Pins & Skewers",
+          "level": 1,
+          "side": "both",
+          "summary": "Absolute vs relative pins, why 'pinned' pieces sometimes move anyway, and the skewer.",
+          "refs": [
+            "game:legal1750",
+            "game:opera1858",
+            "book:silman"
+          ],
+          "steps": [
+            {
+              "type": "text",
+              "title": "Absolute vs relative",
+              "setup": "e4 e5 Nf3 d6 Bc4 Bg4",
+              "arrows": [
+                [
+                  "g4",
+                  "d1",
+                  "red"
+                ]
+              ],
+              "marks": {
+                "f3": "yellow"
+              },
+              "text": "A **pin** attacks a piece that can't move without exposing something more valuable behind it.\n\n• **Absolute pin**: the piece behind is the king, so the pinned piece *legally can't* move.\n• **Relative pin**: the piece behind is something else (here the queen on d1). The pinned piece *can* move, at a cost. Sometimes that cost is worth paying, and that's where combinations live.\n\nThe Bg4 pin on the f3-knight looks strong, but it's only relative."
+            },
+            {
+              "type": "find",
+              "title": "Légal's Mate (Paris, 1750)",
+              "setup": "e4 e5 Nf3 d6 Bc4 Bg4 Nc3 g6",
+              "text": "Black's last move, ...g6, wasted a tempo and weakened f6 and h6. The f3-knight is 'pinned' to the queen. Ignore the pin!",
+              "solution": [
+                "Nxe5",
+                "Bxd1",
+                "Bxf7+",
+                "Ke7",
+                "Nd5#"
+              ],
+              "why": "**5.Nxe5!** breaks the relative pin. If Black greedily takes the queen with 5...Bxd1, then **6.Bxf7+ Ke7 7.Nd5#**: three minor pieces mate the king. This is the pattern from Légal vs Saint Brie (1750). Even if Black declines with 5...dxe5 6.Qxg4, White has won a clean pawn. The lesson: **a relative pin is not a real pin when the reward is bigger than the queen.**",
+              "wrong": {
+                "h3": "Questioning the bishop is natural, but the tactic is available right now: a relatively pinned piece can still move."
+              }
+            },
+            {
+              "type": "find",
+              "title": "The skewer",
+              "fen": "4q3/8/4k3/8/8/8/6K1/R7 w - - 0 1",
+              "text": "A **skewer** is a reversed pin: the more valuable piece is in front, and when it moves away, the piece behind falls. Find it.",
+              "solution": [
+                "Re1+"
+              ],
+              "why": "**Re1+** checks the king along the e-file. The king has to step off the file, and then **Rxe8** wins the queen. Remember the geometry: skewers come from checks along lines (files, ranks, diagonals) with a target behind the king."
+            },
+            {
+              "type": "quiz",
+              "title": "The Opera Game finish",
+              "fen": "1n1Rkb1r/p4ppp/4q3/4p1B1/4P3/8/PPP2PPP/2K5 b k - 1 17",
+              "question": "Morphy vs the Duke & Count (Paris 1858) ended 17.Rd8#, a rook checkmate. Why can't the bishop on f8 or the knight on b8 capture the d8-rook?",
+              "options": [
+                {
+                  "text": "Neither of them attacks d8: the knight on b8 covers a6, c6 and d7, and the bishop moves on diagonals.",
+                  "correct": true,
+                  "why": "Right. The rook on d8 is protected by the g5-bishop along the d8–h4 diagonal, the king can't take it, and none of Black's pieces can reach d8. It is a model of pieces cooperating."
+                },
+                {
+                  "text": "They are both pinned.",
+                  "why": "Neither piece is pinned. They simply don't attack d8."
+                },
+                {
+                  "text": "Capturing would be stalemate.",
+                  "why": "It's checkmate, so the question of capturing never arises. No black piece attacks d8."
+                },
+                {
+                  "text": "It is illegal to capture a rook that gives check.",
+                  "why": "You can always capture a checking piece if one of your pieces attacks it. Here none does."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "greek-gift",
+          "title": "The Greek Gift (Bxh7+)",
+          "level": 2,
+          "side": "w",
+          "summary": "The classic bishop sacrifice on h7, with the conditions Vuković laid out for it to work.",
+          "refs": [
+            "book:vukovic",
+            "game:greco1620"
+          ],
+          "steps": [
+            {
+              "type": "text",
+              "title": "The checklist",
+              "fen": "r1bqrbk1/pp1n1ppp/4p3/2ppP3/3P3P/2PB1N2/PP3PP1/R1BQK2R w KQ - 0 10",
+              "arrows": [
+                [
+                  "d3",
+                  "h7",
+                  "red"
+                ],
+                [
+                  "f3",
+                  "g5",
+                  "orange"
+                ],
+                [
+                  "d1",
+                  "h5",
+                  "orange"
+                ],
+                [
+                  "h1",
+                  "h4",
+                  "green"
+                ]
+              ],
+              "text": "The 'Greek Gift' sacrifice Bxh7+ was already in Greco's manuscripts around 1620. Vuković's *The Art of Attack in Chess* gives the conditions it usually needs:\n\n1. A bishop on the b1–h7 diagonal (Bd3).\n2. A knight that can reach **g5** with check, and no black piece that can take it there (a bishop on e7 would).\n3. The queen able to reach **h5** quickly.\n4. **No black knight on f6** to defend h7. The pawn on e5 makes sure of that.\n5. The king can't run: here the e8-rook and f8-bishop **block its escape** via f8, and White's h4-pawn and h1-rook (White hasn't castled) support the attack on the h-file.\n\nAll of them are present here.",
+              "marks": {
+                "f8": "yellow",
+                "e8": "yellow"
+              }
+            },
+            {
+              "type": "find",
+              "title": "Sacrifice!",
+              "fen": "r1bqrbk1/pp1n1ppp/4p3/2ppP3/3P3P/2PB1N2/PP3PP1/R1BQK2R w KQ - 0 10",
+              "text": "Every condition is met. Play the Greek Gift and follow it up.",
+              "solution": [
+                "Bxh7+",
+                "Kxh7",
+                "Ng5+"
+              ],
+              "why": "**10.Bxh7+! Kxh7 11.Ng5+** and every king move loses:\n\n- 11...Kg8 12.Qh5 threatens Qh7#. The f8-bishop blocks the king's escape, and 12...Nf6 is met by 13.exf6.\n- 11...Kh6 12.Nxe6+ is a discovered check from the c1-bishop, and the knight also hits the queen.\n- 11...Kg6 12.h5+! The h-pawn and h1-rook join in and the king is hunted.\n- 11...Kh8 12.Qh5+ Kg8 13.Qh7#.\n\nCalculating these king moves *before* sacrificing is exactly Kotov's 'tree of analysis'.",
+              "engine": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "structures",
+      "title": "Pawn Structures",
+      "lessons": [
+        {
+          "id": "iqp",
+          "title": "The Isolated Queen's Pawn",
+          "level": 3,
+          "side": "both",
+          "summary": "Dynamic strength vs static weakness. When to attack with the IQP, and how to blockade it.",
+          "refs": [
+            "book:mysystem",
+            "book:watson"
+          ],
+          "steps": [
+            {
+              "type": "text",
+              "title": "Strength and weakness",
+              "setup": "e4 c6 d4 d5 exd5 cxd5 c4 Nf6 Nc3 e6 Nf3 Be7 cxd5 Nxd5 Bd3 Nc6 O-O O-O Re1",
+              "marks": {
+                "d4": "yellow",
+                "d5": "red",
+                "e5": "green",
+                "c5": "green"
+              },
+              "text": "This IQP position comes from the Caro-Kann Panov Attack. White's d4-pawn has no neighbouring pawns.\n\n**Dynamic pluses (White):** outposts on **e5 and c5**, open e- and c-files, more space, the **d4–d5 break**, and attacking chances (Bd3/Qc2 aiming at h7, rook lifts like Re1–e3–h3).\n**Static minuses:** d4 can only be defended by pieces, and the square in front of it, **d5**, is a perfect outpost for Black. Nimzowitsch called the blockading piece a 'blockader' and showed that knights do the job best.\n\nThe rule of thumb: **the IQP side wants to attack in the middlegame; the defender wants to trade pieces and reach an endgame.**"
+            },
+            {
+              "type": "quiz",
+              "title": "Choose the plan",
+              "setup": "e4 c6 d4 d5 exd5 cxd5 c4 Nf6 Nc3 e6 Nf3 Be7 cxd5 Nxd5 Bd3 Nc6 O-O O-O Re1",
+              "question": "You are Black against the IQP. Which general strategy is correct?",
+              "options": [
+                {
+                  "text": "Blockade d5 with a piece, trade minor pieces, and aim for an endgame where d4 is weak.",
+                  "correct": true,
+                  "why": "Yes. Every trade reduces White's attacking potential and makes the isolated pawn's static weakness count for more."
+                },
+                {
+                  "text": "Open the position with ...e5 as soon as possible.",
+                  "why": "...e5 releases the blockade and activates White's pieces. You want to restrain, not open."
+                },
+                {
+                  "text": "Avoid exchanges to keep the tension.",
+                  "why": "That's the IQP side's wish. Keeping many pieces on the board helps the side with more space and better activity, which is White."
+                },
+                {
+                  "text": "Attack the white king with ...g5 and ...h5.",
+                  "why": "Weakening your own king while White's pieces are aimed at the kingside is asking to be mated."
+                }
+              ]
+            },
+            {
+              "type": "quiz",
+              "title": "The d4–d5 break",
+              "setup": "e4 c6 d4 d5 exd5 cxd5 c4 Nf6 Nc3 e6 Nf3 Be7 cxd5 Nxd5 Bd3 Nc6 O-O O-O Re1",
+              "question": "When is the d4–d5 advance usually strongest for the IQP side?",
+              "options": [
+                {
+                  "text": "When White's pieces are fully mobilised and the advance opens lines toward Black's king or wins a tempo.",
+                  "correct": true,
+                  "why": "Right. The break turns an isolated pawn into open lines for the active pieces. It works best when it comes with tactics."
+                },
+                {
+                  "text": "In the endgame, to create a passed pawn.",
+                  "why": "In endgames the isolated pawn is usually just weak. The break is a middlegame resource."
+                },
+                {
+                  "text": "Immediately, before developing.",
+                  "why": "Without piece support the pawn is simply lost or traded for nothing."
+                },
+                {
+                  "text": "Never: an isolated pawn should stay on d4.",
+                  "why": "Freeing advances are one of the main dynamic assets of the IQP."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "passed-pawns",
+          "title": "Passed Pawns & the Blockade",
+          "level": 2,
+          "side": "both",
+          "summary": "Nimzowitsch's 'criminal that should be kept under lock and key', and the protected and outside passed pawn.",
+          "refs": [
+            "book:mysystem",
+            "book:capablanca"
+          ],
+          "steps": [
+            {
+              "type": "text",
+              "title": "The passed pawn's 'lust to expand'",
+              "fen": "6k1/5ppp/8/3P4/8/8/5PPP/6K1 w - - 0 1",
+              "marks": {
+                "d5": "yellow",
+                "d6": "red"
+              },
+              "text": "A **passed pawn** has no enemy pawns in front of it or on adjacent files. Nimzowitsch wrote that it has a 'lust to expand' and must be **blockaded**: a piece placed directly in front of it stops it and is immune to its attacks.\n\nThe ideal blockader is a **knight**, which keeps its full mobility on the blockade square. A bishop or queen there is wasted. Capablanca added that a passed pawn becomes more valuable as material comes off, which is why trading pieces helps the side with the passer."
+            },
+            {
+              "type": "find",
+              "title": "The outside passed pawn",
+              "fen": "8/p4k2/8/1p2K3/1P5P/8/8/8 w - - 0 1",
+              "text": "Pawn ending, White to move. Black's king is busy watching the kingside. Push the outside passed pawn and use it as a **decoy**.",
+              "solution": [
+                "h5"
+              ],
+              "why": "**h5!** The h-pawn runs, Black's king has to go after it (...Kg7, ...Kh6xh5), and meanwhile White's king walks into the queenside (Kd5–c5xb5) and wins. This is the essence of the **outside passed pawn**: it drags the enemy king away from the real battlefield."
+            },
+            {
+              "type": "quiz",
+              "title": "Choose your blockader",
+              "fen": "6k1/5ppp/8/3P4/8/8/5PPP/6K1 w - - 0 1",
+              "question": "Which black piece is the ideal blockader on d6?",
+              "options": [
+                {
+                  "text": "A knight.",
+                  "correct": true,
+                  "why": "Correct. A knight on d6 controls b5, c4, e4, f5, b7, c8, e8 and f7. Its mobility doesn't suffer, and the pawn can't attack it."
+                },
+                {
+                  "text": "The queen.",
+                  "why": "The queen is far too valuable to tie down, and a minor piece will chase her away."
+                },
+                {
+                  "text": "A rook.",
+                  "why": "A rook in front of the pawn is passive. Rooks belong *behind* passed pawns (Tarrasch's rule)."
+                },
+                {
+                  "text": "It doesn't matter.",
+                  "why": "It matters a lot. Nimzowitsch devoted whole chapters to choosing the right blockader."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rooks",
+      "title": "Rook Technique",
+      "lessons": [
+        {
+          "id": "rook-concepts",
+          "title": "Open Files, the 7th Rank & Rook Lifts",
+          "level": 2,
+          "side": "both",
+          "summary": "How rooks become monsters, and the back-rank trap that catches players reaching for the 7th.",
+          "refs": [
+            "game:capatartakower1924",
+            "book:mysystem",
+            "book:dvoretsky"
+          ],
+          "steps": [
+            {
+              "type": "text",
+              "title": "Rook principles",
+              "fen": "6k1/pp3ppp/2p5/8/8/8/PP3PPP/3R2K1 w - - 0 1",
+              "arrows": [
+                [
+                  "d1",
+                  "d7",
+                  "green"
+                ]
+              ],
+              "text": "1. **Open files** are the highways rooks use to enter the game. Fight for them, and double rooks to win them.\n2. The **7th rank** (2nd for Black) is the goal: it attacks pawns that are still on their starting squares and confines the enemy king. Two rooks on the 7th are often decisive.\n3. **Rook lifts**: in attack, a rook can swing via the 3rd rank (Re1–e3–h3), a classic idea in IQP and Sicilian positions.\n4. **Tarrasch's rule**: rooks belong *behind* passed pawns, your own and the opponent's.\n\nCapablanca vs Tartakower (New York, 1924) is the textbook example. Capablanca gave up pawns to keep his rook on the 7th and march his king forward."
+            },
+            {
+              "type": "find",
+              "title": "Before you invade…",
+              "fen": "4r1k1/pp3ppp/2p5/8/8/8/PP3PPP/3R2K1 w - - 0 1",
+              "text": "White wants to play Rd7 and grab the 7th rank. But first, do a **blunder check**: what does Black threaten in return?",
+              "solution": [
+                [
+                  "h3",
+                  "g3",
+                  "Kf1",
+                  "h4",
+                  "f3",
+                  "f4",
+                  "g4"
+                ]
+              ],
+              "why": "If 1.Rd7?? Re1# is a back-rank mate! First **give your king air** (h3, g3) or bring it toward the centre (Kf1), and only then invade with Rd7. Every rook move that leaves the 1st rank must pass this check.",
+              "wrong": {
+                "Rd7": "Re1# is a back-rank mate! Your king had no escape square. Always check what your move gives up."
+              }
+            },
+            {
+              "type": "quiz",
+              "title": "Tarrasch's rule",
+              "fen": "r5k1/8/8/P7/8/8/6K1/R7 w - - 0 1",
+              "question": "White has a passed a-pawn. Where does White's rook belong?",
+              "options": [
+                {
+                  "text": "Behind the pawn (on the a-file below it), pushing it forward.",
+                  "correct": true,
+                  "why": "Yes. From behind, the rook's scope grows as the pawn advances, while the enemy rook in front gets more and more passive."
+                },
+                {
+                  "text": "In front of the pawn, on a8.",
+                  "why": "A rook in front of its own pawn blocks it and has almost no squares. That's the least active setup."
+                },
+                {
+                  "text": "On the 7th rank, regardless of the pawn.",
+                  "why": "The 7th rank is great, but here the passed pawn is the main asset and the rook should support it from behind."
+                },
+                {
+                  "text": "Defending from the side, on the 5th rank.",
+                  "why": "Side defence ties the rook to the pawn. From behind it supports the pawn while staying free."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

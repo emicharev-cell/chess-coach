@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Content Validator</title>
+<style>
+  body { font: 14px/1.5 system-ui, sans-serif; margin: 24px; background: #f6f4f0; color: #222; }
+  h1 { margin: 0 0 4px; } .muted { color: #777; }
+  table { border-collapse: collapse; width: 100%; margin-top: 16px; background: #fff; }
+  td, th { border-bottom: 1px solid #e5e1d8; padding: 6px 10px; text-align: left; vertical-align: top; }
+  .ok { color: #2f7d4f; font-weight: 700; } .err { color: #c2412d; font-weight: 700; } .warn { color: #b7791f; font-weight: 700; }
+  #sum { font-size: 16px; font-weight: 700; margin-top: 10px; }
+  label { margin-left: 12px; }
+</style>
+</head>
+<body>
+<h1>Content validator</h1>
+<div class="muted">Checks every lesson, drill card and puzzle in <code>data/*.json</code>: legal moves, checkmates, quizzes and references. It can also ask the engine whether each "find" solution is really best. Run it after every edit. Add <code>?lang=es</code> to the address to check the Spanish files in <code>data/es/</code>.</div>
+<div style="margin-top:10px">
+  <button id="run">Run checks</button>
+  <label><input type="checkbox" id="eng" checked> engine check of find-solutions (slower)</label>
+  <label><input type="checkbox" id="onlyBad"> hide passing rows</label>
+</div>
+<div id="sum"></div>
+<table><thead><tr><th>Item</th><th>Result</th><th>Details</th></tr></thead><tbody id="out"></tbody></table>
+<script src="../js/chess.js"></script>
+<script src="../js/engine.js"></script>
+<script>window.CCData_BASE = '../'; window.CCData_DIR = /[?&]lang=es/.test(location.search) ? 'data/es/' : 'data/';</script>
+<script src="../js/data.js"></script>
+<script src="validate.js"></script>
+</body>
+</html>

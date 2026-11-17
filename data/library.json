@@ -1,0 +1,168 @@
+{
+  "books": {
+    "mysystem": {
+      "title": "My System",
+      "author": "Aron Nimzowitsch",
+      "year": 1925,
+      "note": "The founding text of positional chess: blockade, prophylaxis, overprotection, the pawn chain and play on open files and the 7th rank."
+    },
+    "fischer60": {
+      "title": "My 60 Memorable Games",
+      "author": "Bobby Fischer",
+      "year": 1969,
+      "note": "Fischer's own annotated games. A masterclass in the Najdorf, the Ruy López and clear, concrete calculation."
+    },
+    "kotov": {
+      "title": "Think Like a Grandmaster",
+      "author": "Alexander Kotov",
+      "year": 1971,
+      "note": "Introduced the 'tree of analysis' and candidate moves: the method for calculating without blundering."
+    },
+    "silman": {
+      "title": "How to Reassess Your Chess (4th ed.)",
+      "author": "Jeremy Silman",
+      "year": 2010,
+      "note": "Teaches you to read a position through its imbalances: minor pieces, pawn structure, space, files, development and initiative."
+    },
+    "dvoretsky": {
+      "title": "Dvoretsky's Endgame Manual",
+      "author": "Mark Dvoretsky",
+      "year": 2003,
+      "note": "The standard reference for theoretical endgames: key squares, Lucena, Philidor, Vančura and more."
+    },
+    "capablanca": {
+      "title": "Chess Fundamentals",
+      "author": "José Raúl Capablanca",
+      "year": 1921,
+      "note": "The world champion's primer. He insisted on studying endgames first because they reveal what each piece can really do."
+    },
+    "reti": {
+      "title": "Modern Ideas in Chess",
+      "author": "Richard Réti",
+      "year": 1923,
+      "note": "The manifesto of the hypermodern school: control the centre from a distance and attack it later."
+    },
+    "watson": {
+      "title": "Secrets of Modern Chess Strategy",
+      "author": "John Watson",
+      "year": 1998,
+      "note": "Explains how modern grandmasters broke the classical 'rules' and why concrete play wins."
+    },
+    "vukovic": {
+      "title": "The Art of Attack in Chess",
+      "author": "Vladimir Vuković",
+      "year": 1965,
+      "note": "The classic work on attacking the king: the Greek Gift (Bxh7+), mating patterns and the conditions an attack needs."
+    },
+    "predecessors": {
+      "title": "My Great Predecessors",
+      "author": "Garry Kasparov",
+      "year": 2003,
+      "note": "A five-volume history of the world champions, with deep analysis of their most important games."
+    },
+    "philidor": {
+      "title": "L'analyse des échecs",
+      "author": "François-André Danican Philidor",
+      "year": 1749,
+      "note": "'Pawns are the soul of chess.' The first book to treat pawn structure as strategy. His 1777 edition analyses the rook ending that bears his name."
+    },
+    "delavilla": {
+      "title": "100 Endgames You Must Know",
+      "author": "Jesús de la Villa",
+      "year": 2008,
+      "note": "The practical minimum of endgame theory every tournament player should know by heart."
+    }
+  },
+  "games": {
+    "greco1620": {
+      "title": "Greco vs NN",
+      "event": "Greco's manuscripts",
+      "year": 1620,
+      "note": "Gioachino Greco recorded model attacking games in the Giuoco Piano. Several of them are still traps that catch players today."
+    },
+    "legal1750": {
+      "title": "Légal vs Saint Brie",
+      "event": "Paris",
+      "year": 1750,
+      "note": "The origin of Légal's Mate. A 'pinned' knight moves, the queen is offered, and three minor pieces deliver mate."
+    },
+    "immortal1851": {
+      "title": "Anderssen vs Kieseritzky, 'The Immortal Game'",
+      "event": "London",
+      "year": 1851,
+      "note": "A King's (Bishop's) Gambit in which Anderssen gave up both rooks, a bishop and his queen to mate with three minor pieces."
+    },
+    "evergreen1852": {
+      "title": "Anderssen vs Dufresne, 'The Evergreen Game'",
+      "event": "Berlin",
+      "year": 1852,
+      "note": "An Evans Gambit that ends in one of the most celebrated combinations ever played."
+    },
+    "opera1858": {
+      "title": "Morphy vs Duke Karl & Count Isouard, 'The Opera Game'",
+      "event": "Paris Opera",
+      "year": 1858,
+      "note": "The model of rapid development: every move gains time, and it ends with a pin and Rd8#."
+    },
+    "reti1910": {
+      "title": "Réti vs Tartakower",
+      "event": "Vienna",
+      "year": 1910,
+      "note": "A Caro-Kann that ends 9.Qd8+!! Kxd8 10.Bg5++ Kc7 11.Bd8#: the most famous double-check mate."
+    },
+    "capamarshall1918": {
+      "title": "Capablanca vs Marshall",
+      "event": "New York",
+      "year": 1918,
+      "note": "Marshall unveiled his gambit (8...d5) in the Ruy López against Capablanca, who accepted, defended and won. The gambit was later proved sound."
+    },
+    "torrelasker1925": {
+      "title": "Torre vs Em. Lasker",
+      "event": "Moscow",
+      "year": 1925,
+      "note": "The most famous 'windmill': a rook gives a string of alternating discovered checks and harvests Black's pieces."
+    },
+    "capatartakower1924": {
+      "title": "Capablanca vs Tartakower",
+      "event": "New York",
+      "year": 1924,
+      "note": "A model rook endgame. Capablanca sacrificed pawns to activate his king and keep his rook on the 7th rank."
+    },
+    "botvinnikcapa1938": {
+      "title": "Botvinnik vs Capablanca",
+      "event": "AVRO, Netherlands",
+      "year": 1938,
+      "note": "A Nimzo-Indian in which White's doubled c-pawns supported a mobile centre, decided by the combination 30.Ba3!!"
+    },
+    "spasskyfischer1960": {
+      "title": "Spassky vs Fischer",
+      "event": "Mar del Plata",
+      "year": 1960,
+      "note": "Spassky beat Fischer with the King's Gambit. Fischer responded with his article 'A Bust to the King's Gambit' (1961)."
+    },
+    "fischerspassky1972g6": {
+      "title": "Fischer vs Spassky, game 6",
+      "event": "World Championship, Reykjavík",
+      "year": 1972,
+      "note": "Fischer, a lifelong 1.e4 player, opened 1.c4 and won a model Queen's Gambit Declined. Spassky joined the audience's applause."
+    },
+    "kasparovanand1995": {
+      "title": "Kasparov vs Anand",
+      "event": "Riga",
+      "year": 1995,
+      "note": "Kasparov revived the Evans Gambit at the top level and won in 25 moves."
+    },
+    "kramnikkasparov2000": {
+      "title": "Kramnik vs Kasparov, World Championship match",
+      "event": "London",
+      "year": 2000,
+      "note": "Kramnik's Berlin Defence ('the Berlin Wall') neutralised Kasparov's 1.e4, and Kasparov lost his title without winning a game."
+    },
+    "reti1921": {
+      "title": "Réti's endgame study",
+      "event": "Kagans Neueste Schachnachrichten",
+      "year": 1921,
+      "note": "A king chasing two goals at once. It shows that a king's diagonal route to the queening square can be as short as a straight one."
+    }
+  }
+}

@@ -1,0 +1,175 @@
+{
+  "decks": [
+    {
+      "id": "blunder-proof",
+      "title": "Blunder-proof: answer the threat",
+      "icon": "🛡️",
+      "blurb": "The opponent has just made a threat. Spot it and play the right defence automatically. These are the most common ways games are thrown away.",
+      "cards": [
+        {
+          "id": "scholar-defence",
+          "title": "Queen and bishop on f7",
+          "you": "b",
+          "setup": "e4 e5 Bc4 Nc6 Qh5",
+          "text": "White's queen and bishop both aim at f7. Defend, and if you can, gain time doing it.",
+          "solution": [
+            [
+              "g6",
+              "Qe7"
+            ]
+          ],
+          "why": "**3...g6** defends f7 indirectly by kicking the queen (4.Qf3 Nf6 is fine for Black), and **3...Qe7** defends f7 directly. The natural 3...Nf6?? allows 4.Qxf7#.",
+          "wrong": {
+            "Nf6": "Qxf7# — checkmate! f7 was attacked twice and defended only by the king."
+          }
+        },
+        {
+          "id": "ng5-defence",
+          "title": "Knight and bishop on f7",
+          "you": "b",
+          "setup": "e4 e5 Nf3 Nc6 Bc4 Nf6 Ng5",
+          "text": "White attacks f7 twice. What is the principled answer?",
+          "solution": [
+            "d5"
+          ],
+          "why": "**4...d5!** blocks the bishop's diagonal. After 5.exd5 Black plays 5...Na5! rather than 5...Nxd5?, which allows the Fried Liver (6.Nxf7) or the Lolli (6.d4).",
+          "wrong": {
+            "d6": "Too slow: 5.Nxf7 wins material (fork of queen and rook)."
+          }
+        },
+        {
+          "id": "legal-defence",
+          "title": "Don't take the queen!",
+          "you": "b",
+          "setup": "e4 e5 Nf3 d6 Bc4 Bg4 Nc3 g6 Nxe5",
+          "text": "White's knight just ignored the pin and took on e5. The queen is hanging on d1. What do you do?",
+          "solution": [
+            "dxe5"
+          ],
+          "why": "**5...dxe5** and Black is only a pawn down after 6.Qxg4. Taking the queen loses to Légal's Mate: 5...Bxd1?? 6.Bxf7+ Ke7 7.Nd5#.",
+          "wrong": {
+            "Bxd1": "6.Bxf7+ Ke7 7.Nd5# — Légal's Mate! A free queen is often a trap: check what the opponent's other pieces can do."
+          }
+        },
+        {
+          "id": "back-rank-threat",
+          "title": "Battery on the e-file",
+          "you": "w",
+          "fen": "4r1k1/pp3ppp/8/4q3/8/8/PPQ2PPP/3R2K1 w - - 0 1",
+          "text": "Black's queen and rook are lined up on the e-file. What is Black threatening, and how do you stop it?",
+          "solution": [
+            [
+              "h3",
+              "g3",
+              "h4",
+              "g4",
+              "Rf1",
+              "Qd2",
+              "Qc1",
+              "f3"
+            ]
+          ],
+          "why": "Black threatens **...Qe1+! Rxe1 Rxe1#**, a back-rank mate. Making *luft* (h3, g3) or guarding e1 again stops it. Make it a habit: when the back rank is weak, make luft before it's too late.",
+          "wrong": {
+            "Qxh7+": "After Kxh7, ...Qe1+ is still coming. Don't panic — defend the back rank.",
+            "b3": "This ignores the threat: ...Qe1+! Rxe1 Rxe1#.",
+            "Kf1": "The king walks toward the e-file battery and stays exposed. Simply make luft with h3 or g3."
+          }
+        },
+        {
+          "id": "h7-battery",
+          "title": "Battery against h7",
+          "you": "b",
+          "fen": "r1bq1rk1/pp1nbppp/2p1p3/3p4/3P4/2NQPN2/PP3PPP/RBB2RK1 b - - 0 1",
+          "text": "White's queen on d3 and bishop on b1 form a battery against h7. Find a sound defence.",
+          "solution": [
+            [
+              "Nf6",
+              "f5",
+              "g6"
+            ]
+          ],
+          "why": "White threatens **Qxh7#**. **...Nf6** covers h7 with a piece (the most natural defence), while ...f5 or ...g6 blocks the diagonal at the cost of a slight weakening. ...h6? does nothing: Qh7# is still mate.",
+          "wrong": {
+            "h6": "Qh7# is still mate. Defend h7 or block the diagonal.",
+            "Re8": "Qxh7+ Kf8 Qh8# — the f8-square was the king's only escape."
+          }
+        },
+        {
+          "id": "opera-defence",
+          "title": "Morphy's queen and bishop",
+          "you": "b",
+          "setup": "e4 e5 Nf3 d6 d4 Bg4 dxe5 Bxf3 Qxf3 dxe5 Bc4",
+          "text": "This is the Opera Game position (Morphy, 1858). White threatens something on f7. Defend it.",
+          "solution": [
+            [
+              "Nf6",
+              "Qf6",
+              "Qd7",
+              "Qe7"
+            ]
+          ],
+          "why": "White threatens **Qxf7#**. In the Opera Game Black played **6...Nf6** 7.Qb3!, and Morphy's double attack on f7 and b7 kept the initiative. Every defence must cover f7 or block the diagonal.",
+          "wrong": {
+            "Nc6": "Qxf7# — mate! Always ask what the opponent's last move threatens.",
+            "Bc5": "Qxf7#. The bishop develops, but f7 is still attacked twice and defended once."
+          }
+        }
+      ]
+    },
+    {
+      "id": "traps",
+      "title": "Opening traps & tactical patterns",
+      "icon": "🪤",
+      "blurb": "Classic traps and mating patterns. Play them from both sides until they're automatic.",
+      "cards": [
+        {
+          "id": "englund-trap",
+          "title": "Englund Gambit Trap",
+          "you": "b",
+          "setup": "d4 e5 dxe5 Nc6 Nf3 Qe7 Bf4 Qb4+ Bd2 Qxb2 Bc3",
+          "text": "White's bishop is trying to trap your queen on b2. Finish the job with mate.",
+          "solution": [
+            "Bb4",
+            "Qd2",
+            "Bxc3",
+            "Qxc3",
+            "Qc1#"
+          ],
+          "why": "**6...Bb4!** pins the c3-bishop, and after 7.Qd2? Bxc3 8.Qxc3 **Qc1#**: the queen on c3 can't get back to c1 because her own c2-pawn blocks the way, and the king has no escape square."
+        },
+        {
+          "id": "london-qxb2",
+          "title": "Punish the b2-grab",
+          "you": "w",
+          "setup": "d4 d5 Bf4 c5 e3 Qb6 Nc3 Qxb2",
+          "text": "Black's queen has grabbed the b2-pawn, leaving d5 unprotected. Find the move that regains material and threatens a fork.",
+          "solution": [
+            "Nxd5"
+          ],
+          "why": "**5.Nxd5!** wins the pawn back with tempo. It threatens **Nc7+**, forking king and rook, and Rb1 will chase the queen around the queenside. Grabbing a wing pawn with the queen while undeveloped, and leaving your centre loose, is a classic way to get punished. (5.Nb5 is the famous gambit try with the same Nc7+ idea, but Nxd5 is cleaner.)",
+          "wrong": {
+            "Rb1": "Chasing the queen first lets Black defend d5. Take the pawn with tempo while it's loose."
+          }
+        },
+        {
+          "id": "philidor-legacy",
+          "title": "Philidor's Legacy",
+          "you": "w",
+          "fen": "3qr2k/ppp3pp/8/4N3/2Q5/8/PP4PP/5RK1 w - - 0 1",
+          "text": "Queen and knight against a cornered king. Find the classic smothered mate.",
+          "solution": [
+            "Nf7+",
+            "Kg8",
+            "Nh6+",
+            "Kh8",
+            "Qg8+",
+            "Rxg8",
+            "Nf7#"
+          ],
+          "why": "**Nf7+ Kg8 Nh6+** (double check: knight and queen) **Kh8 Qg8+!! Rxg8 Nf7#**. The king is smothered by its own pieces. The pattern was described by Lucena (1497) and later popularised as 'Philidor's Legacy'."
+        }
+      ]
+    }
+  ]
+}

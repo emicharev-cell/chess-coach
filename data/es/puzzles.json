@@ -1,0 +1,238 @@
+{
+  "puzzles": [
+    {
+      "id": 1,
+      "rating": 500,
+      "theme": "Mate en 1",
+      "title": "Mate del pastor",
+      "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR w KQkq - 4 4",
+      "solution": [
+        "h5f7"
+      ],
+      "explain": "f7 solo está defendido por el rey. Dama y alfil juntos dan mate: la trampa más común entre principiantes."
+    },
+    {
+      "id": 2,
+      "rating": 500,
+      "theme": "Mate en 1",
+      "title": "Mate del loco",
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/6P1/5P2/PPPPP2P/RNBQKBNR b KQkq g3 0 2",
+      "solution": [
+        "d8h4"
+      ],
+      "explain": "Las blancas debilitaron la diagonal e1–h4 con f3 y g4. Qh4# es el mate más rápido posible."
+    },
+    {
+      "id": 3,
+      "rating": 600,
+      "theme": "Mate en 1",
+      "title": "Última fila",
+      "fen": "6k1/5ppp/8/8/8/8/5PPP/3R2K1 w - - 0 1",
+      "solution": [
+        "d1d8"
+      ],
+      "explain": "El rey negro está atrapado por sus propios peones. ¡Vigila siempre la última fila!"
+    },
+    {
+      "id": 4,
+      "rating": 600,
+      "theme": "Mate en 1",
+      "title": "Última fila (negras)",
+      "fen": "3r2k1/5ppp/8/8/8/8/5PPP/6K1 b - - 0 1",
+      "solution": [
+        "d8d1"
+      ],
+      "explain": "El mismo patrón con los colores invertidos."
+    },
+    {
+      "id": 5,
+      "rating": 650,
+      "theme": "Mate en 1",
+      "title": "Mate al coronar",
+      "fen": "k7/2P5/1K6/8/8/8/8/8 w - - 0 1",
+      "solution": [
+        "c7c8q"
+      ],
+      "explain": "El rey controla a7 y b7; la nueva dama (¡o torre!) da jaque por la octava fila."
+    },
+    {
+      "id": 6,
+      "rating": 700,
+      "theme": "Mate en 1",
+      "title": "Mate ahogado",
+      "fen": "6rk/6pp/8/6N1/8/8/8/6K1 w - - 0 1",
+      "solution": [
+        "g5f7"
+      ],
+      "explain": "El rey queda ahogado por su propia torre y sus peones: solo el jaque de un caballo no se puede tapar."
+    },
+    {
+      "id": 7,
+      "rating": 700,
+      "theme": "Ataque doble",
+      "title": "Horquilla de peón",
+      "fen": "4k3/8/3n1n2/8/4P3/8/8/2B1K3 w - - 0 1",
+      "solution": [
+        "e4e5",
+        "d6f5",
+        "e5f6"
+      ],
+      "explain": "Un peón que ataca dos piezas a la vez: una de ellas tiene que caer."
+    },
+    {
+      "id": 8,
+      "rating": 750,
+      "theme": "Mate en 1",
+      "title": "Mate árabe",
+      "fen": "7k/R7/5N2/8/8/8/8/6K1 w - - 0 1",
+      "solution": [
+        "a7h7"
+      ],
+      "explain": "Uno de los patrones más antiguos que se conocen: el caballo protege la torre y controla g8."
+    },
+    {
+      "id": 9,
+      "rating": 800,
+      "theme": "Mate en 1",
+      "title": "Remate del regalo griego",
+      "fen": "rnbq1rk1/ppp2ppp/4p3/3p3Q/3P4/3B4/PPP2PPP/RNB1K1NR w KQ - 0 7",
+      "solution": [
+        "h5h7"
+      ],
+      "explain": "Batería de dama y alfil sobre h7. Sin caballo en f6, nada lo defiende."
+    },
+    {
+      "id": 10,
+      "rating": 800,
+      "theme": "Ataque doble",
+      "title": "Horquilla real",
+      "fen": "r3k3/8/8/1N6/8/8/8/4K3 w - - 0 1",
+      "solution": [
+        "b5c7",
+        "e8d7",
+        "c7a8"
+      ],
+      "explain": "El caballo da jaque al rey y ataca la torre a la vez."
+    },
+    {
+      "id": 11,
+      "rating": 900,
+      "theme": "Enfilada",
+      "title": "Enfilada por la columna",
+      "fen": "3q4/8/8/3k4/8/8/8/R5K1 w - - 0 1",
+      "solution": [
+        "a1d1",
+        "d5e4",
+        "d1d8"
+      ],
+      "explain": "Da jaque al rey; cuando se aparta, se pierde la dama que estaba detrás."
+    },
+    {
+      "id": 12,
+      "rating": 900,
+      "theme": "Clavada",
+      "title": "Castiga la clavada",
+      "fen": "4k3/1p6/2n5/1B6/3P4/8/8/4K3 w - - 0 1",
+      "solution": [
+        "d4d5",
+        "e8d7",
+        "d5c6"
+      ],
+      "explain": "Una pieza clavada no puede huir. Atácala con algo más barato."
+    },
+    {
+      "id": 13,
+      "rating": 950,
+      "theme": "Ataque doble",
+      "title": "Horquilla de dama",
+      "fen": "6k1/6pp/8/r7/8/8/5PPP/3Q2K1 w - - 0 1",
+      "solution": [
+        "d1d8",
+        "g8f7",
+        "d8a5"
+      ],
+      "explain": "Jaque más un ataque a una pieza suelta. ¡Las piezas sueltas se caen!"
+    },
+    {
+      "id": 14,
+      "rating": 1000,
+      "theme": "Ataque descubierto",
+      "title": "Torre desenmascarada",
+      "fen": "4q1k1/8/8/8/4N3/8/8/4R1K1 w - - 0 1",
+      "solution": [
+        "e4f6",
+        "g8g7",
+        "e1e8"
+      ],
+      "explain": "El caballo sale dando jaque y descubre la torre sobre la dama. Las negras tienen que atender primero el jaque."
+    },
+    {
+      "id": 15,
+      "rating": 1000,
+      "theme": "Mate en 2",
+      "title": "Torres dobladas",
+      "fen": "r5k1/5ppp/8/8/8/8/3R1PPP/3R2K1 w - - 0 1",
+      "solution": [
+        "d2d8",
+        "a8d8",
+        "d1d8"
+      ],
+      "explain": "Dos atacantes contra un defensor en la última fila: sacrifica la primera torre y da mate con la segunda."
+    },
+    {
+      "id": 16,
+      "rating": 1050,
+      "theme": "Mate en 2",
+      "title": "Torres dobladas (negras)",
+      "fen": "3r2k1/3r1ppp/8/8/8/8/5PPP/R5K1 b - - 0 1",
+      "solution": [
+        "d7d1",
+        "a1d1",
+        "d8d1"
+      ],
+      "explain": "La misma idea para las negras: sobrecarga al único defensor de la primera fila."
+    },
+    {
+      "id": 17,
+      "rating": 1200,
+      "theme": "Mate en 2",
+      "title": "El mate de Philidor",
+      "fen": "4r2k/6pp/7N/3Q4/8/8/6PP/6K1 w - - 0 1",
+      "solution": [
+        "d5g8",
+        "e8g8",
+        "h6f7"
+      ],
+      "explain": "Un sacrificio de dama obliga a la torre a ir a g8 y ahogar a su propio rey. Luego Nf7#."
+    },
+    {
+      "id": 18,
+      "rating": 1300,
+      "theme": "Mate en 2",
+      "title": "La Partida de la Ópera",
+      "fen": "4kb1r/p2n1ppp/4q3/4p1B1/4P3/1Q6/PPP2PPP/2KR4 w k - 1 17",
+      "solution": [
+        "b3b8",
+        "d7b8",
+        "d1d8"
+      ],
+      "explain": "Paul Morphy, París 1858: el sacrificio de dama desvía al caballo de d7 y Rd8 es mate, protegido por el alfil."
+    },
+    {
+      "id": 19,
+      "rating": 1400,
+      "theme": "Final",
+      "title": "Rotura de peones",
+      "fen": "7k/ppp5/8/PPP5/8/8/8/7K w - - 0 1",
+      "solution": [
+        "b5b6",
+        "a7b6",
+        "c5c6",
+        "b7c6",
+        "a5a6"
+      ],
+      "noVerify": true,
+      "explain": "Tres peones contra tres: 1.b6! rompe por la fuerza. Tras cualquier captura, el otro sacrificio abre camino y un peón blanco corona."
+    }
+  ]
+}

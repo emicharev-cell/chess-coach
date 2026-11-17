@@ -1,0 +1,839 @@
+{
+  "id": "openings",
+  "title": "Aperturas",
+  "icon": "📖",
+  "blurb": "Módulos de repertorio para 1.e4 y 1.d4: líneas principales con ambos colores, los gambitos famosos y las trampas que debes conocer. Cada jugada viene con su razón estratégica.",
+  "chapters": [
+    {
+      "id": "e4",
+      "title": "Peón de rey: 1.e4",
+      "lessons": [
+        {
+          "id": "italian",
+          "title": "Apertura italiana: Giuoco Piano y dos caballos",
+          "eco": "C50–C59",
+          "level": 1,
+          "side": "both",
+          "summary": "La apertura analizada más antigua. Aprende el plan central c3–d4, la ruptura liberadora ...d5 y cómo responder a 4.Ng5.",
+          "refs": ["game:greco1620", "book:capablanca"],
+          "steps": [
+            {
+              "type": "text",
+              "title": "La idea de 1.e4 e5 2.Nf3 Nc6 3.Bc4",
+              "setup": "e4 e5 Nf3 Nc6 Bc4",
+              "arrows": [["c4", "f7", "red"], ["f3", "e5", "orange"]],
+              "text": "1.e4 gana espacio central y abre diagonales para la dama y el alfil de f1. 2.Nf3 desarrolla ganando tiempo al atacar e5, y 2...Nc6 lo defiende. Con **3.Bc4** el alfil apunta a **f7**, la casilla más débil del campo negro porque solo la defiende el rey.\n\nLas dos respuestas clásicas de las negras son **3...Bc5**, el *Giuoco Piano* ('juego tranquilo'), y **3...Nf6**, la defensa de los dos caballos, que contraataca e4 de inmediato."
+            },
+            {
+              "type": "line",
+              "title": "Giuoco Piano: el plan c3–d4 (juegas con blancas)",
+              "you": "w",
+              "text": "El objetivo estratégico de las blancas es el **centro ideal**, con peones en e4 y d4. Juega las jugadas blancas y lee por qué se hace cada una.",
+              "moves": [
+                ["e4", "Ocupa el centro y libera la dama y el alfil de f1."],
+                ["e5", "Las negras reclaman su parte del centro."],
+                ["Nf3", "Desarrolla hacia el centro ganando tiempo: ataca e5."],
+                ["Nc6", "Desarrolla y defiende e5."],
+                ["Bc4", "Apunta a f7 y controla d5."],
+                ["Bc5", "Estrategia espejo: el alfil mira a f2, el punto débil de las blancas."],
+                ["c3", "Prepara d4 para levantar el centro ideal. Además quita d4 al caballo de c6 y abre la diagonal d1–a4 para la dama."],
+                ["Nf6", "La respuesta más exigente: contraataca e4 antes de que las blancas jueguen d4."],
+                ["d4", "La ruptura central temática. Ataca e5 y abre líneas mientras el rey negro sigue en el centro."],
+                ["exd4", "En la práctica, obligada. Tras 5...Bb6 6.dxe5 el caballo es expulsado y las blancas ganan espacio."],
+                ["cxd4", "Las blancas tienen ahora el centro clásico de peones e4+d4."],
+                ["Bb4+", "Las negras usan un jaque para ganar tiempo y cuestionar el esquema blanco."],
+                ["Bd2", "La respuesta sólida. 7.Nc3!? (el ataque Møller) sacrifica e4 a cambio de la iniciativa; es muy agudo y está muy analizado."],
+                ["Bxd2+", "Las negras cambian un defensor de e4."],
+                ["Nbxd2", "Capturar con el caballo mantiene protegido e4."],
+                ["d5", "La jugada liberadora clave. Las negras **deben** atacar el centro antes de que las blancas jueguen e5 o d5 y las asfixien con su ventaja de espacio. El principio general: a un centro amplio se le responde con una ruptura de peón."],
+                ["exd5", "Las blancas liberan la tensión."],
+                ["Nxd5", "El caballo se instala en una casilla central fuerte."],
+                ["Qb3", "Presión sobre d5 y sobre b7."],
+                ["Nce7", "Refuerza el caballo de d5. Compara con 10...Na5 11.Qa4+ Nc6, que solo repite."],
+                ["O-O", "Primero la seguridad del rey."],
+                ["O-O", "Una posición típica con peón aislado de dama (PAD) en d4 para las blancas: piezas activas a cambio de una debilidad a largo plazo. Esta estructura se estudia en la sección de medio juego."]
+              ]
+            },
+            {
+              "type": "find",
+              "title": "Dos caballos: ataca f7",
+              "setup": "e4 e5 Nf3 Nc6 Bc4 Nf6",
+              "text": "Las negras han elegido 3...Nf6 y han dejado f7 sin protección extra. Encuentra la jugada agresiva que ataca f7 dos veces.",
+              "solution": ["Ng5"],
+              "why": "**4.Ng5** carga sobre f7 con caballo y alfil. Rompe la regla de apertura de 'no mover dos veces la misma pieza', pero las amenazas concretas pesan más que los principios generales. Tarrasch la llamó 'jugada de chapucero', y aun así sigue siendo una línea principal hoy.",
+              "engine": false
+            },
+            {
+              "type": "line",
+              "title": "Cómo defenderse de 4.Ng5 (juegas con negras)",
+              "you": "b",
+              "setup": "e4 e5 Nf3 Nc6 Bc4 Nf6 Ng5",
+              "text": "Las negras tienen que tapar la diagonal del alfil. Aprende la línea principal, en la que las negras entregan un peón a cambio de un desarrollo rápido.",
+              "moves": [
+                ["d5", "La única defensa de principios: tapa el ataque del alfil de c4 sobre f7."],
+                ["exd5", "De momento las blancas ganan un peón."],
+                ["Na5", "No 5...Nxd5?, cuando 6.Nxf7! (el Fried Liver) o 6.d4! dan a las blancas un ataque peligroso. ...Na5 ataca el alfil de c4 y gana un tiempo."],
+                ["Bb5+", "Las blancas conservan el alfil dando jaque."],
+                ["c6", "Las negras entregan un segundo peón para acelerar el desarrollo."],
+                ["dxc6", "Las blancas lo toman."],
+                ["bxc6", "Las piezas negras salen ahora ganando tiempos."],
+                ["Be2", "El alfil se retira. Las blancas tienen un peón de más, pero van atrasadas en desarrollo."],
+                ["h6", "Expulsa al caballo de g5. Ya ha movido tres veces mientras las negras desarrollan."],
+                ["Nf3", "Retirada."],
+                ["e4", "Gana espacio y vuelve a echar al caballo."],
+                ["Ne5", "El caballo queda centralizado pero expuesto."],
+                ["Bd6", "Las negras tienen compensación completa: ventaja de desarrollo, espacio y el peón de e4 que encorseta el flanco de rey blanco."]
+              ]
+            },
+            {
+              "type": "find",
+              "title": "Castiga 5...Nxd5",
+              "setup": "e4 e5 Nf3 Nc6 Bc4 Nf6 Ng5 d5 exd5 Nxd5",
+              "text": "Las negras han recapturado en d5 con el caballo, el error que parece natural. El caballo de d5 queda suelto y f7 es débil. ¿Cómo lo aprovechan las blancas?",
+              "solution": [["d4", "Nxf7"]],
+              "why": "**6.Nxf7!?** Kxf7 7.Qf3+ es el famoso *ataque Fried Liver*: el rey es arrastrado al descubierto para defender el caballo clavado de d5. La teoría moderna prefiere **6.d4!** (el ataque Lolli), que abre antes el centro para que todas las piezas blancas se sumen al ataque. En ambos casos, las negras sufren.",
+              "wrong": {
+                "O-O": "Demasiado lento. Las blancas tienen que golpear mientras el caballo negro de d5 está suelto y f7 es débil."
+              },
+              "engine": false
+            },
+            {
+              "type": "line",
+              "title": "La partida de Greco (c.1620): el peligro de la codicia",
+              "you": "watch",
+              "text": "Una partida de hace 400 años de los manuscritos de Gioachino Greco. Las negras se lanzan a por material en el Giuoco Piano y su rey nunca escapa. Avanza jugada a jugada y fíjate en cómo cada jugada blanca gana tiempo.",
+              "moves": [
+                "e4", "e5", "Nf3", "Nc6", "Bc4", "Bc5", "c3", "Nf6", "d4", "exd4", "cxd4", "Bb4+",
+                ["Nc3", "La opción aguda: las blancas ofrecen el peón de e4."],
+                ["Nxe4", "Aceptado."],
+                ["O-O", "Las blancas enrocan e ignoran el caballo de c3."],
+                ["Nxc3", "Las negras siguen comiendo."],
+                ["bxc3", "Se abre la columna b y se debilitan las casillas negras."],
+                ["Bxc3", "Las negras atacan a la vez la torre de a1 y el peón de d4, pero su rey sigue en el centro."],
+                ["Qb3", "Amenaza Bxf7+ y además ataca el alfil de c3."],
+                ["Bxa1", "Codicia: una torre entera."],
+                ["Bxf7+", "Empieza el ataque."],
+                ["Kf8", "Con Ke7 también aparecerían ideas de Ba3+."],
+                ["Bg5", "Desarrollo con amenaza. Todas las piezas blancas están ya activas."],
+                ["Ne7", "Tapa la columna e."],
+                ["Ne5", "El caballo salta hacia f7, g6 y d7."],
+                ["Bxd4", "Las negras eliminan un defensor de e5..."],
+                ["Bg6", "...pero el alfil blanco amenaza ahora Qf7#."],
+                ["d5", "Tapa la diagonal de la dama y abre el alfil de c8."],
+                ["Qf3+", "Jaque por la columna f."],
+                ["Bf5", "Interpone."],
+                ["Bxf5", "Elimina la pieza interpuesta."],
+                ["Bxe5", "Las negras toman el caballo..."],
+                ["Be6+", "...y aparecen amenazas descubiertas en la columna f."],
+                ["Bf6", "Vuelve a interponer."],
+                ["Bxf6", "Destruye al último defensor."],
+                ["gxf6", "Las negras tienen una torre de más, pero..."],
+                ["Qxf6+", "...la dama irrumpe."],
+                ["Ke8", "La única jugada."],
+                ["Qf7#", "Jaque mate. El material negro no sirvió de nada porque su rey y sus torres nunca entraron en juego."]
+              ]
+            }
+          ]
+        },
+        {
+          "id": "evans",
+          "title": "Gambito Evans",
+          "eco": "C51–C52",
+          "level": 2,
+          "side": "w",
+          "summary": "Un peón a cambio de tiempo y centro. Fue el arma de la época romántica y Kasparov la resucitó en 1995.",
+          "refs": ["game:evergreen1852", "game:kasparovanand1995", "book:predecessors"],
+          "steps": [
+            {
+              "type": "text",
+              "title": "La idea del capitán Evans",
+              "setup": "e4 e5 Nf3 Nc6 Bc4 Bc5 b4",
+              "arrows": [["b4", "c5", "red"], ["c3", "d4", "green"]],
+              "marks": { "b4": "yellow" },
+              "text": "El capitán William Davies Evans, un marino galés, introdujo **4.b4** hacia 1827. El peón b desvía al alfil de c5 para que las blancas puedan jugar **c3 y d4 ganando tiempos** y levantar un gran centro mientras el rey negro sigue sin enrocar.\n\nFue la apertura de la época romántica, incluida la 'Siempreviva' de Anderssen (1852). En 1995 Garry Kasparov la resucitó contra Viswanathan Anand en Riga y ganó en 25 jugadas, demostrando que seguía siendo peligrosa al más alto nivel."
+            },
+            {
+              "type": "line",
+              "title": "Línea principal: aceptar y devolver (juegas con blancas)",
+              "you": "w",
+              "moves": [
+                "e4", "e5", "Nf3", "Nc6", "Bc4", "Bc5",
+                ["b4", "El gambito: un peón de flanco a cambio de control central y tiempo."],
+                ["Bxb4", "Aceptarlo es la prueba crítica."],
+                ["c3", "Ataca el alfil ganando tiempo y prepara d4."],
+                ["Ba5", "La jugada principal: mantiene el alfil en la diagonal a5–e1. Anand eligió 5...Be7 contra Kasparov."],
+                ["d4", "Abre el centro mientras el rey negro sigue en e8."],
+                ["exd4", "6...d6 es la alternativa sólida, que devuelve material para tener una partida segura."],
+                ["O-O", "Las blancas ignoran el peón, ponen el rey a salvo y preparan la torre para e1."],
+                ["Nge7", "Las negras desarrollan y preparan ...d5 para devolver el peón y liberar su juego."],
+                ["cxd4", "Restaura el gran centro."],
+                ["d5", "El antídoto estándar: devolver material para completar el desarrollo."],
+                ["exd5", "Las blancas aceptan."],
+                ["Nxd5", "Una posición abierta y equilibrada en la que la ventaja de desarrollo de las blancas compensa el peón."]
+              ]
+            },
+            {
+              "type": "find",
+              "title": "Castiga el codicioso 7...dxc3",
+              "setup": "e4 e5 Nf3 Nc6 Bc4 Bc5 b4 Bxb4 c3 Ba5 d4 exd4 O-O dxc3",
+              "text": "Las negras se han comido un segundo peón y siguen sin desarrollar el flanco de rey. ¿Qué jugada de dama explota de forma más directa la debilidad de f7?",
+              "solution": ["Qb3"],
+              "why": "**8.Qb3!** alinea dama y alfil contra f7 y amenaza Bxf7+. La continuación habitual es 8...Qf6 9.e5 Qg6 10.Nxc3, y el ataque blanco vale mucho más que dos peones. Esta línea se llama *defensa comprometida*, y el nombre dice lo peligrosa que es para las negras."
+            }
+          ]
+        },
+        {
+          "id": "ruy-lopez",
+          "title": "Ruy López (apertura española)",
+          "eco": "C60–C99",
+          "level": 2,
+          "side": "both",
+          "summary": "La 'tortura española'. Presión indirecta sobre e5, la línea cerrada principal, el ataque Marshall y el muro berlinés.",
+          "refs": ["game:capamarshall1918", "game:kramnikkasparov2000", "book:fischer60"],
+          "steps": [
+            {
+              "type": "text",
+              "title": "Presión sobre el defensor",
+              "setup": "e4 e5 Nf3 Nc6 Bb5",
+              "arrows": [["b5", "c6", "red"], ["c6", "e5", "orange"]],
+              "text": "Lleva el nombre del sacerdote español **Ruy López de Segura**, que la analizó en su libro de 1561. 3.Bb5 ataca al caballo que defiende e5. Pero las blancas aún no amenazan ganar e5, y entender *por qué no* es el primer paso para dominar la española."
+            },
+            {
+              "type": "find",
+              "title": "¿De verdad cuelga e5?",
+              "setup": "e4 e5 Nf3 Nc6 Bb5 a6 Bxc6 dxc6 Nxe5",
+              "text": "Las blancas han cambiado en c6 y se han comido el peón de e5. Demuestra que fue prematuro.",
+              "solution": [["Qd4", "Qg5"]],
+              "why": "**5...Qd4!** ataca a la vez el caballo de e5 y el peón de e4, y las negras recuperan el peón (6.Nf3 Qxe4+). 5...Qg5 también funciona, atacando e5 y g2. Por eso la idea Bxc6/Nxe5 solo se convierte en amenaza real cuando **e4 está defendido**, tras O-O y Re1 o d3. La variante del cambio favorita de Fischer (4.Bxc6) es un arma a largo plazo basada en la mejor estructura de peones, no en ganar un peón de inmediato."
+            },
+            {
+              "type": "line",
+              "title": "La española cerrada (juegas con blancas)",
+              "you": "w",
+              "moves": [
+                "e4", "e5", "Nf3", "Nc6",
+                ["Bb5", "Presión sobre el defensor de e5."],
+                ["a6", "La defensa Morphy: pregunta al alfil de inmediato."],
+                ["Ba4", "Mantiene la presión de la clavada. 4.Bxc6 es la variante del cambio, que Fischer volvió a poner de moda en 1966."],
+                ["Nf6", "Contraataca e4."],
+                ["O-O", "e4 está defendido tácticamente: 5...Nxe4 6.d4 (la española abierta) y las blancas recuperan el peón."],
+                ["Be7", "Las negras se preparan para enrocar."],
+                ["Re1", "Ahora e4 está protegido de verdad, así que Bxc6 seguido de Nxe5 se ha convertido en una amenaza real."],
+                ["b5", "Las negras resuelven la amenaza echando al alfil."],
+                ["Bb3", "El alfil mira ahora a f7 desde lejos."],
+                ["d6", "Defiende e5 con solidez."],
+                ["c3", "Da al alfil una retirada en c2 y prepara d4."],
+                ["O-O", "Las negras enrocan. Aquí 8...d5!? sería el ataque Marshall."],
+                ["h3", "Impide ...Bg4, que clavaría el caballo de f3 y socavaría d4. Es la posición tabiya de la española cerrada, una de las más analizadas de la historia del ajedrez."]
+              ]
+            },
+            {
+              "type": "line",
+              "title": "El ataque Marshall (juegas con negras)",
+              "you": "b",
+              "setup": "e4 e5 Nf3 Nc6 Bb5 a6 Ba4 Nf6 O-O Be7 Re1 b5 Bb3 O-O c3",
+              "text": "Frank Marshall guardó este gambito durante años para sorprender a Capablanca (Nueva York, 1918). Capablanca lo aceptó, se defendió y ganó, pero la teoría moderna demostró que el gambito es **correcto**. Hoy muchos jugadores de élite lo usan para neutralizar 1.e4.",
+              "moves": [
+                ["d5", "El gambito: un peón a cambio de desarrollo rápido y ataque en el flanco de rey."],
+                ["exd5", "Aceptado."],
+                ["Nxd5", "El caballo recaptura y mira a f4."],
+                ["Nxe5", "Las blancas se comen un segundo peón central."],
+                ["Nxe5", "Las negras cambian un par de caballos..."],
+                ["Rxe5", "...y la torre blanca queda adelantada."],
+                ["c6", "La línea principal moderna: sostiene d5 y libera la dama. En 1918 Marshall jugó 11...Nf6."],
+                ["d4", "Las blancas cierran la diagonal del alfil de b3 pero solidifican el centro."],
+                ["Bd6", "Desarrolla ganando tiempo sobre la torre de e5 y apunta a h2."],
+                ["Re1", "La torre se retira."],
+                ["Qh4", "Todas las piezas negras se lanzan hacia el rey blanco."],
+                ["g3", "Obligada, pero debilita las casillas blancas."],
+                ["Qh3", "Las negras tienen presión duradera por el peón: llegan ...Bg4, ...Rae8 y ...f5."]
+              ]
+            },
+            {
+              "type": "find",
+              "title": "La trampa del Arca de Noé (juegan negras)",
+              "setup": "e4 e5 Nf3 Nc6 Bb5 a6 Ba4 d6 d4 b5 Bb3 Nxd4 Nxd4 exd4 Qxd4",
+              "text": "Las blancas acaban de recapturar en d4 con la dama, una jugada natural que en realidad es un error. Ahora las negras pueden atrapar el alfil de b3 con peones. Encuentra la secuencia.",
+              "solution": ["c5", "Qd5", "Be6", "Qc6+", "Bd7", "Qd5", "c4"],
+              "why": "**8...c5!** gana un tiempo sobre la dama, 9...Be6 la vuelve a perseguir y **...c4** termina por emparedar el alfil de b3 tras sus propios peones. Las negras ganan una pieza. La trampa se llama así por lo antigua que es. Lección: un alfil en b3 puede quedar atrapado con ...c5–c4 cuando los tiempos de a6, b5 y el peón c llegan con ataques."
+            },
+            {
+              "type": "text",
+              "title": "El muro berlinés",
+              "setup": "e4 e5 Nf3 Nc6 Bb5 Nf6 O-O Nxe4 d4 Nd6 Bxc6 dxc6 dxe5 Nf5 Qxd8+ Kxd8",
+              "text": "**3...Nf6, la defensa berlinesa.** Tras 4.O-O Nxe4 5.d4 Nd6 6.Bxc6 dxc6 7.dxe5 Nf5 8.Qxd8+ Kxd8, las damas desaparecen en la jugada 8. Las negras ya no pueden enrocar y tienen peones c doblados. A cambio tienen la **pareja de alfiles** y una estructura muy sólida, y el rey puede bloquear desde e8 o c7.\n\nVladímir Krámnik usó este 'muro berlinés' para neutralizar a Kasparov en su match por el Campeonato del Mundo de Londres 2000. Kasparov no ganó ni una partida y perdió el título. A partir de entonces la berlinesa se convirtió en una línea principal de la élite."
+            }
+          ]
+        },
+        {
+          "id": "kings-gambit",
+          "title": "Gambito de rey",
+          "eco": "C30–C39",
+          "level": 2,
+          "side": "both",
+          "summary": "La apertura romántica por excelencia: el Kieseritzky con blancas y la 'refutación' 3...d6 de Fischer con negras.",
+          "refs": ["game:immortal1851", "game:spasskyfischer1960", "book:fischer60"],
+          "steps": [
+            {
+              "type": "text",
+              "title": "¿Por qué 2.f4?",
+              "setup": "e4 e5 f4",
+              "arrows": [["f4", "e5", "red"], ["f1", "f7", "orange"]],
+              "text": "2.f4 ofrece un peón para **desviar el peón de e5**. Si las negras aceptan, las blancas obtienen una mayoría central (llega d4) y una **columna f semiabierta** dirigida a f7. El precio es la posición del propio rey blanco, debilitada en la diagonal e1–h4.\n\nLa apertura dominó el siglo XIX. La 'Inmortal', Anderssen contra Kieseritzky (Londres, 1851), empezó 1.e4 e5 2.f4 exf4 3.Bc4."
+            },
+            {
+              "type": "line",
+              "title": "Gambito Kieseritzky (juegas con blancas)",
+              "you": "w",
+              "moves": [
+                "e4", "e5",
+                ["f4", "Desvía e5 y abre la columna f."],
+                ["exf4", "Aceptado."],
+                ["Nf3", "Impide ...Qh4+ y prepara d4."],
+                ["g5", "La defensa clásica: las negras sostienen el peón de f4."],
+                ["h4", "Las blancas minan la cadena de peones antes de que las negras consoliden con ...Bg7 y ...h6."],
+                ["g4", "Las negras ganan tiempo sobre el caballo."],
+                ["Ne5", "El Kieseritzky: el caballo salta a un puesto central activo, mirando a f7 y g4."],
+                ["Nf6", "La línea principal moderna: las negras contraatacan e4."],
+                ["d4", "Apoya el caballo de e5."],
+                ["d6", "Echa al caballo."],
+                ["Nd3", "El caballo ataca f4."],
+                ["Nxe4", "Las negras se llevan el peón central."],
+                ["Bxf4", "Las blancas recuperan material con líneas abiertas. Es una posición aguda y de doble filo."]
+              ]
+            },
+            {
+              "type": "line",
+              "title": "La defensa Fischer 3...d6 (juegas con negras)",
+              "you": "b",
+              "setup": "e4 e5 f4 exf4 Nf3",
+              "text": "Tras perder contra el gambito de rey de Spassky en Mar del Plata 1960, Fischer publicó 'A Bust to the King's Gambit' (1961), donde recomendaba **3...d6**. La jugada quita e5 al caballo, así que ...g5 puede seguir sin trucos de Ne5.",
+              "moves": [
+                ["d6", "Quita e5 al caballo y prepara ...g5."],
+                ["d4", "Las blancas levantan el centro."],
+                ["g5", "Ahora ...g5 es seguro: no hay Ne5."],
+                ["h4", "La palanca habitual de las blancas contra la cadena."],
+                ["g4", "Gana tiempo."],
+                ["Ng1", "El caballo tiene que volver a casa. Es señal de que el plan negro ha funcionado, aunque la posición sigue siendo compleja."]
+              ]
+            }
+          ]
+        },
+        {
+          "id": "sicilian",
+          "title": "Defensa siciliana: Najdorf, Dragón y el Morra",
+          "eco": "B20–B99",
+          "level": 3,
+          "side": "both",
+          "summary": "La respuesta más popular a 1.e4 a nivel magistral. Asimetría, la casilla d5 y carreras con enroques opuestos.",
+          "refs": ["book:fischer60", "book:predecessors"],
+          "steps": [
+            {
+              "type": "text",
+              "title": "La asimetría como arma",
+              "setup": "e4 c5 Nf3 d6 d4 cxd4 Nxd4",
+              "marks": { "c8": "yellow", "c1": "yellow" },
+              "arrows": [["c8", "c3", "green"]],
+              "text": "En la siciliana abierta las negras cambian su peón c por el peón d blanco. El resultado es desequilibrado. Las **negras** tienen dos peones centrales contra uno y la **columna c** semiabierta. Las **blancas** tienen ventaja de desarrollo y de espacio, y a menudo atacan en el flanco de rey.\n\nEn este tipo de posiciones ambos bandos juegan a ganar. Por eso fue el arma principal tanto de Fischer como de Kasparov."
+            },
+            {
+              "type": "line",
+              "title": "La Najdorf: ataque inglés (juegas con ambos bandos)",
+              "you": "both",
+              "moves": [
+                ["e4", "Ocupa el centro."],
+                ["c5", "Lucha por d4 desde el lado y crea asimetría."],
+                ["Nf3", "Prepara d4."],
+                ["d6", "Controla e5 y abre el alfil de c8."],
+                ["d4", "Las blancas abren el centro para aprovechar su ventaja de desarrollo."],
+                ["cxd4", "Cambia un peón de flanco por uno central: el trato de la siciliana."],
+                ["Nxd4", "El caballo queda centralizado."],
+                ["Nf6", "Ataca e4 para forzar Nc3. Eso bloquea el peón c, así que las blancas no pueden montar un bind Maróczy con c4."],
+                ["Nc3", "Defiende e4."],
+                ["a6", "La Najdorf. Es una jugada profiláctica flexible: impide Nb5 y Bb5+ y prepara ...e5 o ...b5. Fue el arma de toda la vida de Fischer y Kasparov."],
+                ["Be3", "El ataque inglés: f3, Qd2, O-O-O y g4–g5. Las blancas enrocan al lado contrario y lanzan los peones contra el rey negro."],
+                ["e5", "Gana espacio y echa al caballo, aceptando un peón d6 retrasado y un agujero en d5. Este compromiso se llama estructura Boleslavsky, y las negras deben controlar d5 a toda costa."],
+                ["Nb3", "El caballo se retira donde no estorba al peón f."],
+                ["Be6", "Lucha por d5, la casilla clave de la posición."],
+                ["f3", "Sobreprotege e4 y prepara g4."],
+                ["Be7", "Desarrollo."],
+                ["Qd2", "Conecta hacia el enroque largo."],
+                ["O-O", "Las negras enrocan corto."],
+                ["O-O-O", "Enroques opuestos. Empieza la carrera: las blancas avanzan con g4–g5 y las negras con ...b5–b4. Cada tiempo cuenta."]
+              ]
+            },
+            {
+              "type": "text",
+              "title": "El Dragón y el ataque yugoslavo",
+              "setup": "e4 c5 Nf3 d6 d4 cxd4 Nxd4 Nf6 Nc3 g6 Be3 Bg7 f3 O-O Qd2 Nc6 Bc4",
+              "arrows": [["g7", "a1", "green"], ["h2", "h5", "red"], ["d2", "h6", "red"]],
+              "text": "En el **Dragón** (5...g6) el alfil de g7 escupe fuego por la gran diagonal. El **ataque yugoslavo** de las blancas (Be3, f3, Qd2, Bc4, O-O-O) busca Bh6 para cambiar ese alfil, seguido de h4–h5 para abrir la columna h.\n\nEl contrajuego negro es ...Rc8, ...Ne5–c4 y el temático **sacrificio de calidad ...Rxc3**, que destroza los peones del flanco de dama blanco. Pocas aperturas exigen tanto conocimiento concreto."
+            },
+            {
+              "type": "line",
+              "title": "Gambito Smith-Morra (juegas con blancas)",
+              "you": "w",
+              "text": "Un arma práctica contra la siciliana. Las blancas entregan un peón a cambio de desarrollo rápido y de las columnas c y d abiertas.",
+              "moves": [
+                "e4", "c5",
+                ["d4", "Ofrece el peón d de entrada."],
+                ["cxd4", "Las negras lo toman."],
+                ["c3", "El gambito Smith-Morra."],
+                ["dxc3", "Aceptado."],
+                ["Nxc3", "Las blancas van por delante en desarrollo y controlan d5."],
+                ["Nc6", "Desarrollo."],
+                ["Nf3", "Desarrollo."],
+                ["d6", "Controla e5."],
+                ["Bc4", "Apunta a f7, el objetivo de siempre."],
+                ["e6", "Neutraliza el alfil."],
+                ["O-O", "Primero la seguridad del rey."],
+                ["Nf6", "Desarrollo."],
+                ["Qe2", "Prepara Rd1, que presiona d6 por la columna abierta."],
+                ["Be7", "Desarrollo."],
+                ["Rd1", "Las piezas blancas están idealmente situadas y las negras deben tener cuidado en la columna d."]
+              ]
+            },
+            {
+              "type": "find",
+              "title": "La trampa siberiana (juegan negras)",
+              "setup": "e4 c5 d4 cxd4 c3 dxc3 Nxc3 Nc6 Nf3 e6 Bc4 Qc7 O-O Nf6 Qe2 Ng4 h3",
+              "text": "El caballo negro ha ido a g4 y apunta a h2 junto con la dama. Las blancas acaban de jugar 9.h3?, atacándolo. Encuentra el golpe decisivo.",
+              "solution": ["Nd4"],
+              "why": "**9...Nd4!!** ataca la dama blanca. Si 10.Nxd4, entonces **10...Qh2#**: el caballo de f3 era la única pieza que defendía h2. Las blancas tienen que entregar la dama. Es la famosa trampa siberiana del Smith-Morra.",
+              "wrong": { "Nge5": "Demasiado pasivo. Busca una jugada que ataque la dama y a la vez elimine al único defensor de h2." }
+            }
+          ]
+        },
+        {
+          "id": "french",
+          "title": "Defensa francesa: avance y Winawer",
+          "eco": "C00–C19",
+          "level": 2,
+          "side": "b",
+          "summary": "Cadenas de peones y cómo atacarlas por la base, como enseña Mi sistema de Nimzowitsch.",
+          "refs": ["book:mysystem", "book:watson"],
+          "steps": [
+            {
+              "type": "text",
+              "title": "Cadenas de peones: ataca la base",
+              "setup": "e4 e6 d4 d5 e5",
+              "arrows": [["c7", "c5", "green"], ["f7", "f6", "green"]],
+              "marks": { "d4": "red", "e5": "yellow" },
+              "text": "Tras 3.e5 la cadena de peones blanca d4–e5 apunta al flanco de rey negro. La regla de Nimzowitsch en *Mi sistema*: **una cadena de peones se ataca por su base**. Aquí la base es d4, así que las negras juegan ...c5. La segunda palanca es ...f6, que golpea la cabeza.\n\nEl precio de la francesa es el **'alfil malo'** de c8, encerrado por e6. Los planes negros suelen girar en torno a activarlo (...b6 y ...Ba6) o cambiarlo."
+            },
+            {
+              "type": "line",
+              "title": "Variante del avance (juegas con negras)",
+              "you": "b",
+              "moves": [
+                "e4", ["e6", "Prepara ...d5 y disputa el centro en los términos de las negras."],
+                "d4", ["d5", "El golpe central."],
+                ["e5", "La variante del avance, defendida por el propio Nimzowitsch: gana espacio y encorseta el flanco de rey negro."],
+                ["c5", "Golpea la base de la cadena (d4), tal como dice Mi sistema."],
+                ["c3", "Sostiene d4."],
+                ["Nc6", "Un segundo atacante sobre d4."],
+                ["Nf3", "Un defensor."],
+                ["Qb6", "Un tercer atacante sobre d4, y además presión sobre b2."],
+                ["a3", "Prepara b4 para ganar espacio en el flanco de dama."],
+                ["c4", "Cierra el flanco de dama y gana espacio allí. El plan negro pasa a ser ...Na5–b3, ...Bd7 y ...f6 contra la cabeza de la cadena."]
+              ]
+            },
+            {
+              "type": "line",
+              "title": "Variante Winawer (juegas con negras)",
+              "you": "b",
+              "text": "La favorita de Botvínnik. Las negras clavan el caballo de c3 y luchan por e4 de inmediato, aceptando desequilibrios estructurales a largo plazo.",
+              "moves": [
+                "e4", "e6", "d4", "d5", "Nc3",
+                ["Bb4", "La Winawer: la clavada aumenta la presión sobre e4."],
+                ["e5", "Las blancas cierran el centro."],
+                ["c5", "De nuevo el ataque a la base."],
+                ["a3", "Hace la pregunta."],
+                ["Bxc3+", "Las negras entregan la pareja de alfiles para doblar los peones blancos."],
+                ["bxc3", "Las blancas obtienen la pareja de alfiles y las casillas negras, pero los peones de c3 y a3 son objetivos a largo plazo."],
+                ["Ne7", "Se dirige a f5 o c6 y deja posible f7–f6."],
+                ["Qg4", "Lo más crítico: las blancas atacan g7."],
+                ["Qc7", "La variante del peón envenenado: tras 8.Qxg7 Rg8 9.Qxh7 cxd4 las negras obtienen un enorme contrajuego central."]
+              ]
+            }
+          ]
+        },
+        {
+          "id": "caro-kann",
+          "title": "Defensa Caro-Kann",
+          "eco": "B10–B19",
+          "level": 1,
+          "side": "b",
+          "summary": "Sólida como la francesa, pero el alfil de casillas blancas sale primero. Fue la favorita de Capablanca, Botvínnik y Kárpov.",
+          "refs": ["game:reti1910", "book:predecessors"],
+          "steps": [
+            {
+              "type": "line",
+              "title": "Variante clásica (juegas con negras)",
+              "you": "b",
+              "moves": [
+                "e4", ["c6", "Prepara ...d5 sin encerrar el alfil de c8, lo que resuelve el problema del 'alfil malo' de la francesa."],
+                "d4", ["d5", "El desafío central."],
+                "Nc3", ["dxe4", "Las negras ceden el centro para desarrollar el alfil de forma activa."],
+                "Nxe4", ["Bf5", "La clásica: el alfil se desarrolla fuera de la cadena de peones ganando tiempo sobre e4."],
+                ["Ng3", "Echa al alfil."],
+                ["Bg6", "Se queda en la diagonal h7–b1."],
+                ["h4", "Amenaza h5, atrapando el alfil."],
+                ["h6", "Le hace sitio en h7."],
+                ["Nf3", "Desarrollo."],
+                ["Nd7", "Impide Ne5, que atacaría g6."],
+                ["h5", "Gana espacio en el flanco de rey."],
+                ["Bh7", "El alfil se retira."],
+                ["Bd3", "Ofrece el cambio de los alfiles de casillas blancas."],
+                ["Bxd3", "Las negras aceptan. Su problema del 'alfil malo' desaparece para siempre."],
+                ["Qxd3", "Las blancas enrocarán largo. La estructura negra es muy sólida, y el plan es ...e6, ...Ngf6, ...Be7 o ...Qc7 y ...O-O-O."]
+              ]
+            },
+            {
+              "type": "line",
+              "title": "Variante del avance (juegas con negras)",
+              "you": "b",
+              "moves": [
+                "e4", "c6", "d4", "d5",
+                ["e5", "Gana espacio."],
+                ["Bf5", "El alfil sale antes de ...e6: es la gran ventaja de la Caro-Kann sobre la francesa."],
+                ["Nf3", "El tranquilo sistema Short."],
+                ["e6", "Ahora ...e6 no encierra el alfil."],
+                ["Be2", "Prepara el enroque."],
+                ["c5", "De nuevo la base de la cadena: las negras golpean d4."]
+              ]
+            },
+            {
+              "type": "find",
+              "title": "Réti contra Tartakower, Viena 1910",
+              "setup": "e4 c6 d4 d5 Nc3 dxe4 Nxe4 Nf6 Qd3 e5 dxe5 Qa5+ Bd2 Qxe5 O-O-O Nxe4",
+              "text": "Una advertencia para los jugadores de la Caro-Kann. Las negras acaban de tomar el caballo de e4, pero su rey sigue en e8 y la columna d está abierta. Juegan blancas y dan mate en tres.",
+              "solution": ["Qd8+", "Kxd8", "Bg5+", "Kc7", "Bd8#"],
+              "why": "**9.Qd8+!! Kxd8 10.Bg5++** es un **jaque doble**, del alfil y de la torre de d1 a la vez. Contra un jaque doble solo sirve mover el rey. 10...Kc7 11.Bd8# (o 10...Ke8 11.Rd8#). Es el mate con jaque doble más famoso de la historia del ajedrez."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d4",
+      "title": "Peón de dama: 1.d4",
+      "lessons": [
+        {
+          "id": "qgd",
+          "title": "Gambito de dama rehusado",
+          "eco": "D30–D69",
+          "level": 2,
+          "side": "both",
+          "summary": "La defensa ortodoxa, la trampa del elefante y la estructura Carlsbad con su ataque de minorías.",
+          "refs": ["game:fischerspassky1972g6", "book:capablanca", "book:silman"],
+          "steps": [
+            {
+              "type": "line",
+              "title": "Defensa ortodoxa (juegas con blancas)",
+              "you": "w",
+              "text": "2.c4 no es un gambito de verdad: si las negras toman, las blancas siempre pueden recuperar el peón. La idea es **eliminar la defensa del peón de d5** y ganar el centro.",
+              "moves": [
+                ["d4", "Ocupa el centro. El peón d ya está defendido por la dama."],
+                ["d5", "Simetría clásica."],
+                ["c4", "El gambito de dama: ataca d5 desde el lado."],
+                ["e6", "El rehusado: d5 se mantiene sólido, a costa de encerrar el alfil de c8. Ese alfil es el eterno problema del gambito de dama rehusado."],
+                ["Nc3", "Otro atacante sobre d5."],
+                ["Nf6", "Defiende d5."],
+                ["Bg5", "Clava el caballo de f6 y aumenta la presión sobre d5."],
+                ["Be7", "Desclava."],
+                ["e3", "Sólido. Abre el alfil de f1."],
+                ["O-O", "Seguridad del rey."],
+                ["Nf3", "Desarrollo."],
+                ["Nbd7", "Apoya ...c5 o ...e5 más adelante."],
+                ["Rc1", "La torre va pronto a la columna c, que se abrirá tras cxd5 o ...dxc4."],
+                ["c6", "La defensa ortodoxa. Las negras refuerzan d5 y preparan ...dxc4 y ...Nd5, la maniobra liberadora clásica (el método de Capablanca)."]
+              ]
+            },
+            {
+              "type": "find",
+              "title": "La trampa del elefante (juegan negras)",
+              "setup": "d4 d5 c4 e6 Nc3 Nf6 Bg5 Nbd7 cxd5 exd5 Nxd5",
+              "text": "Las blancas creen que el caballo de f6 está clavado y se han comido el peón de d5. Castígalas.",
+              "solution": ["Nxd5", "Bxd8", "Bb4+", "Qd2", "Bxd2+", "Kxd2", "Kxd8"],
+              "why": "La clavada era solo **relativa**, no absoluta. **6...Nxd5!** 7.Bxd8 **Bb4+!** es la jugada intermedia (zwischenzug). 8.Qd2 Bxd2+ 9.Kxd2 Kxd8, y las negras tienen una pieza entera de más. El error blanco fue olvidar que la jugada del caballo a d7 había abierto la diagonal del alfil de f8 hacia b4.",
+              "wrong": { "Bb4": "Casi, pero primero elimina al intruso de d5. El jaque viene después." }
+            },
+            {
+              "type": "text",
+              "title": "La estructura Carlsbad y el ataque de minorías",
+              "setup": "d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 cxd5 exd5",
+              "arrows": [["b2", "b5", "green"], ["a2", "a4", "green"]],
+              "marks": { "c6": "red", "e4": "yellow" },
+              "text": "Tras cxd5 exd5 tenemos la **estructura Carlsbad**. Las blancas tienen dos peones en el flanco de dama (a, b) contra tres negros (a, b, c). Esa 'minoría' se usa como ariete: **b4–b5** y luego bxc6. El objetivo es dejar a las negras un peón c débil, aislado o retrasado, en una columna abierta.\n\nEl otro plan blanco es central: f3 y e4, un método asociado a Botvínnik. Las opciones negras están en el flanco de rey, usando el puesto de e4 y ...Ne4, ...f5 y la batería con ...Bd6. *How to Reassess Your Chess* de Silman lo llama 'crear un objetivo'."
+            },
+            {
+              "type": "quiz",
+              "title": "Comprueba lo que has entendido",
+              "setup": "d4 d5 c4 e6 Nc3 Nf6 Bg5 Be7 e3 O-O Nf3 Nbd7 cxd5 exd5",
+              "question": "¿Cuál es el objetivo estratégico principal del ataque de minorías blanco (b4–b5) en la estructura Carlsbad?",
+              "options": [
+                { "text": "Crear un peón débil en c6 (o d5) que las blancas puedan atacar por la columna c semiabierta.", "correct": true, "why": "Exacto. Tras b5 y bxc6, a las negras les queda un peón c6 retrasado o un peón d5 aislado, un objetivo permanente." },
+                { "text": "Coronar rápido el peón b.", "why": "No. La minoría no puede crear un peón pasado por sí sola (está en inferioridad, 2 contra 3). Su tarea es crear debilidades." },
+                { "text": "Preparar el enroque largo.", "why": "En esta estructura las blancas suelen enrocar corto. Avanzar los peones del flanco de dama expondría un rey en c1." },
+                { "text": "Cambiar el alfil de casillas blancas de las negras.", "why": "Eso es un objetivo aparte, y en la estructura Carlsbad el alfil de c8 negro suele liberarse con ...Bf5 o ...Bg4. El avance de peones apunta a la estructura, no a las piezas." }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "qga",
+          "title": "Gambito de dama aceptado",
+          "eco": "D20–D29",
+          "level": 1,
+          "side": "both",
+          "summary": "Las negras toman en c4, desarrollan con libertad y contraatacan con ...c5. Aprende por qué falla sostener el peón con ...b5.",
+          "refs": ["book:silman"],
+          "steps": [
+            {
+              "type": "line",
+              "title": "Línea principal (juegas con negras)",
+              "you": "b",
+              "moves": [
+                "d4", "d5", "c4",
+                ["dxc4", "Las negras ceden temporalmente el centro para desarrollar con libertad."],
+                "Nf3", ["Nf6", "Impide e4."],
+                "e3", ["e6", "Abre el alfil de f8."],
+                ["Bxc4", "Las blancas recuperan el peón."],
+                ["c5", "El contragolpe temático. Las negras atacan d4 y a menudo dejan a las blancas con un peón aislado de dama."],
+                "O-O", ["a6", "Prepara ...b5, ganando espacio en el flanco de dama con tiempo sobre el alfil de c4."]
+              ]
+            },
+            {
+              "type": "find",
+              "title": "Por qué no puedes quedarte con el peón de c4",
+              "setup": "d4 d5 c4 dxc4 e3 b5",
+              "text": "Las negras intentan conservar el peón de más con ...b5. Demuestra por qué falla.",
+              "solution": ["a4", "c6", "axb5", "cxb5", "Qf3"],
+              "why": "**4.a4!** mina el peón de b5. Tras 4...c6 5.axb5 cxb5?? **6.Qf3!** la dama ataca la torre de a8 por la gran diagonal, que está vacía porque los peones b y c se han movido, y las negras pierden material. La lección: en el gambito de dama aceptado, las negras deben devolver el peón y jugar a desarrollar."
+            }
+          ]
+        },
+        {
+          "id": "slav",
+          "title": "Defensa eslava",
+          "eco": "D10–D19",
+          "level": 2,
+          "side": "b",
+          "summary": "Sostiene d5 con ...c6 y deja libre el alfil de casillas blancas. Fue un pilar de los matches Alekhine–Euwe por el Campeonato del Mundo.",
+          "refs": ["book:predecessors"],
+          "steps": [
+            {
+              "type": "line",
+              "title": "Línea principal con ...Bf5 (juegas con negras)",
+              "you": "b",
+              "moves": [
+                "d4", "d5", "c4",
+                ["c6", "La eslava: defiende d5 sin encerrar el alfil de c8, a diferencia de 2...e6."],
+                "Nf3", ["Nf6", "Desarrollo."],
+                "Nc3",
+                ["dxc4", "Ahora que ...Bf5 está listo, las negras toman y amenazan sostener el peón con ...b5."],
+                ["a4", "Impide ...b5. Cuesta un tiempo y debilita b4."],
+                ["Bf5", "El sentido de la eslava: el alfil se desarrolla activamente antes de ...e6."],
+                ["e3", "Prepara Bxc4."],
+                ["e6", "Ahora ...e6 no encierra el alfil."],
+                ["Bxc4", "Las blancas recuperan el peón."],
+                ["Bb4", "Clava el caballo de c3, aprovecha el agujero de b4 que creó a4 y prepara el enroque."],
+                "O-O", ["O-O", "Una posición clásica: las negras están sólidas y completamente desarrolladas, con todas sus piezas fuera."]
+              ]
+            }
+          ]
+        },
+        {
+          "id": "kid",
+          "title": "Defensa india de rey",
+          "eco": "E60–E99",
+          "level": 3,
+          "side": "b",
+          "summary": "El contragolpe hipermoderno. Deja que las blancas levanten un centro, atácalo después y corre en flancos opuestos en la Mar del Plata.",
+          "refs": ["book:reti", "book:watson", "book:fischer60"],
+          "steps": [
+            {
+              "type": "text",
+              "title": "La filosofía hipermoderna",
+              "setup": "d4 Nf6 c4 g6 Nc3 Bg7 e4 d6",
+              "arrows": [["g7", "d4", "green"], ["e7", "e5", "green"]],
+              "text": "La escuela hipermoderna (*Ideas modernas en ajedrez* de Réti, *Mi sistema* de Nimzowitsch) sostenía que no hace falta *ocupar* el centro con peones. Se puede controlar a distancia y golpearlo más tarde.\n\nEn la india de rey las negras permiten e4+d4+c4, fianchettan, enrocan y luego contraatacan con **...e5** o **...c5**. Fue el arma de Fischer y Kasparov: aguda, desequilibrada y llena de opciones de victoria para las negras."
+            },
+            {
+              "type": "line",
+              "title": "Clásica y Mar del Plata (juegas con negras)",
+              "you": "b",
+              "moves": [
+                "d4", "Nf6", "c4", ["g6", "Prepara el fianchetto."],
+                "Nc3", ["Bg7", "El alfil apunta a d4 y a la gran diagonal."],
+                "e4", ["d6", "Controla e5 y prepara ...e5."],
+                "Nf3", ["O-O", "Seguridad del rey antes de la lucha central."],
+                "Be2", ["e5", "El golpe central."],
+                "O-O", ["Nc6", "Aumenta la presión sobre d4."],
+                ["d5", "Las blancas cierran el centro y ganan espacio."],
+                ["Ne7", "La Mar del Plata. El centro está bloqueado, así que cada bando ataca hacia donde apunta su cadena de peones: las blancas en el flanco de dama con c5, las negras en el de rey con ...f5, ...f4 y ...g5–g4."],
+                ["Ne1", "Va a d3 para apoyar c5 y libera el peón f para jugar f3."],
+                ["Nd7", "Despeja el peón f para ...f5."],
+                ["Be3", "Desarrollo, mirando a c5."],
+                ["f5", "La palanca negra contra e4."],
+                ["f3", "Refuerza e4."],
+                ["f4", "Gana espacio en el flanco de rey y cierra la diagonal c1–h6 ganando tiempo."],
+                ["Bf2", "El alfil se retira."],
+                ["g5", "Empieza la avalancha de peones: viene ...g4. Se acaba la teoría y empieza una carrera de ataques."]
+              ]
+            }
+          ]
+        },
+        {
+          "id": "nimzo",
+          "title": "Defensa Nimzoindia",
+          "eco": "E20–E59",
+          "level": 3,
+          "side": "b",
+          "summary": "Las piezas controlan el centro en lugar de los peones. Peones doblados, la pareja de alfiles y la lucha por e4.",
+          "refs": ["game:botvinnikcapa1938", "book:mysystem"],
+          "steps": [
+            {
+              "type": "line",
+              "title": "Variante Rubinstein (juegas con negras)",
+              "you": "b",
+              "moves": [
+                "d4", "Nf6", "c4", ["e6", "Prepara ...Bb4 y deja flexibles ...d5 y ...c5."],
+                "Nc3", ["Bb4", "La Nimzoindia: la clavada lucha por e4 con piezas, no con peones; es la idea hipermoderna de Nimzowitsch."],
+                ["e3", "La Rubinstein: desarrollo sólido."],
+                ["O-O", "Las negras enrocan primero y esperan a ver el esquema blanco."],
+                ["Bd3", "Desarrollo."],
+                ["d5", "Ahora las negras reclaman el centro."],
+                ["Nf3", "Desarrollo."],
+                ["c5", "Presión sobre d4 desde ambos lados."],
+                "O-O", ["Nc6", "Todas las piezas negras golpean el centro. Las blancas tienen que decidir cómo resolver la tensión."]
+              ]
+            },
+            {
+              "type": "text",
+              "title": "Peones doblados contra la pareja de alfiles",
+              "setup": "d4 Nf6 c4 e6 Nc3 Bb4 a3 Bxc3+ bxc3",
+              "marks": { "c3": "red", "c4": "red" },
+              "arrows": [["c8", "a6", "green"], ["b8", "a5", "green"]],
+              "text": "En la Sämisch (4.a3) las blancas fuerzan ...Bxc3+ y obtienen la **pareja de alfiles** y un **centro fuerte**. El precio son los peones c doblados, sobre todo el débil c4. El plan negro es bloquear y atacar c4 con ...b6, ...Ba6, ...Nc6–a5 y ...c5.\n\nEs una batalla de desequilibrios. En Botvínnik contra Capablanca (AVRO 1938) los peones c doblados de las blancas sostuvieron un centro móvil, e3–e4–e5, y la partida terminó con la famosa combinación 30.Ba3!! La lección de Nimzowitsch se aplica: los peones doblados solo son débiles si se pueden atacar."
+            },
+            {
+              "type": "quiz",
+              "title": "Evalúa el desequilibrio",
+              "setup": "d4 Nf6 c4 e6 Nc3 Bb4 a3 Bxc3+ bxc3",
+              "question": "Con negras en esta estructura Sämisch, ¿qué plan sigue la lógica de la posición?",
+              "options": [
+                { "text": "Bloquear y presionar el peón doblado de c4 con ...b6, ...Ba6 y ...Nc6–a5.", "correct": true, "why": "Correcto. El peón de c4 no puede defenderse con un peón, así que es un objetivo natural. Mantener la posición cerrada además neutraliza la pareja de alfiles blanca." },
+                { "text": "Abrir rápido la posición con ...e5 y cambios con ...d5.", "why": "Abrir la posición favorece al bando con la pareja de alfiles, que aquí son las blancas. Las negras quieren una posición cerrada donde brillen los caballos." },
+                { "text": "Avanzar ...g5 y ...h5 para atacar al rey blanco.", "why": "Las blancas aún no han enrocado, y debilitar tu propio rey yendo atrasado en desarrollo es antiposicional." },
+                { "text": "Cambiar damas de inmediato porque el final favorece a las negras.", "why": "El final podría favorecer a las negras por los peones débiles, pero no puedes forzar sin más un cambio de damas. El plan tiene que salir primero de la estructura." }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "london",
+          "title": "Sistema Londres",
+          "eco": "D02 / A46",
+          "level": 1,
+          "side": "w",
+          "summary": "Una apertura de sistema: el mismo esquema armónico contra casi todo. Conoce las pruebas de ...c5 y ...Qb6.",
+          "refs": ["book:watson"],
+          "steps": [
+            {
+              "type": "line",
+              "title": "El esquema (juegas con blancas)",
+              "you": "w",
+              "moves": [
+                ["d4", "Control central."],
+                "d5",
+                ["Bf4", "El Londres: el alfil sale fuera de la cadena de peones antes de que e3 lo encierre."],
+                "Nf6",
+                ["e3", "Sólido; abre el alfil de f1."],
+                ["c5", "La respuesta más activa de las negras: un desafío inmediato a d4."],
+                ["c3", "La pirámide c3–d4–e3: sólida como una roca, y el alfil de f4 sigue activo fuera de ella."],
+                "Nc6",
+                ["Nd2", "Flexible: apoya e4 más adelante y deja c3 para el peón."],
+                "e6",
+                ["Ngf3", "Desarrollo."],
+                ["Bd6", "Las negras ofrecen cambiar los alfiles."],
+                ["Bg3", "Conserva el alfil. Si ...Bxg3 hxg3, la columna h se abre para la torre blanca."],
+                "O-O",
+                ["Bd3", "El esquema ideal del Londres. Planes: Ne5, Qe2 o Qc2 y un ataque en el flanco de rey."]
+              ]
+            },
+            {
+              "type": "find",
+              "title": "Responde al ataque ...Qb6",
+              "setup": "d4 d5 Bf4 c5 e3 Nc6 c3 Qb6",
+              "text": "El alfil ha dejado c1, así que la dama ataca b2. ¿Cuál es la respuesta estándar?",
+              "solution": [["Qb3", "Qc1"]],
+              "why": "**5.Qb3!** ofrece el cambio de damas. Tras ...Qxb3 axb3 los peones doblados blancos se compensan con la columna a semiabierta, y el cambio de damas apaga la iniciativa negra. 5.Qc1 también defiende b2 con seguridad. 5.b3? debilita c3, y 5.Nd2? Qxb2 simplemente pierde un peón.",
+              "wrong": { "b3": "Debilita el peón de c3 y la diagonal a1–h8. Defiende b2 con una pieza.", "Nd2": "b2 sigue colgando: ...Qxb2." }
+            }
+          ]
+        },
+        {
+          "id": "d4-gambits",
+          "title": "Gambitos contra 1.d4",
+          "eco": "A51–A59, D08",
+          "level": 3,
+          "side": "b",
+          "summary": "El Budapest, el Benko y la trampa Lasker del contragambito Albin, con su famosa subpromoción.",
+          "refs": ["book:watson"],
+          "steps": [
+            {
+              "type": "line",
+              "title": "Gambito Budapest (juegas con negras)",
+              "you": "b",
+              "text": "Debe su nombre a una partida jugada en Budapest en 1896. Las negras golpean d4 de inmediato y normalmente recuperan el peón.",
+              "moves": [
+                "d4", "Nf6", "c4",
+                ["e5", "El Budapest: un golpe inmediato contra d4."],
+                ["dxe5", "Aceptado."],
+                ["Ng4", "Ataca e5. Las negras recuperarán el peón."],
+                ["Bf4", "Defiende e5."],
+                ["Nc6", "Un segundo atacante."],
+                ["Nf3", "Un segundo defensor."],
+                ["Bb4+", "Desarrolla con jaque, para que se bloquee la casilla d2."],
+                ["Nbd2", "Interpone."],
+                ["Qe7", "Un tercer atacante sobre e5."],
+                ["a3", "Pregunta al alfil."],
+                ["Ngxe5", "Las negras recuperan su peón con piezas activas."]
+              ]
+            },
+            {
+              "type": "line",
+              "title": "Gambito Benko (juegas con negras)",
+              "you": "b",
+              "text": "Popularizado por Pal Benko a finales de los años sesenta. Las negras dan un peón a cambio de presión duradera en las columnas a y b. Es uno de los pocos gambitos cuya compensación suele durar hasta el final.",
+              "moves": [
+                "d4", "Nf6", "c4", ["c5", "Desafía d4."],
+                "d5", ["b5", "El Benko: mina c4."],
+                ["cxb5", "Aceptado."],
+                ["a6", "Ofrece un segundo peón para abrir columnas."],
+                ["bxa6", "Las blancas aceptan."],
+                ["Bxa6", "Las columnas a y b están abiertas para las torres negras, y el alfil de g7 barrerá la gran diagonal."],
+                ["Nc3", "Desarrollo."],
+                ["d6", "Sólido."],
+                ["e4", "Las blancas levantan el centro."],
+                ["Bxf1", "Cambia al mejor defensor blanco y quita el enroque."],
+                ["Kxf1", "Las blancas tendrán que enrocar a mano con g3 y Kg2."],
+                ["g6", "El fianchetto. El plan negro es ...Bg7, ...O-O, ...Nbd7, ...Qa5 y presión por las columnas."]
+              ]
+            },
+            {
+              "type": "find",
+              "title": "La trampa Lasker (juegan negras)",
+              "setup": "d4 d5 c4 e5 dxe5 d4 e3 Bb4+ Bd2 dxe3 Bxb4",
+              "text": "Contragambito Albin. Las blancas acaban de capturar el alfil de b4 sin ver la idea negra. Encuentra el brillante final. *¡Atención a la pieza que eliges al coronar!*",
+              "solution": ["exf2+", "Ke2", "fxg1=N+"],
+              "why": "**6...exf2+ 7.Ke2 fxg1=N+!** Coronar dama permitiría 8.Rxg1. El **caballo** llega con jaque, y tras 8.Ke1 Qh4+ u 8.Rxg1 Bg4+ (enfilando rey y dama) las negras ganan de forma decisiva. Es una de las raras subpromociones que se ven en partidas reales."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "books": {
+    "mysystem": {
+      "title": "Mi sistema",
+      "author": "Aron Nimzowitsch",
+      "year": 1925,
+      "note": "El texto fundacional del ajedrez posicional: bloqueo, profilaxis, sobreprotección, la cadena de peones y el juego por columnas abiertas y la séptima fila."
+    },
+    "fischer60": {
+      "title": "Mis 60 partidas memorables",
+      "author": "Bobby Fischer",
+      "year": 1969,
+      "note": "Las partidas de Fischer comentadas por él mismo. Una clase magistral de Najdorf, de Ruy López y de cálculo claro y concreto."
+    },
+    "kotov": {
+      "title": "Piense como un gran maestro",
+      "author": "Alexander Kotov",
+      "year": 1971,
+      "note": "Introdujo el \"árbol de variantes\" y las jugadas candidatas: el método para calcular sin cometer errores graves."
+    },
+    "silman": {
+      "title": "How to Reassess Your Chess (4.ª ed.)",
+      "author": "Jeremy Silman",
+      "year": 2010,
+      "note": "Enseña a leer una posición a través de sus desequilibrios: piezas menores, estructura de peones, espacio, columnas, desarrollo e iniciativa."
+    },
+    "dvoretsky": {
+      "title": "Manual de finales de Dvoretsky",
+      "author": "Mark Dvoretsky",
+      "year": 2003,
+      "note": "La referencia estándar de los finales teóricos: casillas clave, Lucena, Philidor, Vančura y mucho más."
+    },
+    "capablanca": {
+      "title": "Fundamentos del ajedrez",
+      "author": "José Raúl Capablanca",
+      "year": 1921,
+      "note": "El manual del campeón del mundo. Insistía en estudiar primero los finales, porque muestran lo que cada pieza puede hacer de verdad."
+    },
+    "reti": {
+      "title": "Ideas modernas en ajedrez",
+      "author": "Richard Réti",
+      "year": 1923,
+      "note": "El manifiesto de la escuela hipermoderna: controlar el centro a distancia y atacarlo después."
+    },
+    "watson": {
+      "title": "Secretos de la estrategia moderna en ajedrez",
+      "author": "John Watson",
+      "year": 1998,
+      "note": "Explica cómo los grandes maestros modernos rompieron las \"reglas\" clásicas y por qué gana el juego concreto."
+    },
+    "vukovic": {
+      "title": "El arte del ataque en ajedrez",
+      "author": "Vladimir Vuković",
+      "year": 1965,
+      "note": "La obra clásica sobre el ataque al rey: el regalo griego (Bxh7+), los patrones de mate y las condiciones que necesita un ataque."
+    },
+    "predecessors": {
+      "title": "Mis geniales predecesores",
+      "author": "Garry Kasparov",
+      "year": 2003,
+      "note": "Una historia en cinco volúmenes de los campeones del mundo, con un análisis profundo de sus partidas más importantes."
+    },
+    "philidor": {
+      "title": "L'analyse des échecs",
+      "author": "François-André Danican Philidor",
+      "year": 1749,
+      "note": "\"Los peones son el alma del ajedrez.\" El primer libro que trató la estructura de peones como estrategia. Su edición de 1777 analiza el final de torre que lleva su nombre."
+    },
+    "delavilla": {
+      "title": "100 finales que hay que saber",
+      "author": "Jesús de la Villa",
+      "year": 2008,
+      "note": "El mínimo práctico de teoría de finales que todo jugador de torneo debería saberse de memoria."
+    }
+  },
+  "games": {
+    "greco1620": {
+      "title": "Greco contra NN",
+      "event": "Manuscritos de Greco",
+      "year": 1620,
+      "note": "Gioachino Greco recogió partidas modélicas de ataque en el Giuoco Piano. Varias de ellas siguen siendo trampas que hoy pillan a jugadores."
+    },
+    "legal1750": {
+      "title": "Légal contra Saint Brie",
+      "event": "París",
+      "year": 1750,
+      "note": "El origen del mate de Légal. Un caballo \"clavado\" se mueve, se ofrece la dama y tres piezas menores dan mate."
+    },
+    "immortal1851": {
+      "title": "Anderssen contra Kieseritzky, \"la Inmortal\"",
+      "event": "Londres",
+      "year": 1851,
+      "note": "Un gambito de rey (gambito de alfil) en el que Anderssen entregó las dos torres, un alfil y la dama para dar mate con tres piezas menores."
+    },
+    "evergreen1852": {
+      "title": "Anderssen contra Dufresne, \"la Siempreviva\"",
+      "event": "Berlín",
+      "year": 1852,
+      "note": "Un gambito Evans que termina en una de las combinaciones más celebradas de la historia."
+    },
+    "opera1858": {
+      "title": "Morphy contra el duque Karl y el conde Isouard, \"la Partida de la Ópera\"",
+      "event": "Ópera de París",
+      "year": 1858,
+      "note": "El modelo de desarrollo rápido: cada jugada gana tiempo, y termina con una clavada y Rd8#."
+    },
+    "reti1910": {
+      "title": "Réti contra Tartakower",
+      "event": "Viena",
+      "year": 1910,
+      "note": "Una Caro-Kann que termina 9.Qd8+!! Kxd8 10.Bg5++ Kc7 11.Bd8#: el mate con jaque doble más famoso."
+    },
+    "capamarshall1918": {
+      "title": "Capablanca contra Marshall",
+      "event": "Nueva York",
+      "year": 1918,
+      "note": "Marshall estrenó su gambito (8...d5) en la española contra Capablanca, que lo aceptó, se defendió y ganó. Más tarde se demostró que el gambito era correcto."
+    },
+    "torrelasker1925": {
+      "title": "Torre contra Em. Lasker",
+      "event": "Moscú",
+      "year": 1925,
+      "note": "El \"molino\" más famoso: una torre da una serie de jaques descubiertos alternos y se come las piezas negras."
+    },
+    "capatartakower1924": {
+      "title": "Capablanca contra Tartakower",
+      "event": "Nueva York",
+      "year": 1924,
+      "note": "Un final de torres modélico. Capablanca sacrificó peones para activar su rey y mantener la torre en la séptima fila."
+    },
+    "botvinnikcapa1938": {
+      "title": "Botvínnik contra Capablanca",
+      "event": "AVRO, Países Bajos",
+      "year": 1938,
+      "note": "Una Nimzoindia en la que los peones c doblados de las blancas sostuvieron un centro móvil, decidida por la combinación 30.Ba3!!"
+    },
+    "spasskyfischer1960": {
+      "title": "Spassky contra Fischer",
+      "event": "Mar del Plata",
+      "year": 1960,
+      "note": "Spassky venció a Fischer con el gambito de rey. Fischer respondió con su artículo \"A Bust to the King's Gambit\" (1961)."
+    },
+    "fischerspassky1972g6": {
+      "title": "Fischer contra Spassky, 6.ª partida",
+      "event": "Campeonato del Mundo, Reikiavik",
+      "year": 1972,
+      "note": "Fischer, jugador de 1.e4 de toda la vida, abrió con 1.c4 y ganó un gambito de dama rehusado modélico. Spassky se unió a los aplausos del público."
+    },
+    "kasparovanand1995": {
+      "title": "Kasparov contra Anand",
+      "event": "Riga",
+      "year": 1995,
+      "note": "Kasparov resucitó el gambito Evans al máximo nivel y ganó en 25 jugadas."
+    },
+    "kramnikkasparov2000": {
+      "title": "Krámnik contra Kasparov, match por el Campeonato del Mundo",
+      "event": "Londres",
+      "year": 2000,
+      "note": "La defensa berlinesa de Krámnik (\"el muro berlinés\") neutralizó el 1.e4 de Kasparov, que perdió el título sin ganar una sola partida."
+    },
+    "reti1921": {
+      "title": "El estudio de Réti",
+      "event": "Kagans Neueste Schachnachrichten",
+      "year": 1921,
+      "note": "Un rey que persigue dos objetivos a la vez. Demuestra que la ruta diagonal de un rey hacia la casilla de coronación puede ser tan corta como una recta."
+    }
+  }
+}

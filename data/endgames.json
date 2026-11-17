@@ -1,0 +1,365 @@
+{
+  "id": "endgames",
+  "title": "Endgames",
+  "icon": "♔",
+  "blurb": "The theoretical positions every strong player knows by heart, drilled against the engine until the technique is automatic.",
+  "chapters": [
+    {
+      "id": "king-pawn",
+      "title": "King & Pawn",
+      "lessons": [
+        {
+          "id": "key-squares",
+          "title": "Key Squares & the Opposition",
+          "level": 1,
+          "side": "w",
+          "summary": "The foundation of all endgames. Learn which squares win and how kings fight for them.",
+          "refs": [
+            "book:dvoretsky",
+            "book:capablanca"
+          ],
+          "steps": [
+            {
+              "type": "text",
+              "title": "Key squares",
+              "fen": "4k3/8/8/8/8/4K3/4P3/8 w - - 0 1",
+              "marks": {
+                "d4": "green",
+                "e4": "green",
+                "f4": "green"
+              },
+              "text": "For a pawn that hasn't crossed the middle of the board, the **key squares** are the three squares **two ranks in front of it**. Here, for the e2-pawn, that's d4, e4 and f4. If the attacking king reaches a key square, the pawn promotes **whatever the defender does**.\n\nThis is Dvoretsky's starting point: you don't calculate the whole ending, you just ask 'can my king reach a key square?'"
+            },
+            {
+              "type": "find",
+              "title": "Step on a key square",
+              "fen": "8/8/4k3/8/8/4K3/4P3/8 w - - 0 1",
+              "text": "White to move. Black's king is close. Win the race for the key squares.",
+              "solution": [
+                [
+                  "Ke4",
+                  "Kd4",
+                  "Kf4"
+                ]
+              ],
+              "why": "Any of **Ke4, Kd4 or Kf4** puts the king on a key square, and the ending is won. A pawn move like e4? would throw it away: after ...Ke5 Black controls the key squares (d5, e5, f5) of the e4-pawn himself.",
+              "wrong": {
+                "e4": "Pushing first lets Black's king take the opposition in front of the pawn: ...Ke5 and it's a draw. King first!",
+                "e3": "The pawn can't move there because your own king is on e3."
+              }
+            },
+            {
+              "type": "quiz",
+              "title": "The opposition",
+              "fen": "8/4k3/8/4K3/4P3/8/8/8 w - - 0 1",
+              "question": "Kings on e5 and e7, White pawn on e4, **White to move**. What is the result with best play?",
+              "options": [
+                {
+                  "text": "Draw: Black has the opposition, and White has no spare pawn tempo.",
+                  "correct": true,
+                  "why": "Right. The kings face each other with one square between them and it's White's move, so Black 'has the opposition'. White can't reach d6, e6 or f6 (the key squares), and the pawn can't move because the king blocks it. With Black to move it would be a win."
+                },
+                {
+                  "text": "White wins by Kd5.",
+                  "why": "1.Kd5 Kd7! keeps the opposition, and White can't make progress."
+                },
+                {
+                  "text": "White wins by pushing e4–e5.",
+                  "why": "The pawn can't advance: White's own king is standing on e5."
+                },
+                {
+                  "text": "Black wins.",
+                  "why": "Black has no pawns, so he can't win. The question is whether White can promote."
+                }
+              ]
+            },
+            {
+              "type": "play",
+              "title": "Technique drill: promote it",
+              "fen": "4k3/8/8/8/8/4K3/4P3/8 w - - 0 1",
+              "goal": "promote",
+              "you": "w",
+              "text": "Now play it out against the engine. Get your king onto a key square, keep the opposition when needed, and promote the pawn safely. (The new queen must not be capturable and it must not be stalemate.)"
+            }
+          ]
+        },
+        {
+          "id": "reti",
+          "title": "The Square & Réti's Miracle",
+          "level": 2,
+          "side": "w",
+          "summary": "Counting pawn races with the 'square', and a king that chases two goals at once.",
+          "refs": [
+            "game:reti1921",
+            "book:delavilla"
+          ],
+          "steps": [
+            {
+              "type": "text",
+              "title": "The rule of the square",
+              "fen": "8/8/8/8/k6p/8/3K4/8 w - - 0 1",
+              "marks": {
+                "h4": "red",
+                "h1": "yellow",
+                "e1": "yellow",
+                "e4": "yellow"
+              },
+              "text": "Draw a square from the pawn to its promotion square (here h4–h1–e1–e4). If the defending king can **step into the square** on its move, it catches the pawn. With White to move, Ke2 or Ke3 steps into the square and the h-pawn is caught. With Black to move, ...h3 escapes it and the pawn promotes.\n\nThe square lets you judge pawn races instantly, without counting moves one by one."
+            },
+            {
+              "type": "find",
+              "title": "Réti's study (1921)",
+              "fen": "7K/8/k1P5/7p/8/8/8/8 w - - 0 1",
+              "text": "White's king is outside the square of the h-pawn, and Black's king is next to the c-pawn. It looks hopeless. White to play and **draw**.",
+              "solution": [
+                "Kg7"
+              ],
+              "why": "**1.Kg7!** heads for the h-pawn *and* toward the c-pawn at the same time, because a diagonal king route is as short as a straight one. 1...h4 2.Kf6! h3 (2...Kb6 3.Ke5! catches the pawn) 3.Ke7 h2 4.c7 Kb7 5.Kd7, and both sides queen. Draw. Réti published it in 1921, and it still amazes people today.",
+              "wrong": {
+                "c7": "1.c7? Kb7 and the c-pawn falls; then the h-pawn runs. The king has to work on both goals at once.",
+                "Kh7": "The king has to move diagonally to gain time: Kg7, Kf6, Ke5 / Ke7."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rook-endings",
+      "title": "Rook Endgames",
+      "lessons": [
+        {
+          "id": "lucena",
+          "title": "The Lucena Position: Building a Bridge",
+          "level": 2,
+          "side": "w",
+          "summary": "The most important winning technique in rook endgames.",
+          "refs": [
+            "book:dvoretsky",
+            "book:delavilla"
+          ],
+          "steps": [
+            {
+              "type": "text",
+              "title": "The position",
+              "fen": "1K6/1P1k4/8/8/8/8/r7/2R5 w - - 0 1",
+              "marks": {
+                "b8": "yellow",
+                "b7": "yellow"
+              },
+              "text": "White's pawn is on the 7th, his king is on the queening square, and Black's king is **cut off** by the c1-rook. The problem is that White's king can't come out without getting checked by Black's rook.\n\nThe position is named after Luis Ramírez de Lucena, although it doesn't appear in his 1497 book; it was first published by Alessandro Salvio in 1634. The winning method is called **'building a bridge'** (Nimzowitsch's term): the rook goes to the 4th rank to block the checks later."
+            },
+            {
+              "type": "line",
+              "title": "Build the bridge (play White)",
+              "you": "w",
+              "fen": "1K6/1P1k4/8/8/8/8/r7/2R5 w - - 0 1",
+              "moves": [
+                [
+                  "Rd1+",
+                  "First push the black king one more file away."
+                ],
+                [
+                  "Ke7",
+                  "If 1...Kc6 2.Kc8 and the pawn queens."
+                ],
+                [
+                  "Rd4",
+                  "The bridge! The rook goes to the 4th rank, ready to block checks on the b-file."
+                ],
+                [
+                  "Ra1",
+                  "Black waits."
+                ],
+                [
+                  "Kc7",
+                  "The king comes out."
+                ],
+                [
+                  "Rc1+",
+                  "Checks from the side."
+                ],
+                [
+                  "Kb6",
+                  "The king approaches the rook."
+                ],
+                [
+                  "Rb1+",
+                  "Another check."
+                ],
+                [
+                  "Kc6",
+                  "Still walking toward the bridge."
+                ],
+                [
+                  "Rc1+",
+                  "Check."
+                ],
+                [
+                  "Kb5",
+                  "Now the king is on the 5th rank..."
+                ],
+                [
+                  "Rb1+",
+                  "...one last check..."
+                ],
+                [
+                  "Rb4",
+                  "...and the bridge blocks it. The pawn queens. Learn this by heart."
+                ]
+              ]
+            },
+            {
+              "type": "play",
+              "title": "Technique drill: win it against the engine",
+              "fen": "1K6/1P1k4/8/8/8/8/r7/2R5 w - - 0 1",
+              "goal": "promote",
+              "you": "w",
+              "text": "Now win it against the engine, which will defend as stubbornly as it can. Promote the pawn safely."
+            }
+          ]
+        },
+        {
+          "id": "philidor",
+          "title": "The Philidor Position: the Third-Rank Defence",
+          "level": 2,
+          "side": "b",
+          "summary": "The fundamental drawing method in rook endgames, from Philidor (1777).",
+          "refs": [
+            "book:philidor",
+            "book:dvoretsky"
+          ],
+          "steps": [
+            {
+              "type": "text",
+              "title": "The defensive set-up",
+              "fen": "4k3/R7/1r6/4PK2/8/8/8/8 w - - 0 1",
+              "marks": {
+                "b6": "green",
+                "e8": "green"
+              },
+              "arrows": [
+                [
+                  "b6",
+                  "h6",
+                  "green"
+                ]
+              ],
+              "text": "Black's king is **in front of the pawn**, and Black's rook holds the **6th rank** (the 'third rank' from Black's side). It stops White's king from reaching the 6th, where it would shelter from checks.\n\nThe key moment: when White pushes **e6**, the king can no longer hide in front of its pawn, so Black's rook **drops to the 1st rank** and checks from behind. Philidor analysed this in 1777, and it's still the first defensive technique every player must know."
+            },
+            {
+              "type": "line",
+              "title": "The moment of truth (play Black)",
+              "you": "b",
+              "fen": "4k3/R7/1r6/4PK2/8/8/8/8 w - - 0 1",
+              "moves": [
+                [
+                  "e6",
+                  "White pushes, hoping for Kf6 next."
+                ],
+                [
+                  "Rb1",
+                  "Now! The rook goes to the far side to check from behind. The king can't hide, because the e6-pawn no longer shields it."
+                ],
+                [
+                  "Kf6",
+                  "White tries anyway."
+                ],
+                [
+                  "Rf1+",
+                  "Checks from behind."
+                ],
+                [
+                  "Ke5",
+                  "The king has to retreat or run toward the rook."
+                ],
+                [
+                  "Re1+",
+                  "Keep checking: there is no shelter. Draw."
+                ]
+              ]
+            },
+            {
+              "type": "play",
+              "title": "Technique drill: hold the draw",
+              "fen": "4k3/R7/1r6/4PK2/8/8/8/8 w - - 0 1",
+              "goal": "hold",
+              "you": "b",
+              "moves": 12,
+              "text": "You are Black and the engine plays White. Hold the draw for 12 moves: keep the rook on the 6th rank until the pawn advances, then check from behind."
+            }
+          ]
+        },
+        {
+          "id": "rook-skewer",
+          "title": "The a-Pawn Skewer Trick",
+          "level": 2,
+          "side": "w",
+          "summary": "When the defender's king goes to the wrong side, a rook skewer decides.",
+          "refs": [
+            "book:dvoretsky"
+          ],
+          "steps": [
+            {
+              "type": "find",
+              "title": "Skewer!",
+              "fen": "R7/P4k2/8/8/8/6K1/r7/8 w - - 0 1",
+              "text": "White's rook is in front of the a-pawn and Black's rook is behind it. Black's king is on f7, and that's a mistake. Find the winning trick.",
+              "solution": [
+                "Rh8",
+                "Rxa7",
+                "Rh7+",
+                "Kf6",
+                "Rxa7"
+              ],
+              "why": "**1.Rh8!** threatens a8=Q. If 1...Rxa7, **2.Rh7+** skewers the king and the rook along the 7th rank. That's why the defending king must stand on **g7 or h7** in this ending (the Vančura and similar defences). From there it covers h7 and h8 and the trick doesn't work.",
+              "engine": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mating-technique",
+      "title": "Mating Technique",
+      "lessons": [
+        {
+          "id": "basic-mates",
+          "title": "Queen & Rook Mates on the Clock",
+          "level": 1,
+          "side": "w",
+          "summary": "Mate efficiently against best defence: the box method with the rook and the knight's-move squeeze with the queen.",
+          "refs": [
+            "book:capablanca"
+          ],
+          "steps": [
+            {
+              "type": "text",
+              "title": "Method, not luck",
+              "fen": "8/8/8/4k3/8/8/8/3QK3 w - - 0 1",
+              "text": "**Queen:** shrink the box by staying a knight's move away from the king. Once it's on the edge, bring your own king closer and mate. Beware of **stalemate**: always leave the king a square until the final blow.\n\n**Rook:** cut the king off along a rank or file (the 'box'), bring your king up to face it (the opposition), then give check to push it back one row. Repeat until it reaches the edge.\n\nCapablanca's *Chess Fundamentals* begins with exactly these mates, so you learn how the pieces cooperate."
+            },
+            {
+              "type": "play",
+              "title": "Queen mate: under 12 moves",
+              "fen": "8/8/8/4k3/8/8/8/3QK3 w - - 0 1",
+              "goal": "mate",
+              "you": "w",
+              "moves": 12,
+              "text": "Checkmate the engine's king in **12 moves or fewer**. Don't stalemate!"
+            },
+            {
+              "type": "play",
+              "title": "Rook mate: under 22 moves",
+              "fen": "8/8/8/4k3/8/8/8/R3K3 w - - 0 1",
+              "goal": "mate",
+              "you": "w",
+              "moves": 22,
+              "text": "Now with a rook. Use the box method and checkmate in **22 moves or fewer**."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

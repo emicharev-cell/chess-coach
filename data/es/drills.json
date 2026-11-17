@@ -1,0 +1,175 @@
+{
+  "decks": [
+    {
+      "id": "blunder-proof",
+      "title": "A prueba de errores: responde a la amenaza",
+      "icon": "🛡️",
+      "blurb": "El rival acaba de hacer una amenaza. Detéctala y juega la defensa correcta de forma automática. Son las formas más habituales de tirar una partida.",
+      "cards": [
+        {
+          "id": "scholar-defence",
+          "title": "Dama y alfil sobre f7",
+          "you": "b",
+          "setup": "e4 e5 Bc4 Nc6 Qh5",
+          "text": "La dama y el alfil blancos apuntan a f7. Defiéndete y, si puedes, gana tiempo al hacerlo.",
+          "solution": [
+            [
+              "g6",
+              "Qe7"
+            ]
+          ],
+          "why": "**3...g6** defiende f7 de forma indirecta echando a la dama (4.Qf3 Nf6 está bien para las negras), y **3...Qe7** defiende f7 directamente. La natural 3...Nf6?? permite 4.Qxf7#.",
+          "wrong": {
+            "Nf6": "¡Qxf7#, jaque mate! f7 estaba atacado dos veces y solo lo defendía el rey."
+          }
+        },
+        {
+          "id": "ng5-defence",
+          "title": "Caballo y alfil sobre f7",
+          "you": "b",
+          "setup": "e4 e5 Nf3 Nc6 Bc4 Nf6 Ng5",
+          "text": "Las blancas atacan f7 dos veces. ¿Cuál es la respuesta de principios?",
+          "solution": [
+            "d5"
+          ],
+          "why": "**4...d5!** tapa la diagonal del alfil. Tras 5.exd5 las negras juegan 5...Na5! y no 5...Nxd5?, que permite el Fried Liver (6.Nxf7) o el Lolli (6.d4).",
+          "wrong": {
+            "d6": "Demasiado lento: 5.Nxf7 gana material (ataque doble a dama y torre)."
+          }
+        },
+        {
+          "id": "legal-defence",
+          "title": "¡No tomes la dama!",
+          "you": "b",
+          "setup": "e4 e5 Nf3 d6 Bc4 Bg4 Nc3 g6 Nxe5",
+          "text": "El caballo blanco acaba de ignorar la clavada y ha tomado en e5. La dama cuelga en d1. ¿Qué haces?",
+          "solution": [
+            "dxe5"
+          ],
+          "why": "**5...dxe5**, y las negras solo tienen un peón de menos tras 6.Qxg4. Tomar la dama pierde por el mate de Légal: 5...Bxd1?? 6.Bxf7+ Ke7 7.Nd5#.",
+          "wrong": {
+            "Bxd1": "6.Bxf7+ Ke7 7.Nd5#: ¡el mate de Légal! Una dama gratis suele ser una trampa: mira qué pueden hacer las demás piezas del rival."
+          }
+        },
+        {
+          "id": "back-rank-threat",
+          "title": "Batería en la columna e",
+          "you": "w",
+          "fen": "4r1k1/pp3ppp/8/4q3/8/8/PPQ2PPP/3R2K1 w - - 0 1",
+          "text": "La dama y la torre negras están alineadas en la columna e. ¿Qué amenazan las negras y cómo lo impides?",
+          "solution": [
+            [
+              "h3",
+              "g3",
+              "h4",
+              "g4",
+              "Rf1",
+              "Qd2",
+              "Qc1",
+              "f3"
+            ]
+          ],
+          "why": "Las negras amenazan **...Qe1+! Rxe1 Rxe1#**, un mate en la última fila. Dar *aire* al rey (h3, g3) o volver a cubrir e1 lo impide. Conviértelo en costumbre: cuando la última fila es débil, da aire antes de que sea tarde.",
+          "wrong": {
+            "Qxh7+": "Tras Kxh7, ...Qe1+ sigue llegando. No te pongas nervioso: defiende la última fila.",
+            "b3": "Ignora la amenaza: ...Qe1+! Rxe1 Rxe1#.",
+            "Kf1": "El rey camina hacia la batería de la columna e y sigue expuesto. Simplemente da aire con h3 o g3."
+          }
+        },
+        {
+          "id": "h7-battery",
+          "title": "Batería contra h7",
+          "you": "b",
+          "fen": "r1bq1rk1/pp1nbppp/2p1p3/3p4/3P4/2NQPN2/PP3PPP/RBB2RK1 b - - 0 1",
+          "text": "La dama de d3 y el alfil de b1 forman una batería contra h7. Encuentra una defensa sólida.",
+          "solution": [
+            [
+              "Nf6",
+              "f5",
+              "g6"
+            ]
+          ],
+          "why": "Las blancas amenazan **Qxh7#**. **...Nf6** cubre h7 con una pieza (la defensa más natural), mientras que ...f5 o ...g6 tapan la diagonal a costa de una ligera debilidad. ...h6? no sirve de nada: Qh7# sigue siendo mate.",
+          "wrong": {
+            "h6": "Qh7# sigue siendo mate. Defiende h7 o tapa la diagonal.",
+            "Re8": "Qxh7+ Kf8 Qh8#: la casilla f8 era la única salida del rey."
+          }
+        },
+        {
+          "id": "opera-defence",
+          "title": "La dama y el alfil de Morphy",
+          "you": "b",
+          "setup": "e4 e5 Nf3 d6 d4 Bg4 dxe5 Bxf3 Qxf3 dxe5 Bc4",
+          "text": "Es la posición de la Partida de la Ópera (Morphy, 1858). Las blancas amenazan algo en f7. Defiéndelo.",
+          "solution": [
+            [
+              "Nf6",
+              "Qf6",
+              "Qd7",
+              "Qe7"
+            ]
+          ],
+          "why": "Las blancas amenazan **Qxf7#**. En la Partida de la Ópera las negras jugaron **6...Nf6** 7.Qb3!, y el ataque doble de Morphy sobre f7 y b7 mantuvo la iniciativa. Toda defensa debe cubrir f7 o tapar la diagonal.",
+          "wrong": {
+            "Nc6": "¡Qxf7#, mate! Pregúntate siempre qué amenaza la última jugada del rival.",
+            "Bc5": "Qxf7#. El alfil se desarrolla, pero f7 sigue atacado dos veces y defendido una."
+          }
+        }
+      ]
+    },
+    {
+      "id": "traps",
+      "title": "Trampas de apertura y patrones tácticos",
+      "icon": "🪤",
+      "blurb": "Trampas clásicas y patrones de mate. Juégalos desde ambos bandos hasta que sean automáticos.",
+      "cards": [
+        {
+          "id": "englund-trap",
+          "title": "La trampa del gambito Englund",
+          "you": "b",
+          "setup": "d4 e5 dxe5 Nc6 Nf3 Qe7 Bf4 Qb4+ Bd2 Qxb2 Bc3",
+          "text": "El alfil blanco intenta atrapar tu dama en b2. Remata la faena con mate.",
+          "solution": [
+            "Bb4",
+            "Qd2",
+            "Bxc3",
+            "Qxc3",
+            "Qc1#"
+          ],
+          "why": "**6...Bb4!** clava el alfil de c3, y tras 7.Qd2? Bxc3 8.Qxc3 **Qc1#**: la dama de c3 no puede volver a c1 porque su propio peón de c2 le cierra el paso, y el rey no tiene casilla de escape."
+        },
+        {
+          "id": "london-qxb2",
+          "title": "Castiga la captura en b2",
+          "you": "w",
+          "setup": "d4 d5 Bf4 c5 e3 Qb6 Nc3 Qxb2",
+          "text": "La dama negra se ha comido el peón de b2 y ha dejado d5 sin protección. Encuentra la jugada que recupera material y amenaza un ataque doble.",
+          "solution": [
+            "Nxd5"
+          ],
+          "why": "**5.Nxd5!** recupera el peón ganando tiempo. Amenaza **Nc7+**, atacando a la vez rey y torre, y Rb1 perseguirá a la dama por el flanco de dama. Comerse un peón de flanco con la dama sin haber desarrollado, y dejando el centro suelto, es una forma clásica de recibir un castigo. (5.Nb5 es el famoso intento de gambito con la misma idea de Nc7+, pero Nxd5 es más limpio.)",
+          "wrong": {
+            "Rb1": "Perseguir primero a la dama permite a las negras defender d5. Toma el peón ganando tiempo mientras está suelto."
+          }
+        },
+        {
+          "id": "philidor-legacy",
+          "title": "El mate de Philidor",
+          "you": "w",
+          "fen": "3qr2k/ppp3pp/8/4N3/2Q5/8/PP4PP/5RK1 w - - 0 1",
+          "text": "Dama y caballo contra un rey arrinconado. Encuentra el clásico mate ahogado.",
+          "solution": [
+            "Nf7+",
+            "Kg8",
+            "Nh6+",
+            "Kh8",
+            "Qg8+",
+            "Rxg8",
+            "Nf7#"
+          ],
+          "why": "**Nf7+ Kg8 Nh6+** (jaque doble de caballo y dama) **Kh8 Qg8+!! Rxg8 Nf7#**. El rey queda ahogado por sus propias piezas. Lucena ya describió el patrón (1497), y más tarde se popularizó como \"el legado de Philidor\"."
+        }
+      ]
+    }
+  ]
+}

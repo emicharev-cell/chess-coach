@@ -1,0 +1,261 @@
+{
+  "id": "middlegame",
+  "title": "Medio juego",
+  "icon": "⚔️",
+  "blurb": "Motivos tácticos, patrones de ataque, estructuras de peones y técnica de torres. Son los patrones que un gran maestro reconoce al instante.",
+  "chapters": [
+    {
+      "id": "tactics",
+      "title": "Motivos tácticos",
+      "lessons": [
+        {
+          "id": "discovered",
+          "title": "Jaques descubiertos y el molino",
+          "level": 2,
+          "side": "both",
+          "summary": "El arma táctica más poderosa: una pieza se mueve y otra ataca. El jaque doble y el molino.",
+          "refs": ["game:torrelasker1925", "game:reti1910", "book:vukovic"],
+          "steps": [
+            {
+              "type": "text",
+              "title": "Anatomía de un descubierto",
+              "fen": "r3q3/pp3ppk/8/8/4N3/8/PP3PPP/4R1K1 w - - 0 1",
+              "arrows": [["e1", "e8", "red"]],
+              "marks": { "e4": "yellow" },
+              "text": "Un **ataque descubierto** se produce cuando una pieza (la *pieza delantera*) se aparta del camino de otra (la *pieza trasera*). Entonces hay **dos atacantes a la vez**: se abre la línea de la pieza trasera y la delantera hace su propia amenaza.\n\nSi la pieza delantera se mueve **dando jaque**, el rival tiene que atender el jaque, y el ataque de detrás llega gratis. Aquí el caballo de e4 tapa el ataque de la torre de e1 sobre la dama negra."
+            },
+            {
+              "type": "find",
+              "title": "Libera la torre",
+              "fen": "r3q3/pp3ppk/8/8/4N3/8/PP3PPP/4R1K1 w - - 0 1",
+              "text": "Juegan blancas y ganan la dama. Mueve el caballo *dando jaque*.",
+              "solution": ["Ng5+"],
+              "why": "**1.Ng5+!** El caballo da jaque desde una casilla donde nada puede capturarlo, así que las negras deben atender el jaque, y **2.Rxe8** gana la dama. Compara con 1.Nf6+? gxf6!, donde se pierde la pieza delantera. Un ataque descubierto funciona mejor cuando la pieza delantera se mueve con jaque *y* cae en una casilla segura.",
+              "wrong": {
+                "Nd6": "La torre ataca ahora la dama, pero sin jaque las negras simplemente apartan la dama.",
+                "Nf6+": "También es jaque, pero 1...gxf6! toma el caballo, y tras 2.Rxe8 Rxe8 lo has perdido para nada. Elige la casilla donde el caballo esté a salvo."
+              }
+            },
+            {
+              "type": "text",
+              "title": "El jaque doble",
+              "setup": "e4 c6 d4 d5 Nc3 dxe4 Nxe4 Nf6 Qd3 e5 dxe5 Qa5+ Bd2 Qxe5 O-O-O Nxe4 Qd8+ Kxd8 Bg5+",
+              "arrows": [["g5", "d8", "red"], ["d1", "d8", "red"]],
+              "text": "**Jaque doble**: dan jaque a la vez la pieza delantera y la trasera. No se pueden tapar dos líneas ni capturar dos piezas a la vez, así que **solo cabe mover el rey**. Eso hace del jaque doble la jugada más forzante del ajedrez.\n\nEs Réti contra Tartakower (Viena 1910) tras 9.Qd8+!! Kxd8 10.Bg5++. Las negras abandonaron tras 10...Kc7 11.Bd8#."
+            },
+            {
+              "type": "find",
+              "title": "El molino",
+              "fen": "5r1k/1p1b1qRp/5B2/8/8/8/5PPP/6K1 w - - 0 1",
+              "text": "La torre de g7 y el alfil de f6 forman un **molino**: la torre se mueve por la séptima fila con jaque descubierto del alfil, vuelve a g7 dando jaque y repite. Empieza la cosecha por el objetivo más valioso.",
+              "solution": ["Rxf7+", "Kg8", "Rg7+", "Kh8", "Rxd7+"],
+              "why": "**Rxf7+** (jaque descubierto del alfil de f6) gana la dama. Tras Kg8, **Rg7+** Kh8, el molino vuelve a girar con **Rxd7+**, luego Rg7+ y Rxb7+... El rey negro queda atrapado yendo y viniendo entre g8 y h8. El molino más famoso es Torre contra Lasker, Moscú 1925, donde la torre de Carlos Torre se comió casi toda la séptima fila contra un ex campeón del mundo."
+            }
+          ]
+        },
+        {
+          "id": "pins-skewers",
+          "title": "Clavadas y enfiladas",
+          "level": 1,
+          "side": "both",
+          "summary": "Clavadas absolutas y relativas, por qué a veces las piezas 'clavadas' se mueven igualmente, y la enfilada.",
+          "refs": ["game:legal1750", "game:opera1858", "book:silman"],
+          "steps": [
+            {
+              "type": "text",
+              "title": "Absoluta y relativa",
+              "setup": "e4 e5 Nf3 d6 Bc4 Bg4",
+              "arrows": [["g4", "d1", "red"]],
+              "marks": { "f3": "yellow" },
+              "text": "Una **clavada** ataca una pieza que no puede moverse sin dejar expuesta otra más valiosa detrás.\n\n• **Clavada absoluta**: detrás está el rey, así que la pieza clavada *no puede* moverse legalmente.\n• **Clavada relativa**: detrás hay otra pieza (aquí la dama de d1). La pieza clavada *puede* moverse, con un coste. A veces ese coste merece la pena, y ahí es donde viven las combinaciones.\n\nLa clavada de Bg4 sobre el caballo de f3 parece fuerte, pero solo es relativa."
+            },
+            {
+              "type": "find",
+              "title": "El mate de Légal (París, 1750)",
+              "setup": "e4 e5 Nf3 d6 Bc4 Bg4 Nc3 g6",
+              "text": "La última jugada negra, ...g6, perdió un tiempo y debilitó f6 y h6. El caballo de f3 está 'clavado' a la dama. ¡Ignora la clavada!",
+              "solution": ["Nxe5", "Bxd1", "Bxf7+", "Ke7", "Nd5#"],
+              "why": "**5.Nxe5!** rompe la clavada relativa. Si las negras se comen la dama con codicia con 5...Bxd1, entonces **6.Bxf7+ Ke7 7.Nd5#**: tres piezas menores dan mate al rey. Es el patrón de Légal contra Saint Brie (1750). Aunque las negras lo rechacen con 5...dxe5 6.Qxg4, las blancas han ganado un peón limpio. La lección: **una clavada relativa no es una clavada de verdad cuando el premio vale más que la dama.**",
+              "wrong": { "h3": "Preguntar al alfil es natural, pero la táctica está disponible ya: una pieza clavada de forma relativa puede moverse igualmente." }
+            },
+            {
+              "type": "find",
+              "title": "La enfilada",
+              "fen": "4q3/8/4k3/8/8/8/6K1/R7 w - - 0 1",
+              "text": "Una **enfilada** es una clavada al revés: la pieza más valiosa está delante, y cuando se aparta, cae la de detrás. Encuéntrala.",
+              "solution": ["Re1+"],
+              "why": "**Re1+** da jaque al rey por la columna e. El rey tiene que salir de la columna, y entonces **Rxe8** gana la dama. Recuerda la geometría: las enfiladas salen de jaques a lo largo de líneas (columnas, filas, diagonales) con un objetivo detrás del rey."
+            },
+            {
+              "type": "quiz",
+              "title": "El final de la Partida de la Ópera",
+              "fen": "1n1Rkb1r/p4ppp/4q3/4p1B1/4P3/8/PPP2PPP/2K5 b k - 1 17",
+              "question": "Morphy contra el duque y el conde (París 1858) terminó con 17.Rd8#, un mate de torre. ¿Por qué ni el alfil de f8 ni el caballo de b8 pueden capturar la torre de d8?",
+              "options": [
+                { "text": "Ninguno de los dos ataca d8: el caballo de b8 controla a6, c6 y d7, y el alfil se mueve en diagonal.", "correct": true, "why": "Correcto. La torre de d8 está protegida por el alfil de g5 a lo largo de la diagonal d8–h4, el rey no puede tomarla y ninguna pieza negra llega a d8. Es un modelo de cooperación entre piezas." },
+                { "text": "Los dos están clavados.", "why": "Ninguno está clavado. Simplemente no atacan d8." },
+                { "text": "Capturar sería ahogado.", "why": "Es jaque mate, así que la cuestión de capturar ni se plantea. Ninguna pieza negra ataca d8." },
+                { "text": "Es ilegal capturar una torre que da jaque.", "why": "Siempre puedes capturar la pieza que da jaque si una de tus piezas la ataca. Aquí ninguna lo hace." }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "greek-gift",
+          "title": "El regalo griego (Bxh7+)",
+          "level": 2,
+          "side": "w",
+          "summary": "El clásico sacrificio de alfil en h7, con las condiciones que Vuković estableció para que funcione.",
+          "refs": ["book:vukovic", "game:greco1620"],
+          "steps": [
+            {
+              "type": "text",
+              "title": "La lista de comprobación",
+              "fen": "r1bqrbk1/pp1n1ppp/4p3/2ppP3/3P3P/2PB1N2/PP3PP1/R1BQK2R w KQ - 0 10",
+              "arrows": [["d3", "h7", "red"], ["f3", "g5", "orange"], ["d1", "h5", "orange"], ["h1", "h4", "green"]],
+              "marks": { "f8": "yellow", "e8": "yellow" },
+              "text": "El sacrificio del 'regalo griego', Bxh7+, ya aparecía en los manuscritos de Greco hacia 1620. *El arte del ataque en ajedrez* de Vuković enumera las condiciones que suele necesitar:\n\n1. Un alfil en la diagonal b1–h7 (Bd3).\n2. Un caballo que pueda llegar a **g5** con jaque, y ninguna pieza negra que pueda tomarlo allí (un alfil en e7 lo haría).\n3. La dama capaz de llegar rápido a **h5**.\n4. **Ningún caballo negro en f6** que defienda h7. El peón de e5 se encarga de ello.\n5. El rey no puede huir: aquí la torre de e8 y el alfil de f8 **le cierran la salida** por f8, y el peón de h4 y la torre de h1 (las blancas no han enrocado) apoyan el ataque por la columna h.\n\nTodas se cumplen aquí."
+            },
+            {
+              "type": "find",
+              "title": "¡Sacrifica!",
+              "fen": "r1bqrbk1/pp1n1ppp/4p3/2ppP3/3P3P/2PB1N2/PP3PP1/R1BQK2R w KQ - 0 10",
+              "text": "Se cumplen todas las condiciones. Juega el regalo griego y continúa el ataque.",
+              "solution": ["Bxh7+", "Kxh7", "Ng5+"],
+              "why": "**10.Bxh7+! Kxh7 11.Ng5+** y cualquier jugada de rey pierde:\n\n- 11...Kg8 12.Qh5 amenaza Qh7#. El alfil de f8 cierra la salida del rey, y a 12...Nf6 se responde 13.exf6.\n- 11...Kh6 12.Nxe6+ es un jaque descubierto del alfil de c1, y el caballo además ataca la dama.\n- 11...Kg6 12.h5+! El peón h y la torre de h1 se suman y el rey es cazado.\n- 11...Kh8 12.Qh5+ Kg8 13.Qh7#.\n\nCalcular estas jugadas de rey *antes* de sacrificar es exactamente el 'árbol de variantes' de Kotov.",
+              "engine": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "structures",
+      "title": "Estructuras de peones",
+      "lessons": [
+        {
+          "id": "iqp",
+          "title": "El peón aislado de dama",
+          "level": 3,
+          "side": "both",
+          "summary": "Fuerza dinámica contra debilidad estática. Cuándo atacar con el peón aislado y cómo bloquearlo.",
+          "refs": ["book:mysystem", "book:watson"],
+          "steps": [
+            {
+              "type": "text",
+              "title": "Fuerza y debilidad",
+              "setup": "e4 c6 d4 d5 exd5 cxd5 c4 Nf6 Nc3 e6 Nf3 Be7 cxd5 Nxd5 Bd3 Nc6 O-O O-O Re1",
+              "marks": { "d4": "yellow", "d5": "red", "e5": "green", "c5": "green" },
+              "text": "Esta posición de peón aislado sale del ataque Panov de la Caro-Kann. El peón blanco de d4 no tiene peones vecinos.\n\n**Ventajas dinámicas (blancas):** puestos avanzados en **e5 y c5**, columnas e y c abiertas, más espacio, la **ruptura d4–d5** y opciones de ataque (Bd3/Qc2 apuntando a h7, elevaciones de torre como Re1–e3–h3).\n**Desventajas estáticas:** d4 solo puede defenderse con piezas, y la casilla de delante, **d5**, es un puesto ideal para las negras. Nimzowitsch llamó 'bloqueador' a la pieza que ocupa esa casilla y demostró que los caballos lo hacen mejor.\n\nLa regla práctica: **el bando del peón aislado quiere atacar en el medio juego; el defensor quiere cambiar piezas y llegar al final.**"
+            },
+            {
+              "type": "quiz",
+              "title": "Elige el plan",
+              "setup": "e4 c6 d4 d5 exd5 cxd5 c4 Nf6 Nc3 e6 Nf3 Be7 cxd5 Nxd5 Bd3 Nc6 O-O O-O Re1",
+              "question": "Juegas con negras contra el peón aislado. ¿Qué estrategia general es la correcta?",
+              "options": [
+                { "text": "Bloquear d5 con una pieza, cambiar piezas menores y buscar un final en el que d4 sea débil.", "correct": true, "why": "Sí. Cada cambio reduce el potencial de ataque blanco y hace que la debilidad estática del peón aislado pese más." },
+                { "text": "Abrir la posición con ...e5 cuanto antes.", "why": "...e5 suelta el bloqueo y activa las piezas blancas. Quieres frenar, no abrir." },
+                { "text": "Evitar los cambios para mantener la tensión.", "why": "Eso es lo que desea el bando del peón aislado. Mantener muchas piezas favorece al bando con más espacio y actividad, que son las blancas." },
+                { "text": "Atacar al rey blanco con ...g5 y ...h5.", "why": "Debilitar tu propio rey mientras las piezas blancas apuntan al flanco de rey es pedir que te den mate." }
+              ]
+            },
+            {
+              "type": "quiz",
+              "title": "La ruptura d4–d5",
+              "setup": "e4 c6 d4 d5 exd5 cxd5 c4 Nf6 Nc3 e6 Nf3 Be7 cxd5 Nxd5 Bd3 Nc6 O-O O-O Re1",
+              "question": "¿Cuándo suele ser más fuerte el avance d4–d5 para el bando del peón aislado?",
+              "options": [
+                { "text": "Cuando las piezas blancas están completamente movilizadas y el avance abre líneas hacia el rey negro o gana un tiempo.", "correct": true, "why": "Correcto. La ruptura convierte un peón aislado en líneas abiertas para las piezas activas. Funciona mejor cuando viene acompañada de táctica." },
+                { "text": "En el final, para crear un peón pasado.", "why": "En los finales el peón aislado suele ser simplemente débil. La ruptura es un recurso del medio juego." },
+                { "text": "De inmediato, antes de desarrollar.", "why": "Sin apoyo de piezas, el peón simplemente se pierde o se cambia por nada." },
+                { "text": "Nunca: un peón aislado debe quedarse en d4.", "why": "Los avances liberadores son uno de los principales recursos dinámicos del peón aislado." }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "passed-pawns",
+          "title": "Peones pasados y el bloqueo",
+          "level": 2,
+          "side": "both",
+          "summary": "El 'criminal que debe estar bajo llave' de Nimzowitsch, y los peones pasados protegidos y alejados.",
+          "refs": ["book:mysystem", "book:capablanca"],
+          "steps": [
+            {
+              "type": "text",
+              "title": "El 'ansia de expansión' del peón pasado",
+              "fen": "6k1/5ppp/8/3P4/8/8/5PPP/6K1 w - - 0 1",
+              "marks": { "d5": "yellow", "d6": "red" },
+              "text": "Un **peón pasado** no tiene peones rivales delante ni en las columnas vecinas. Nimzowitsch escribió que tiene 'ansia de expansión' y que debe ser **bloqueado**: una pieza situada justo delante lo detiene y es inmune a sus ataques.\n\nEl bloqueador ideal es un **caballo**, que conserva toda su movilidad en la casilla de bloqueo. Un alfil o una dama ahí se desperdician. Capablanca añadió que un peón pasado vale más cuantas menos piezas quedan, por eso cambiar piezas ayuda al bando que lo tiene."
+            },
+            {
+              "type": "find",
+              "title": "El peón pasado alejado",
+              "fen": "8/p4k2/8/1p2K3/1P5P/8/8/8 w - - 0 1",
+              "text": "Final de peones, juegan blancas. El rey negro está ocupado vigilando el flanco de rey. Avanza el peón pasado alejado y úsalo como **señuelo**.",
+              "solution": ["h5"],
+              "why": "**h5!** El peón h corre, el rey negro tiene que ir a por él (...Kg7, ...Kh6xh5), y mientras tanto el rey blanco entra en el flanco de dama (Kd5–c5xb5) y gana. Esa es la esencia del **peón pasado alejado**: arrastra al rey rival lejos del verdadero campo de batalla."
+            },
+            {
+              "type": "quiz",
+              "title": "Elige tu bloqueador",
+              "fen": "6k1/5ppp/8/3P4/8/8/5PPP/6K1 w - - 0 1",
+              "question": "¿Qué pieza negra es el bloqueador ideal en d6?",
+              "options": [
+                { "text": "Un caballo.", "correct": true, "why": "Correcto. Un caballo en d6 controla b5, c4, e4, f5, b7, c8, e8 y f7. No pierde movilidad y el peón no puede atacarlo." },
+                { "text": "La dama.", "why": "La dama es demasiado valiosa para atarla, y una pieza menor la echará de allí." },
+                { "text": "Una torre.", "why": "Una torre delante del peón es pasiva. Las torres van *detrás* de los peones pasados (regla de Tarrasch)." },
+                { "text": "Da igual.", "why": "Importa mucho. Nimzowitsch dedicó capítulos enteros a elegir el bloqueador adecuado." }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rooks",
+      "title": "Técnica de torres",
+      "lessons": [
+        {
+          "id": "rook-concepts",
+          "title": "Columnas abiertas, la séptima fila y elevaciones de torre",
+          "level": 2,
+          "side": "both",
+          "summary": "Cómo las torres se convierten en monstruos, y la trampa de la última fila que atrapa a quien corre a la séptima.",
+          "refs": ["game:capatartakower1924", "book:mysystem", "book:dvoretsky"],
+          "steps": [
+            {
+              "type": "text",
+              "title": "Principios de las torres",
+              "fen": "6k1/pp3ppp/2p5/8/8/8/PP3PPP/3R2K1 w - - 0 1",
+              "arrows": [["d1", "d7", "green"]],
+              "text": "1. Las **columnas abiertas** son las autopistas por las que entran las torres. Lucha por ellas y dobla las torres para dominarlas.\n2. La **séptima fila** (la segunda para las negras) es la meta: ataca los peones que siguen en su casilla inicial y encierra al rey rival. Dos torres en séptima suelen ser decisivas.\n3. **Elevaciones de torre**: en el ataque, una torre puede pasar por la tercera fila (Re1–e3–h3), una idea clásica en posiciones de peón aislado y en la siciliana.\n4. **Regla de Tarrasch**: las torres van *detrás* de los peones pasados, propios y del rival.\n\nCapablanca contra Tartakower (Nueva York, 1924) es el ejemplo de manual. Capablanca entregó peones para mantener su torre en séptima y avanzar con su rey."
+            },
+            {
+              "type": "find",
+              "title": "Antes de invadir…",
+              "fen": "4r1k1/pp3ppp/2p5/8/8/8/PP3PPP/3R2K1 w - - 0 1",
+              "text": "Las blancas quieren jugar Rd7 y apoderarse de la séptima. Pero antes, haz una **comprobación de seguridad**: ¿qué amenazan las negras a cambio?",
+              "solution": [["h3", "g3", "Kf1", "h4", "f3", "f4", "g4"]],
+              "why": "Si 1.Rd7?? Re1# es mate en la última fila. Primero **dale aire al rey** (h3, g3) o acércalo al centro (Kf1), y solo entonces invade con Rd7. Toda jugada de torre que abandone la primera fila debe pasar esta comprobación.",
+              "wrong": { "Rd7": "¡Re1# es mate en la última fila! Tu rey no tenía casilla de escape. Comprueba siempre lo que tu jugada deja de defender." }
+            },
+            {
+              "type": "quiz",
+              "title": "La regla de Tarrasch",
+              "fen": "r5k1/8/8/P7/8/8/6K1/R7 w - - 0 1",
+              "question": "Las blancas tienen un peón a pasado. ¿Dónde debe estar la torre blanca?",
+              "options": [
+                { "text": "Detrás del peón (en la columna a, por debajo de él), empujándolo.", "correct": true, "why": "Sí. Desde atrás, el alcance de la torre crece a medida que el peón avanza, mientras la torre rival de delante se vuelve cada vez más pasiva." },
+                { "text": "Delante del peón, en a8.", "why": "Una torre delante de su propio peón lo bloquea y casi no tiene casillas. Es la disposición menos activa." },
+                { "text": "En la séptima fila, sin importar el peón.", "why": "La séptima es estupenda, pero aquí el peón pasado es la baza principal y la torre debe apoyarlo desde atrás." },
+                { "text": "Defendiendo de lado, en la quinta fila.", "why": "La defensa lateral ata la torre al peón. Desde atrás lo apoya sin perder libertad." }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
