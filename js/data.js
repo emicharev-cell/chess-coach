@@ -105,16 +105,27 @@
     }
     for (const c of D.cards) {
       if (!c.you) c.you = startPosition(c).turn;
+      c.requires = c.lessonId || c.lesson; // the lesson that unlocks this card
+      if (!D.lessonById[c.requires]) throw new Error(`drill card ${c.id}: unknown lesson "${c.requires}"`);
       D.cardById[c.id] = c;
     }
     for (const d of D.decks) {
       d.cards = D.cards.filter((c) => c.deck === d.id);
+      d.lessons = [...new Set(d.cards.map((c) => c.requires))].map((id) => D.lessonById[id]);
       D.deckById[d.id] = d;
     }
     D.puzzles = puzzles.puzzles;
     D.loaded = true;
     return D;
   };
+
+  /** Lessons are the gate: a card is only drilled once its lesson is completed. */
+  D.isDone = (lessonId) => {
+    const s = global.CC && CC.Store.data.lessons[lessonId];
+    return !!(s && s.done);
+  };
+  D.isUnlocked = (card) => D.isDone(card.requires);
+  D.available = (list) => (list || D.cards).filter(D.isUnlocked);
 
   D.parseMoves = parseMoves;
   D.startPosition = startPosition;

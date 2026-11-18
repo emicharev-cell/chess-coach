@@ -77,7 +77,7 @@ Todos los pasos aceptan una posición inicial:
 ```
 - `you`: `"w"`, `"b"`, `"both"` (el alumno juega las dos) o `"watch"` (solo se avanza con botones: ideal para **partidas históricas**).
 - Cada jugada es `"SAN"` o `["SAN", "por qué"]`. La explicación aparece en las notas de las jugadas.
-- Las jugadas del rival se hacen solas. Si el alumno se equivoca, se le muestra la jugada correcta y su explicación.
+- En las lecciones el profesor anuncia cada jugada con una flecha verde y su explicación antes de que el alumno la haga; las del rival se hacen solas. En el Repaso, la misma línea se juega de memoria.
 - Opcional: `"wrong": {"Nc3": "Mensaje para esa jugada concreta"}`.
 
 ### `find`: encontrar la jugada (o la combinación)
@@ -119,14 +119,16 @@ Exactamente una opción con `"correct": true`.
 
 Cada paso `line` (salvo `you: "watch"`) y cada paso `find` de una lección se convierte **automáticamente** en una tarjeta de repaso. Las líneas de aperturas van a los mazos de repertorio de blancas o negras. Pon `"drill": false` en un paso para excluirlo.
 
-Para mazos extra, edita `drills.json`:
+**Las lecciones son la base:** una tarjeta solo aparece en el Repaso cuando su lección está terminada. Los mazos sin ninguna lección terminada salen bloqueados.
+
+Para mazos extra, edita `drills.json`. Cada tarjeta necesita `"lesson"`: el `id` de la lección que la desbloquea.
 ```json
 {
   "decks": [
     {
       "id": "blunder-proof", "title": "…", "icon": "🛡️", "blurb": "…",
       "cards": [
-        { "id": "scholar-defence", "title": "…", "you": "b", "setup": "e4 e5 Bc4 Nc6 Qh5",
+        { "id": "scholar-defence", "lesson": "italian", "title": "…", "you": "b", "setup": "e4 e5 Bc4 Nc6 Qh5",
           "text": "…", "solution": [["g6", "Qe7"]], "why": "…", "wrong": { "Nf6": "…" } }
       ]
     }

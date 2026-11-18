@@ -344,5 +344,17 @@ I18N.dict.es = {
   "Control the centre; you don't have to occupy it.": "Controla el centro; no hace falta ocuparlo.",
   "Réti, Modern Ideas in Chess": "Réti, Ideas modernas en ajedrez",
   "The attack needs a reason: a lead in development, a weakened king or superior force at the point of attack.": "El ataque necesita un motivo: ventaja en desarrollo, un rey debilitado o superioridad de fuerzas en el punto de ataque.",
-  "Vuković, The Art of Attack": "Vuković, El arte del ataque"
+  "Vuković, The Art of Attack": "Vuković, El arte del ataque",
+  "{color} played {san}": "Las {color} jugaron {san}",
+  "Now play {san}": "Ahora juega {san}",
+  "Not that one. Follow the green arrow: play {san}.": "Esa no. Sigue la flecha verde: juega {san}.",
+  "Key move": "Jugada clave",
+  "The teacher shows you each move with a green arrow and explains it. Play it on the board.": "El profesor te muestra cada jugada con una flecha verde y te explica por qué. Hazla en el tablero.",
+  "Finish your first lesson to unlock the Drill: you only review what you have already learned.": "Termina tu primera lección para desbloquear el Repaso: solo repasas lo que ya has aprendido.",
+  "The Drill unlocks with the lessons": "El Repaso se desbloquea con las lecciones",
+  "Each lesson you finish adds its lines and exercises here as cards. That way you only review what you have already studied.": "Cada lección que terminas añade aquí sus líneas y ejercicios como tarjetas. Así solo repasas lo que ya has estudiado.",
+  "Start with": "Empieza por",
+  "Unlocks when you finish:": "Se desbloquea al terminar:",
+  "{n} more after their lessons": "{n} más al terminar sus lecciones",
+  "Finish the lesson first: the Drill only contains what you have already studied.": "Termina antes la lección: el Repaso solo contiene lo que ya has estudiado."
 };

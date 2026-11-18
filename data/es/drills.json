@@ -21,7 +21,8 @@
           "why": "**3...g6** defiende f7 de forma indirecta echando a la dama (4.Qf3 Nf6 está bien para las negras), y **3...Qe7** defiende f7 directamente. La natural 3...Nf6?? permite 4.Qxf7#.",
           "wrong": {
             "Nf6": "¡Qxf7#, jaque mate! f7 estaba atacado dos veces y solo lo defendía el rey."
-          }
+          },
+          "lesson": "italian"
         },
         {
           "id": "ng5-defence",
@@ -35,7 +36,8 @@
           "why": "**4...d5!** tapa la diagonal del alfil. Tras 5.exd5 las negras juegan 5...Na5! y no 5...Nxd5?, que permite el Fried Liver (6.Nxf7) o el Lolli (6.d4).",
           "wrong": {
             "d6": "Demasiado lento: 5.Nxf7 gana material (ataque doble a dama y torre)."
-          }
+          },
+          "lesson": "italian"
         },
         {
           "id": "legal-defence",
@@ -49,7 +51,8 @@
           "why": "**5...dxe5**, y las negras solo tienen un peón de menos tras 6.Qxg4. Tomar la dama pierde por el mate de Légal: 5...Bxd1?? 6.Bxf7+ Ke7 7.Nd5#.",
           "wrong": {
             "Bxd1": "6.Bxf7+ Ke7 7.Nd5#: ¡el mate de Légal! Una dama gratis suele ser una trampa: mira qué pueden hacer las demás piezas del rival."
-          }
+          },
+          "lesson": "pins-skewers"
         },
         {
           "id": "back-rank-threat",
@@ -74,7 +77,8 @@
             "Qxh7+": "Tras Kxh7, ...Qe1+ sigue llegando. No te pongas nervioso: defiende la última fila.",
             "b3": "Ignora la amenaza: ...Qe1+! Rxe1 Rxe1#.",
             "Kf1": "El rey camina hacia la batería de la columna e y sigue expuesto. Simplemente da aire con h3 o g3."
-          }
+          },
+          "lesson": "rook-concepts"
         },
         {
           "id": "h7-battery",
@@ -93,7 +97,8 @@
           "wrong": {
             "h6": "Qh7# sigue siendo mate. Defiende h7 o tapa la diagonal.",
             "Re8": "Qxh7+ Kf8 Qh8#: la casilla f8 era la única salida del rey."
-          }
+          },
+          "lesson": "greek-gift"
         },
         {
           "id": "opera-defence",
@@ -113,7 +118,8 @@
           "wrong": {
             "Nc6": "¡Qxf7#, mate! Pregúntate siempre qué amenaza la última jugada del rival.",
             "Bc5": "Qxf7#. El alfil se desarrolla, pero f7 sigue atacado dos veces y defendido una."
-          }
+          },
+          "lesson": "pins-skewers"
         }
       ]
     },
@@ -136,7 +142,8 @@
             "Qxc3",
             "Qc1#"
           ],
-          "why": "**6...Bb4!** clava el alfil de c3, y tras 7.Qd2? Bxc3 8.Qxc3 **Qc1#**: la dama de c3 no puede volver a c1 porque su propio peón de c2 le cierra el paso, y el rey no tiene casilla de escape."
+          "why": "**6...Bb4!** clava el alfil de c3, y tras 7.Qd2? Bxc3 8.Qxc3 **Qc1#**: la dama de c3 no puede volver a c1 porque su propio peón de c2 le cierra el paso, y el rey no tiene casilla de escape.",
+          "lesson": "pins-skewers"
         },
         {
           "id": "london-qxb2",
@@ -150,7 +157,8 @@
           "why": "**5.Nxd5!** recupera el peón ganando tiempo. Amenaza **Nc7+**, atacando a la vez rey y torre, y Rb1 perseguirá a la dama por el flanco de dama. Comerse un peón de flanco con la dama sin haber desarrollado, y dejando el centro suelto, es una forma clásica de recibir un castigo. (5.Nb5 es el famoso intento de gambito con la misma idea de Nc7+, pero Nxd5 es más limpio.)",
           "wrong": {
             "Rb1": "Perseguir primero a la dama permite a las negras defender d5. Toma el peón ganando tiempo mientras está suelto."
-          }
+          },
+          "lesson": "london"
         },
         {
           "id": "philidor-legacy",
@@ -167,7 +175,8 @@
             "Rxg8",
             "Nf7#"
           ],
-          "why": "**Nf7+ Kg8 Nh6+** (jaque doble de caballo y dama) **Kh8 Qg8+!! Rxg8 Nf7#**. El rey queda ahogado por sus propias piezas. Lucena ya describió el patrón (1497), y más tarde se popularizó como \"el legado de Philidor\"."
+          "why": "**Nf7+ Kg8 Nh6+** (jaque doble de caballo y dama) **Kh8 Qg8+!! Rxg8 Nf7#**. El rey queda ahogado por sus propias piezas. Lucena ya describió el patrón (1497), y más tarde se popularizó como \"el legado de Philidor\".",
+          "lesson": "discovered"
         }
       ]
     }

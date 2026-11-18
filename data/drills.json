@@ -21,7 +21,8 @@
           "why": "**3...g6** defends f7 indirectly by kicking the queen (4.Qf3 Nf6 is fine for Black), and **3...Qe7** defends f7 directly. The natural 3...Nf6?? allows 4.Qxf7#.",
           "wrong": {
             "Nf6": "Qxf7# — checkmate! f7 was attacked twice and defended only by the king."
-          }
+          },
+          "lesson": "italian"
         },
         {
           "id": "ng5-defence",
@@ -35,7 +36,8 @@
           "why": "**4...d5!** blocks the bishop's diagonal. After 5.exd5 Black plays 5...Na5! rather than 5...Nxd5?, which allows the Fried Liver (6.Nxf7) or the Lolli (6.d4).",
           "wrong": {
             "d6": "Too slow: 5.Nxf7 wins material (fork of queen and rook)."
-          }
+          },
+          "lesson": "italian"
         },
         {
           "id": "legal-defence",
@@ -49,7 +51,8 @@
           "why": "**5...dxe5** and Black is only a pawn down after 6.Qxg4. Taking the queen loses to Légal's Mate: 5...Bxd1?? 6.Bxf7+ Ke7 7.Nd5#.",
           "wrong": {
             "Bxd1": "6.Bxf7+ Ke7 7.Nd5# — Légal's Mate! A free queen is often a trap: check what the opponent's other pieces can do."
-          }
+          },
+          "lesson": "pins-skewers"
         },
         {
           "id": "back-rank-threat",
@@ -74,7 +77,8 @@
             "Qxh7+": "After Kxh7, ...Qe1+ is still coming. Don't panic — defend the back rank.",
             "b3": "This ignores the threat: ...Qe1+! Rxe1 Rxe1#.",
             "Kf1": "The king walks toward the e-file battery and stays exposed. Simply make luft with h3 or g3."
-          }
+          },
+          "lesson": "rook-concepts"
         },
         {
           "id": "h7-battery",
@@ -93,7 +97,8 @@
           "wrong": {
             "h6": "Qh7# is still mate. Defend h7 or block the diagonal.",
             "Re8": "Qxh7+ Kf8 Qh8# — the f8-square was the king's only escape."
-          }
+          },
+          "lesson": "greek-gift"
         },
         {
           "id": "opera-defence",
@@ -113,7 +118,8 @@
           "wrong": {
             "Nc6": "Qxf7# — mate! Always ask what the opponent's last move threatens.",
             "Bc5": "Qxf7#. The bishop develops, but f7 is still attacked twice and defended once."
-          }
+          },
+          "lesson": "pins-skewers"
         }
       ]
     },
@@ -136,7 +142,8 @@
             "Qxc3",
             "Qc1#"
           ],
-          "why": "**6...Bb4!** pins the c3-bishop, and after 7.Qd2? Bxc3 8.Qxc3 **Qc1#**: the queen on c3 can't get back to c1 because her own c2-pawn blocks the way, and the king has no escape square."
+          "why": "**6...Bb4!** pins the c3-bishop, and after 7.Qd2? Bxc3 8.Qxc3 **Qc1#**: the queen on c3 can't get back to c1 because her own c2-pawn blocks the way, and the king has no escape square.",
+          "lesson": "pins-skewers"
         },
         {
           "id": "london-qxb2",
@@ -150,7 +157,8 @@
           "why": "**5.Nxd5!** wins the pawn back with tempo. It threatens **Nc7+**, forking king and rook, and Rb1 will chase the queen around the queenside. Grabbing a wing pawn with the queen while undeveloped, and leaving your centre loose, is a classic way to get punished. (5.Nb5 is the famous gambit try with the same Nc7+ idea, but Nxd5 is cleaner.)",
           "wrong": {
             "Rb1": "Chasing the queen first lets Black defend d5. Take the pawn with tempo while it's loose."
-          }
+          },
+          "lesson": "london"
         },
         {
           "id": "philidor-legacy",
@@ -167,7 +175,8 @@
             "Rxg8",
             "Nf7#"
           ],
-          "why": "**Nf7+ Kg8 Nh6+** (double check: knight and queen) **Kh8 Qg8+!! Rxg8 Nf7#**. The king is smothered by its own pieces. The pattern was described by Lucena (1497) and later popularised as 'Philidor's Legacy'."
+          "why": "**Nf7+ Kg8 Nh6+** (double check: knight and queen) **Kh8 Qg8+!! Rxg8 Nf7#**. The king is smothered by its own pieces. The pattern was described by Lucena (1497) and later popularised as 'Philidor's Legacy'.",
+          "lesson": "discovered"
         }
       ]
     }

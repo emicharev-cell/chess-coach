@@ -33,7 +33,7 @@
   // =================================================================== HOME
   page('', function Home(root) {
     const d = Store.data;
-    const st = SRS.stats(CCData.cards);
+    const st = SRS.stats(CCData.available());
     const nl = nextLesson();
     const streak = CC.dayStreak();
     const p = lessonProgress();
@@ -49,8 +49,11 @@
           <h1>${t('Train like a grandmaster.')}</h1>
           <p class="lead">${t('Deep opening repertoires, middlegame patterns and endgame technique, drilled with spaced repetition until the right move is automatic.')}</p>
           <div class="row">
-            <a class="btn primary lg" href="#/drill/session/all">${sessionSize ? t("▶ Start today's drill · {n} cards", { n: sessionSize }) : t('▶ Drill: review ahead')}</a>
-            <a class="btn lg" href="#/lesson/${nl.id}">📖 ${started ? t('Continue') : t('Next lesson')}: ${esc(nl.title)}</a>
+            ${st.total ? `<a class="btn primary lg" href="#/drill/session/all">${sessionSize ? t("▶ Start today's drill · {n} cards", { n: sessionSize }) : t('▶ Drill: review ahead')}</a>` : ''}
+            <a class="btn lg ${st.total ? '' : 'primary'}" href="#/lesson/${nl.id}">📖 ${started ? t('Continue') : t('Next lesson')}: ${esc(nl.title)}</a>
+          </div>
+          ${st.total ? '' : `<p class="small muted unlock-hint">🔒 ${t('Finish your first lesson to unlock the Drill: you only review what you have already learned.')}</p>`}
+          <div class="row hidden">
           </div>
         </div>
         <div class="hero-board" id="heroBoard"></div>

@@ -19,7 +19,19 @@
   // ================================================================ OVERVIEW
   function overview(root) {
     const S = Store.data.settings;
-    const all = SRS.stats(CCData.cards);
+    const all = SRS.stats(CCData.available());
+    if (!all.total) {
+      const first = CCData.lessons.find((l) => !CCData.isDone(l.id)) || CCData.lessons[0];
+      root.innerHTML = `
+        <div class="page-head"><h1>${t('Drill')}</h1></div>
+        <div class="card locked-card">
+          <div class="big">🔒</div>
+          <h2>${t('The Drill unlocks with the lessons')}</h2>
+          <p class="muted">${t('Each lesson you finish adds its lines and exercises here as cards. That way you only review what you have already studied.')}</p>
+          <a class="btn primary lg" href="#/lesson/${first.id}">📖 ${t('Start with')}: ${esc(first.title)}</a>
+        </div>`;
+      return;
+    }
     const todayN = Math.min(20, all.due + Math.min(all.fresh, S.newPerSession));
     root.innerHTML = `
       <div class="page-head">
@@ -43,11 +55,19 @@
       <h2 class="section-title">${t('Decks')}</h2>
       <div class="deck-grid">
         ${CCData.decks.map((d) => {
-          const st = SRS.stats(d.cards);
+          const av = CCData.available(d.cards);
+          const st = SRS.stats(av);
+          if (!av.length) {
+            return `<div class="card deck-card locked">
+              <div class="deck-top"><span class="deck-ico">🔒</span><div><h3>${esc(d.title)}</h3><div class="small muted">${plural(d.cards.length, 'card')}</div></div></div>
+              <p class="small muted">${t('Unlocks when you finish:')} ${d.lessons.map((l) => `<a href="#/lesson/${l.id}">${esc(l.title)}</a>`).join(', ')}</p>
+            </div>`;
+          }
+          const lockedN = d.cards.length - av.length;
           const pct = st.total ? Math.round((st.mastered / st.total) * 100) : 0;
           const learnPct = st.total ? Math.round(((st.mastered + st.learning) / st.total) * 100) : 0;
           return `<div class="card deck-card">
-            <div class="deck-top"><span class="deck-ico">${d.icon}</span><div><h3>${esc(d.title)}</h3><div class="small muted">${plural(st.total, 'card')}</div></div></div>
+            <div class="deck-top"><span class="deck-ico">${d.icon}</span><div><h3>${esc(d.title)}</h3><div class="small muted">${plural(st.total, 'card')}${lockedN ? ` · 🔒 ${t('{n} more after their lessons', { n: lockedN })}` : ''}</div></div></div>
             <p class="small muted">${esc(d.blurb)}</p>
             <div class="mastery"><div class="m-learn" style="width:${learnPct}%"></div><div class="m-done" style="width:${pct}%"></div></div>
             <div class="deck-foot">
@@ -72,11 +92,11 @@
   function session(root, mode, arg) {
     const S = Store.data.settings;
     let cards, title;
-    if (mode === 'deck') { const d = CCData.deckById[arg]; if (!d) { location.hash = '#/drill'; return null; } cards = d.cards; title = d.title; }
-    else if (mode === 'lesson') { const l = CCData.lessonById[arg]; if (!l) { location.hash = '#/drill'; return null; } cards = CCData.cards.filter((c) => c.lessonId === arg); title = l.title; }
-    else { cards = CCData.cards; title = t("Today's session"); }
+    if (mode === 'deck') { const d = CCData.deckById[arg]; if (!d) { location.hash = '#/drill'; return null; } cards = CCData.available(d.cards); title = d.title; }
+    else if (mode === 'lesson') { const l = CCData.lessonById[arg]; if (!l) { location.hash = '#/drill'; return null; } cards = CCData.available(CCData.cards.filter((c) => c.requires === arg)); title = l.title; }
+    else { cards = CCData.available(); title = t("Today's session"); }
     const queue = SRS.queue(cards, { newLimit: mode === 'lesson' ? 99 : S.newPerSession, max: mode === 'lesson' ? 30 : 20, reviewAhead: true });
-    if (!queue.length) { root.innerHTML = `<div class="card"><h2>${t('No cards here yet')}</h2><p><a href="#/drill">${t('Back to Drill')}</a></p></div>`; return null; }
+    if (!queue.length) { root.innerHTML = `<div class="card locked-card"><div class="big">🔒</div><h2>${t('No cards here yet')}</h2><p class="muted">${t('Finish the lesson first: the Drill only contains what you have already studied.')}</p><p><a class="btn" href="#/drill">${t('Back to Drill')}</a></p></div>`; return null; }
 
     const { holder, panel } = CC.trainingLayout(root);
     const board = new BoardView(holder, {});

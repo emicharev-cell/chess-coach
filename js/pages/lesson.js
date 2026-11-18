@@ -7,7 +7,7 @@
   const { Store, esc, md, levelBadge, page, $ } = CC;
 
   const TYPE_LABEL = {
-    text: ['📖', 'Concept'], line: ['♟', 'Play the line'], watch: ['▶', 'Watch'], find: ['🎯', 'Find the move'],
+    text: ['📖', 'Concept'], line: ['♟', 'Play the line'], watch: ['▶', 'Watch'], find: ['🎯', 'Key move'],
     quiz: ['❓', 'Quiz'], play: ['⚙️', 'Technique vs engine'],
   };
 
@@ -114,10 +114,10 @@
       if (kind === 'line') sideTxt = step.you === 'both' ? ' · ' + t('both sides') : ' · ' + t('you play {color}', { color: CC.colorName(step.you || 'w') });
       typeEl.innerHTML = `<span class="tbadge t-${kind}">${ico} ${t(label)}${sideTxt}</span><span class="muted small">${t('Step {a} of {b}', { a: si + 1, b: lesson.steps.length })}</span>`;
       titleEl.textContent = step.title || '';
-      textEl.innerHTML = md(step.text || (kind === 'line' ? t('Play the moves of the line. Read the note for each move: it explains the purpose.') : ''));
+      textEl.innerHTML = md(step.text || (kind === 'line' ? t('The teacher shows you each move with a green arrow and explains it. Play it on the board.') : ''));
       quizEl.innerHTML = '';
       btn('wback').hidden = btn('wfwd').hidden = kind !== 'watch';
-      btn('hint').hidden = !['line', 'find', 'play'].includes(kind);
+      btn('hint').hidden = kind !== 'play';
       btn('retry').hidden = !['line', 'find', 'play', 'watch', 'quiz'].includes(kind);
       btn('back').disabled = si === 0;
       renderBar();
@@ -128,9 +128,8 @@
         board.set({ chess: ch, orientation: step.orientation || (lesson.side === 'b' ? 'b' : 'w'), movable: null, arrows: step.arrows || [], marks: markClasses(step.marks), lastMove: h ? [h.fromSq, h.toSq] : null, selected: null });
         if (kind === 'quiz') renderQuiz(step);
       } else {
-        trainer = new Trainer(board, { mode: 'lesson', onEvent });
+        trainer = new Trainer(board, { mode: 'lesson', guided: true, onEvent });
         trainer.start(Object.assign({}, step, { kind, arrows: step.arrows, marks: markClasses(step.marks), orientation: step.orientation }));
-        if (kind === 'find') setStatus(`<span class="turn"><span class="sw ${trainer.chess.turn}"></span>${t('{color} to move', { color: CC.colorName(trainer.chess.turn) })}</span>`);
         if (kind === 'play') setStatus(`<span class="turn"><span class="sw ${step.you || trainer.chess.turn}"></span>${t('You play {color}', { color: CC.colorName(step.you || trainer.chess.turn) })}</span>`);
       }
       updateNext();
@@ -177,7 +176,7 @@
       Store.bump(2);
       Sound.play('end');
       const next = all[idx + 1];
-      const cards = CCData.cards.filter((c) => c.lessonId === lesson.id).length;
+      const cards = CCData.cards.filter((c) => c.requires === lesson.id).length;
       if (trainer) trainer.destroy();
       panel.innerHTML = `
         <div class="card done-card">

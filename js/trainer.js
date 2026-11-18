@@ -8,6 +8,9 @@
  *           alternatives are checked by the engine unless `engine: false`
  *   play  — reach a goal against the engine: "mate" | "promote" | "hold" (moves = limit)
  *
+ * opts.guided (lessons): the teacher announces every move of line/find steps with an
+ * arrow and its explanation before you play it. Drills run unguided (from memory).
+ *
  * Emits events through opts.onEvent({type, ...}):
  *   status {html, tone}   comment {san, why, by, ok}   moves {}   done {success, mistakes, hints, avgMs, note}
  */
@@ -44,6 +47,7 @@
       this.mistakes = 0; this.hints = 0; this.hintStage = 0; this.attempts = 0;
       this.times = []; this.turnStart = 0; this.busy = false; this.finished = false;
       this.userMoves = 0;
+      this.lastOpp = null;
       const k = this.kind;
       if (k === 'line' || k === 'watch') {
         this.line = CCData.parseMoves(spec.moves);
@@ -77,25 +81,39 @@
       const k = this.kind;
       if (k === 'line') {
         if (this.idx >= this.line.length) return this.done(true);
-        if (this.userTurn()) { this.setMovable(); this.promptLine(); return; }
+        if (this.userTurn()) { this.setMovable(); if (this.opts.guided) this.teach(this.line[this.idx]); else this.promptLine(); return; }
         this.autoPlay(() => {
           const res = this.play(this.line[this.idx].san);
           this.emit({ type: 'comment', san: res.san, why: this.line[this.idx].why, by: 'opp', ok: true });
+          this.lastOpp = { san: res.san, color: res.color, why: this.line[this.idx].why };
           this.idx++;
         });
       } else if (k === 'find') {
         if (this.ply >= this.sol.length) return this.done(true, this.spec.why);
-        if (this.userTurn()) { this.setMovable(); return; }
+        if (this.userTurn()) { this.setMovable(); if (this.opts.guided) this.teach({ san: this.sol[this.ply][0] }); return; }
         this.autoPlay(() => {
           const res = this.play(this.sol[this.ply][0]);
           this.emit({ type: 'comment', san: res.san, by: 'opp', ok: true });
-          this.status(t('{color} replied {san}. Your move.', { color: colorName(res.color), san: `<b>${esc(res.san)}</b>` }));
+          this.lastOpp = { san: res.san, color: res.color };
+          if (!this.opts.guided) this.status(t('{color} replied {san}. Your move.', { color: colorName(res.color), san: `<b>${esc(res.san)}</b>` }));
           this.ply++;
         });
       } else if (k === 'play') {
         if (this.userTurn()) { this.setMovable(); return; }
         this.engineReply();
       }
+    }
+
+    /** Guided mode: show the next move with an arrow and explain it before the student plays it. */
+    teach(exp) {
+      const uci = this.uciOf(exp.san);
+      if (uci) this.board.set({ arrows: [[uci.slice(0, 2), uci.slice(2, 4), 'green']] });
+      let html = '';
+      const o = this.lastOpp;
+      if (o) html += `<div class="opp-said">${t('{color} played {san}', { color: colorName(o.color), san: `<b>${esc(o.san)}</b>` })}${o.why ? ': ' + esc(o.why) : '.'}</div>`;
+      html += `<div class="teach">👨‍🏫 ${t('Now play {san}', { san: `<b>${esc(exp.san)}</b>` })}${exp.why ? ': ' + esc(exp.why) : '. ' + t('Follow the arrow.')}</div>`;
+      this.lastOpp = null;
+      this.status(html, 'teach');
     }
 
     promptLine() {
@@ -160,7 +178,7 @@
       this.mistakes++;
       this.attempts++;
       Sound.play('wrong');
-      const reveal = revealUci && (this.opts.mode === 'drill' || this.attempts >= 2);
+      const reveal = revealUci && (this.opts.mode === 'drill' || this.opts.guided || this.attempts >= 2);
       this.board.set({ selected: null, lastMove: this.lastPlayed(), arrows: reveal ? [[revealUci.slice(0, 2), revealUci.slice(2, 4), 'green']] : [], marks: { [res.toSq]: 'mark-red' } });
       this.emit({ type: 'moves' });
       this.emit({ type: 'wrong', san: res.san });
@@ -199,6 +217,7 @@
       this.chess.undo();
       const expUci = this.uciOf(exp.san);
       this.chess.move(res.uci);
+      if (this.opts.guided) return this.reject(res, '✗ ' + t('Not that one. Follow the green arrow: play {san}.', { san: `<b>${esc(exp.san)}</b>` }), expUci);
       const custom = this.wrongFor(playedSan);
       const reveal = this.opts.mode === 'drill' || this.attempts >= 1;
       const html = '✗ ' + t("{san} isn't the move we're learning here.", { san: `<b>${esc(playedSan)}</b>` }) +
@@ -219,6 +238,7 @@
       }
       const custom = this.wrongFor(res.san);
       const expUci = (() => { const c = before.clone(); const m = c.findMove(exp[0]); return m ? Chess.sqName(m.from) + Chess.sqName(m.to) + (m.promotion || '') : null; })();
+      if (this.opts.guided) return this.reject(res, '✗ ' + (custom ? `<b>${esc(res.san)}</b>? ${esc(custom)} ` : '') + t('Not that one. Follow the green arrow: play {san}.', { san: `<b>${esc(exp[0])}</b>` }), expUci);
       if (custom) return this.reject(res, `✗ <b>${esc(res.san)}</b>? ${esc(custom)}`, expUci);
       if (this.spec.engine === false) return this.reject(res, '✗ ' + t("{san} isn't the move we're looking for. Try again.", { san: `<b>${esc(res.san)}</b>` }), expUci);
       // Engine arbitration: is the alternative just as good?

@@ -255,6 +255,13 @@ a.card:hover { text-decoration: none; transform: translateY(-2px); box-shadow: v
 .status.warn { background: var(--warn-soft); border-color: color-mix(in srgb, var(--warn) 35%, transparent); }
 .status p { margin: 6px 0 0; }
 .done-head { font-weight: 800; font-size: 16px; color: var(--good); }
+.status.teach { background: var(--info-soft); border-color: color-mix(in srgb, var(--info) 35%, transparent); }
+.status .opp-said { color: var(--muted); margin-bottom: 6px; }
+.status .teach { font-size: 15px; }
+.locked-card { text-align: center; padding: 32px 22px; max-width: 640px; }
+.locked-card .big { font-size: 46px; margin-bottom: 6px; }
+.deck-card.locked { opacity: .75; background: var(--surface-2); box-shadow: none; }
+.unlock-hint { margin-top: 12px; }
 @keyframes pop { from { transform: translateY(3px); opacity: 0; } to { transform: none; opacity: 1; } }
 .turn { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; }
 .sw { display: inline-block; width: 14px; height: 14px; border-radius: 50%; border: 1px solid #888; }
